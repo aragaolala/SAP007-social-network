@@ -21,7 +21,7 @@ export function Welcome(abrirModalCreatePost, user) {
   photoContainer.append(nome);
 
   // eslint-disable-next-line no-use-before-define
-  obtenerUsuario(user.uid, photoAvatar, nome);
+  obterUsuario(user.uid, photoAvatar, nome);
 
   // -----------------------------------------------------------------------------------
   const buttonAddPost = document.createElement('button');
@@ -48,7 +48,7 @@ export function Welcome(abrirModalCreatePost, user) {
     abrirModalCreatePost();
   });
 
-  contenedorBienvenida.append(photoContainer);
+  containerBemVinda.append(photoContainer);
   photoContainer.append(buttonAddPost);
 
   return contentWelcome;

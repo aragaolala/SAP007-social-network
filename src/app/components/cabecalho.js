@@ -1,5 +1,5 @@
 export const Header = () => {
-  // Esta es una cabecera de prueba
+  // Este é um cabeçalho de teste
   const header = document.createElement('div');
   header.style.background = 'orange';
   header.style.height = '80px';
