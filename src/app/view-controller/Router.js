@@ -4,9 +4,9 @@ import { auth } from '../firebase/firebase-auth.js';
 import { components } from './index.js';
 import { Loader } from './Loader.js';
 
-// se ejecuta una sola vez
+// é executado uma única vez
 export const Router = () => {
-  // console.log("entró a función router");
+  // console.log("entrou na função router");
 
   const $root = document.getElementById('root');
   $root.textContent = '';
@@ -59,7 +59,7 @@ export const Router = () => {
       case '#/passwordChange': {
         if (auth.currentUser.providerData[0].providerId === 'google.com') {
           // console.log(
-          //   'AQUÍ HAREMOS APPEND DE UN COMPONENTE DE 404 NOT FOUND O ALGO'
+          //   'Aqui faremos um append de um componente 404 ou algo'
           // );
         }
         if (auth.currentUser) {
@@ -70,7 +70,7 @@ export const Router = () => {
         break;
       }
       default:
-        // todo: Deberíamos crear una vista en caso que el usuario coloque una url no existente
+        // Devemos criar uma vista caso o usuário coloque uma URL não existente
         return $root.appendChild(components.login());
       // return (window.location.hash = "#/");
 
@@ -78,25 +78,25 @@ export const Router = () => {
     }
   }
 
-  // para asegurar que se ejecute una sola vez
+  // para assegurar que a execução seja única
   let hasRouterStarted = false;
 
-  // se ejecuta una sola vez
+  // é executado uma única vez
   function start() {
     render();
     window.addEventListener('hashchange', () => {
       render();
     });
-    // ya me ejecute
+    // já executou
     hasRouterStarted = true;
   }
 
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       window.location.hash = '#/';
-    // console.log('el usuario ya está sign out!');
+    // console.log('o usuário já está sign out!');
     }
-    // ya se ejecuto el router?
+    // O router já foi executado?
     if (!hasRouterStarted) start();
   });
 };

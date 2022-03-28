@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 
-// Importacion de metodos
+// Importação de métofos
 import {
   signInWithEmailAndPassword,
   getAuth,
