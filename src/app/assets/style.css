@@ -17,12 +17,11 @@ body {
   margin: 0;
   overflow-x: hidden;
   height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main-container {
-  background-image: url("back-login.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #E8E3E7;
 }
 
 .allView {
@@ -38,7 +37,6 @@ body {
 }
 
 .logo-container {
-  
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -53,12 +51,10 @@ body {
 }
 
 .logo-name {
-  color: black;
+  color: #662F82;
   text-align: center;
   width: 300px;
-  
-  font-family: "Poppins";
-
+  font-family: "Verdana";
 }
 
 .eslogan-container {
@@ -72,27 +68,33 @@ body {
   text-align: center;
   font-size: 22px;
   font-weight: 500;
+  color: #662F82;
 }
 
 .inputs-container {
   text-align: center;
   width: 254px;
+  background-color: #662F82;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .redirect-text__left {
-  font-size: 16px;
+  font-size: 13px;
+  color: #E8E3E7;
 }
 
 .redirect-text__left-small {
   font-size: 13px;
+  color: #E8E3E7;
 }
 
 .redirect-text__link {
-  font-weight: 600;
-  color: #000;
+  font-weight: bolder;
+  color: #E8E3E7;
   text-decoration: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
   margin-left: 5px;
 }
 
@@ -118,14 +120,11 @@ body {
   margin-bottom: 10px;
   height: 39px;
   width: 100%;
-  border-radius: 25px;
-  border: 1px solid transparent;
-  background-image: linear-gradient(white, white),
-    radial-gradient(circle at top left, #ffb800, #ff6f00);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  text-indent: 45px;
-  font-family: "Lato", sans-serif;
+  border-radius: 10px;
+  background-color: #E8E3E7;
+  text-indent: 10px;
+  text-decoration: none;
+  border: none;
 }
 
 .form__input:-internal-autofill-selected {
@@ -135,7 +134,8 @@ body {
 }
 
 .form__input::placeholder {
-  color: #ccc;
+  color: #662F82;
+  margin: 0;
 }
 
 .form__input:focus {
@@ -150,8 +150,7 @@ body {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-  outline: 2px solid orange;
-  background-color: white;
+  outline: 2px solid #662F82;
 }
 
 .form__icon {
@@ -170,7 +169,6 @@ input[type="password"]:focus {
   text-decoration: none;
   height: 30px;
   padding: 20px;
-  color: #000;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -180,7 +178,7 @@ input[type="password"]:focus {
   font-size: 14px;
   font-weight: bold;
   border: none;
-  background-image: linear-gradient(45deg, #f51616, #ffb800);
+  background-color: #E8E3E7;
 }
 
 .btn-g {
@@ -188,7 +186,7 @@ input[type="password"]:focus {
   text-decoration: none;
   height: 30px;
   padding: 20px;
-  color: #000;
+  color: #662F82;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -197,14 +195,13 @@ input[type="password"]:focus {
   margin-bottom: 10px;
   font-size: 14px;
   font-weight: bold;
-  border: 1px solid #cbbdbd;
-  background-color: white;
+  background-color: #E8E3E7;
   position: relative;
 }
 
 .btn__text,
 .btn-g__text {
-  color: #000;
+  color: #662F82;
   font-size: 0.9rem;
 }
 
