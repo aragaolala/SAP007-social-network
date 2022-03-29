@@ -26,23 +26,23 @@ export { sendPasswordResetEmail, auth };
 
 const provider = new GoogleAuthProvider(app);
 
-/** *****************Inicio de sesion con correo************************** */
+/** ***************** Iniciar a sessão com email ************************** */
 export const enviarAcesso = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
-/** **********************Continuar con Google********************************* */
+/** **********************Continuar com o Google********************************* */
 export const loginGoogle = () => signInWithPopup(auth, provider)
-// ! Deberiamos chequear primero si esta cuenta ya se encuentra registrada en el firebase,
-  // ! en caso de estar en el firestore, pedirle que ingrese sus datos
+// ! Devemos verificar primeiro se esta conta já está registrada no firebase,
+  // ! se você estiver no firestore, pedir-lhe para digitar seus dados
   .then((response) => {
     const user = response.user;
     addUser(user, '', '');
     window.location.hash = '#/timeline';
   });
 
-/** *************************Cerrar sesión************************** */
+/** ************************* Encerrar sessão ************************** */
 export const logOutGoogle = () => { signOut(auth); };
 
-/** ****************Registro con correo************************* */
+/** **************** Registro com email ************************* */
 export function enviarRegistro() {
   document.getElementById('errorLogin').textContent = '';
   // Primera vista de registro
@@ -57,7 +57,7 @@ export function enviarRegistro() {
   const nameV = name.value.trim();
   const emailV = email.value.trim();
   const passwordV = password.value.trim();
-  // Validando los campos
+  // Validando os campos
 
   // ------------------------------------
 
@@ -71,7 +71,7 @@ export function enviarRegistro() {
     || !validateField(passwordV)
   ) {
     document.getElementById('errorLogin').textContent = 'Datos inválidos';
-    // Pinta el input
+    // Aparece o input
     name.classList.remove('success');
     email.classList.remove('success');
     password.classList.remove('success');
@@ -88,12 +88,12 @@ export function enviarRegistro() {
     email.classList.add('success');
     password.classList.add('success');
 
-    // Validando los campos de la siguiente vista, si están vacios
+    // Validando os campos da próxima vista, se vazios
     createUserWithEmailAndPassword(auth, emailV, passwordV)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // Añadimos a este usuario en nuestra base de datos
+        // Adicionamos este usuário em nosso banco de dados
         return addUser(user, nameV, passwordV);
       })
       .then(() => updateProfile(auth.currentUser, {
@@ -125,14 +125,14 @@ export function changeNameAndPhotoAuth(objNewData) {
   });
 }
 
-// Siempre me pedirán credencial para eliminar cuenta, cambiar contraseña o correo
+// Sempre me pedirão credenciais para apagar conta, alterar senha ou e-mail
 export const createCredential = (user, password) => {
   const email = user.email;
   const credential = EmailAuthProvider.credential(email, password);
   return credential;
 };
 
-// El método indicará la funcion (si es para actualizar el correo o la contraseña)
+// O método indicará a função (se é para atualizar o correio ou a senha)
 export const reauth = async (user, credential) => reauthenticateWithCredential(user, credential);
 
 export const changePasswordAuth = (user, newPassword) => updatePassword(user, newPassword);

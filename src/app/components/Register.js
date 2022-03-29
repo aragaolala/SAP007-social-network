@@ -106,6 +106,8 @@ export const Registro = () => {
   googleIcon.classList.add('icon-google');
   googleIcon.classList.add('form__icon');
 
+
+  /* ícones importados do https://icomoon.io/ */
   const span1 = document.createElement('span');
   span1.classList.add('path1');
   const span2 = document.createElement('span');
@@ -152,7 +154,7 @@ export const Registro = () => {
   linkLogIn.append(spanAsk);
   linkLogIn.append(link);
 
-  // Terminos y Condiciones
+  // Termos e Condições
   const termsContainer = document.createElement('div');
   termsContainer.id = 'termsAndConditions';
   termsContainer.classList.add('redirect-text');

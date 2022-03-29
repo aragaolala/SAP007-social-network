@@ -7,6 +7,7 @@ import {
 import { Logo } from './Logo.js';
 import { Eslogan } from './Eslogan.js';
 
+
 export const Login = () => {
   const root = document.getElementById('root');
   root.classList.add('main-container');
@@ -102,6 +103,8 @@ export const Login = () => {
   googleIcon.classList.add('icon-google');
   googleIcon.classList.add('form__icon');
 
+
+/* ícones importados do https://icomoon.io/ */
   const span1 = document.createElement('span');
   span1.classList.add('path1');
   const span2 = document.createElement('span');
