@@ -154,7 +154,7 @@ export const Registro = () => {
   linkLogIn.append(spanAsk);
   linkLogIn.append(link);
 
-  // Terminos y Condiciones
+  // Termos e Condições
   const termsContainer = document.createElement('div');
   termsContainer.id = 'termsAndConditions';
   termsContainer.classList.add('redirect-text');

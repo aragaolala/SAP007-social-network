@@ -3,10 +3,10 @@ import { getUserData } from '../firebase/firebase-data.js';
 export function Welcome(abrirModalCreatePost, user) {
   const contentWelcome = document.createElement('div');
   contentWelcome.classList.add('perfil-grid');
-  //   Contenedor Base de foto del usuario
+  //   Container Base de Foto do Usuário
   const photoContainer = document.createElement('div');
   photoContainer.classList.add('photo__container', 'row', 'card');
-  //   Imagen del usuario Contenedor
+  //   Imagem do usuário Container
   const imgAvatarContainer = document.createElement('div');
   imgAvatarContainer.classList.add('photo__avatar-container');
   const photoAvatar = document.createElement('img');
