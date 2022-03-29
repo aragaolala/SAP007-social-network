@@ -282,7 +282,7 @@ input[type="password"]:focus {
   background-color: white;
 }
 
-/*Estilos del Modal*/
+/*Estilos do Modal*/
 
 .modal__contenedor {
   position: fixed;
@@ -347,7 +347,7 @@ input[type="password"]:focus {
   border-color: #e74c3c;
 }
 
-/* terminos y condiciones */
+/* termos e condições */
 .parrafo-terminos {
   font-size: smaller;
 }
@@ -373,7 +373,7 @@ input[type="password"]:focus {
   width: 80px;
 }
 
-/* COMPONENTES DE VISTA TIMELINE */
+/* COMPONENTES TIMELINE VIEW */
 
 .notification-grid {
   display: grid;
@@ -382,7 +382,7 @@ input[type="password"]:focus {
   padding: 1rem 1rem 92px;
 }
 
-/* Componente de post-card */
+/* Componente do post-card */
 .card {
   background-color: #fff;
   box-shadow: 5px 5px 12px #aaa;
@@ -569,7 +569,7 @@ input[type="password"]:focus {
 .likesDiv.selected .likesCounter {
   color: #ffb800;
 }
-/* Vista crear Post */
+/* View criar Post */
 
 .modal-bg {
   position: fixed;
@@ -589,7 +589,7 @@ input[type="password"]:focus {
   visibility: visible;
 }
 
-/* todo: hay que arreglar la clase modal, hay dos repetidos. Uno debería tener los estilos y otros su modificadores según tipo de modal */
+/* tem que arranjar a classe modal, há dois repetidos. Um deve ter os estilos e outros seus modificadores segundo o tipo de modal */
 
 .modal--post {
   background-color: #fff;
@@ -664,7 +664,7 @@ input[type="password"]:focus {
   align-items: center;
   height: 1rem;
 }
-/* ---------Para vista escritorio--------- */
+/* ---------Para view escritorio--------- */
 
 @media (min-width: 1200px) {
   .card {
@@ -903,7 +903,7 @@ input[type="password"]:focus {
   transform: translateY(100%);
 }
 
-/* Cerrar Modal Plus */
+/* Encerrar Modal Plus */
 .offModal {
   opacity: 0;
   z-index: -1;
@@ -912,7 +912,7 @@ input[type="password"]:focus {
 .modal__contenedor.offModal .modal__lista {
   transform: translateY(100%);
 }
-/*Modal Cerrar Sesion*/
+/*Modal Encerrar Sessão*/
 .modal__p-cancelar {
   padding: 20px;
   text-align: center;
@@ -1022,7 +1022,7 @@ input[type="password"]:focus {
   margin-top: 20px;
 }
 
-/* Formulario de Profile */
+/* Formulario do Profile */
 
 .formProfile__container {
   margin-top: 3em;
@@ -1104,7 +1104,7 @@ input[type="password"]:focus {
   cursor: pointer;
 }
 
-/* icono del input date */
+/* icono do input data */
 
 ::-webkit-calendar-picker-indicator {
   filter: invert(70%);
@@ -1136,7 +1136,7 @@ input[type="password"]:focus {
   display: none;
 }
 
-/* Modal de Edit Profile */
+/* Modal do Edit Profile */
 
 .modal-profile {
   display: flex;
@@ -1183,7 +1183,7 @@ input[type="password"]:focus {
 .modal-profile__input::placeholder {
   color: #636c72;
 }
-/* Muro */
+/* Wall */
 .opcionesMuro__container {
   padding: 20px 10px;
   display: flex;
@@ -1193,7 +1193,7 @@ input[type="password"]:focus {
   border-bottom: 1px solid #cbbdbd;
 }
 
-/*Seccion Comentarios*/
+/*Sessão Comentarios*/
 .newComment {
   display: flex;
   align-items: center;
@@ -1335,7 +1335,7 @@ input[type="password"]:focus {
   display: none;
 }
 
-/* ---Componente cambiar contraseña--------- */
+/* ---Componente trocar senha--------- */
 
 .userNameContainer {
   height: 1.3rem;
@@ -1350,7 +1350,7 @@ input[type="password"]:focus {
   text-align: center;
 }
 
-/* Agregar archivo imagen a post */
+/* Adicionar arquivo de imagem ao post */
 input[type="file"] {
   width: 0.1px;
   height: 0.1px;
@@ -1426,7 +1426,7 @@ input[type="file"] {
   display: flex;
   justify-content: center;
 }
-/* ---Componente cambiar contraseña--------- */
+/* ---Componente trocar senha--------- */
 
 .userNameContainer {
   height: 1.3rem;
@@ -1468,7 +1468,7 @@ input[type="file"] {
   font-size: 20px;
   width: 30px;
 }
-/* CLASES DEL COMPONENTE BIENVENIDA */
+/* CLASSES DO COMPONENTE BEM-VINDA */
 .perfil-grid {
   display: grid;
   grid-template-columns: 1fr;
