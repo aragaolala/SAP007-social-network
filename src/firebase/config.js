@@ -1,13 +1,31 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
 import {
+  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
   getAuth,
   GoogleAuthProvider,
-} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  query,
+  orderBy,
+  where,
+  serverTimestamp,
+  deleteDoc,
+  onSnapshot,
+} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
 // A Configuração de Firebase de Nossa Aplicação Web
 const firebaseConfig = {
