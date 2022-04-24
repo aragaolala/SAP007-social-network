@@ -14,6 +14,19 @@ import {
   onSnapshot,
 } from "./config.js";
 
+// Obter dados de todos os usuários
+export const obterUsuarios = async () => {
+  const colRef = collection(db, 'usuarios');
+  const querySnapshot = await getDocs(colRef).then((snapshot) => {
+    const posts = [];
+    snapshot.docs.forEach((docs) => {
+      posts.push({ ...docs.data(), userId: docs.id });
+    });
+    return posts;
+  });
+  return querySnapshot;
+};
+
 // Obter os dados de cada usuario salvo no Firestore, procurar por id
 export const obterPeloId = (idUser, nameColeccion) => {
   const docRef = doc(db, nameColeccion, idUser);
