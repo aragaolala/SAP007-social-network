@@ -2,6 +2,7 @@
 import {
   auth,
   onAuthStateChanged,
+  signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
