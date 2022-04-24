@@ -31,6 +31,11 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
 return divPainel;
 };
 
+// Simula o contador no Firestore como array de usuários que dão click
+export const handleLikes = async (e) => {
+    const btnLike = e.target;
+    const userData = JSON.parse(sessionStorage.userSession);
+
 
 
 
