@@ -30,5 +30,15 @@ export const funcRegistro = {
         </div>
       `;
       return msgSenhaFraca;
-    }
-};
+    },
+    
+    registroSucesso: () => {
+        const registroSucessoMensagem = `
+          <div class= "exibicaoRegistroSucesso" id="exibicaoRegistroSucesso">
+            <i class="fas fa-check-circle"></i>
+            <p>Verifique seu e-mail para confirmar sua conta</p>
+          </div>
+        `;
+        return registroSucessoMensagem;
+      },
+    };
