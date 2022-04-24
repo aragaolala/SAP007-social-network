@@ -68,6 +68,10 @@ export const btnLikes = () => {
   });
 };
 
+// Mostrar todos os posts na timeline principal
+
+
+
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
 painelCompartilhar.classList.add("painelCompartilhar");
