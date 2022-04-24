@@ -69,6 +69,8 @@ export const btnLikes = () => {
 };
 
 // Mostrar todos os posts na timeline principal
+const userData = JSON.parse(sessionStorage.userSession);
+  const usuarios = await obterUsuarios();
 
 
 
