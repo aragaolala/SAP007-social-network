@@ -1,7 +1,6 @@
 // Criação da estrutura e design da aparência do logo e slogan nas pags login e registro
 export const fundoHome = (divFormulario) => {
   const fundo = `
-      <div id="localExibicao"></div>
       <section class="div-logo-slogan">
         <div class="boxInterno1">
           <img src="imagens/pinky-promise.svg" class="left-login-img" alt="powerful woman">
@@ -11,13 +10,11 @@ export const fundoHome = (divFormulario) => {
           ${divFormulario}
         </div>    
       </section>
-      
-      
+      <div id="localExibicao"></div>
     `;
-
-  const divFundo = document.createElement("article");
-  divFundo.setAttribute("id", "artRegistro");
-  divFundo.classList.add("artRegistro");
+  const divFundo = document.createElement('article');
+  divFundo.setAttribute('id', 'artRegistro');
+  divFundo.classList.add('artRegistro');
   divFundo.innerHTML = fundo;
   return divFundo;
 };
@@ -26,11 +23,10 @@ export const fundoHome = (divFormulario) => {
 export const mostrarEocultarSenha = (boton, idInput) => {
   const botaoSenha = document.getElementById(boton);
   const chave = document.querySelector(`input[id=${idInput}]`);
-  botaoSenha.addEventListener("click", () => {
-    const type =
-      chave.getAttribute("type") === "password" ? "text" : "password";
-    chave.setAttribute("type", type);
-    botaoSenha.classList.toggle("ph-eye");
-    botaoSenha.classList.toggle("ph-eye-closed");
+  botaoSenha.addEventListener('click', () => {
+    const type = chave.getAttribute('type') === 'password' ? 'text' : 'password';
+    chave.setAttribute('type', type);
+    botaoSenha.classList.toggle('ph-eye');
+    botaoSenha.classList.toggle('ph-eye-closed');
   });
 };
