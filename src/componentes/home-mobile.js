@@ -50,6 +50,10 @@ export const handleLikes = async (e) => {
   }
 };
 
+// Reconhece todos os botões like em cada Publicação
+export const btnLikes = () => {
+    const botoesPost = document.getElementsByClassName('botoesReacao');
+
 
 
 
