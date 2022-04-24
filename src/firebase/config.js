@@ -44,11 +44,16 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 // inicializa o firestore
 export const db = getFirestore(app);
+// inicializa o storage
+export const storage = getStorage(app);
+//
+const provedor = new GoogleAuthProvider();
 
 export {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  provedor,
   GoogleAuthProvider,
 };
