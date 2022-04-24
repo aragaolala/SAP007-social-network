@@ -1,5 +1,6 @@
 import { formRegistros, registroemail } from "../componentes/registro.js";
 import { formInicioSessao, login } from "../componentes/login.js";
+import { fundoHome } from "../componentes/logo-slogan.js";
 
 
 
