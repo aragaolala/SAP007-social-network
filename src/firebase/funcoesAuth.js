@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
-} from './config.js';
+} from "./config.js";
 
 // Cria um usuário com e- mail e senha
 export const registroUsuario = (email, senha) =>
