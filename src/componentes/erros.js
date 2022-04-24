@@ -53,5 +53,14 @@ export const modoInicioSecao = {
       </div>
     `;
     return confirmeSeuEmailMsg;
+  },
+  dadosInvalidos: () => {
+    const emailOuSenhaInvalidosMsg = `
+      <div class= "exibicaoError" id="exibicaoDadosInvalidos">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Você digitou um e-mail ou senha inválidos</p>
+      </div>
+    `;
+    return emailOuSenhaInvalidosMsg;
   }
 };
