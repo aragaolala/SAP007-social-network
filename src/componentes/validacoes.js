@@ -8,3 +8,21 @@ export const userState = () => {
     }
   });
 };
+
+// Função para chamar o sessionStorage
+export const validarSessaoStorage = () => {
+    let userData = sessionStorage.getItem('userSession');
+    // console.log(userData);
+    if (!userData) {
+      userData = {
+        username: '',
+        email: '',
+        pronomes: '',
+        local: '',
+      };
+    } else {
+      userData = JSON.parse(sessionStorage.userSession);
+    }
+    return userData;
+  };
+  
