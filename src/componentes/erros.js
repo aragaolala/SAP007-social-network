@@ -42,3 +42,16 @@ export const funcRegistro = {
         return registroSucessoMensagem;
       },
     };
+
+    // Objeto que cria de forma dinâmica os modos para Início de Sessão
+export const modoInicioSecao = {
+  confirmar: () => {
+    const confirmeSeuEmailMsg = `
+      <div class= "exibicaoError" id="exibicaoConfirmar">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Verifique sua caixa de entrada e confirme sua conta</p>
+      </div>
+    `;
+    return confirmeSeuEmailMsg;
+  }
+};
