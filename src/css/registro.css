@@ -1,0 +1,187 @@
+Estiliza a tela de Login e Criar Conta */
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #662F82;
+}
+
+#formIngresso, #formRegistro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 15px;
+    background: #662F82;
+    border-radius: 37px;
+    height: auto;
+    margin-left: 15px;
+    margin-right: 15px;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
+
+.left-login-img {
+    width: 35vw;
+}
+
+.texto {
+    color: #E8E3E7;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+}
+
+.secaoRegistro{
+    display: flex;
+    margin: 10px;
+}
+
+.dadosIngresso {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+    color: #361646;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: #662F82;
+    font-size: 10px;
+    padding-left: 3px;
+}
+
+.ph-envelope, .ph-eye-closed, .ph-eye, .ph-user {
+    color: #E8E3E7;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.slogan {
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    color: #662F82;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    letter-spacing: 0.8px;
+}
+
+.boxInterno1{
+    text-align: center;
+}
+
+#Logo {
+    margin: 0;
+    width: 70%;
+    height: auto;
+}
+
+.logosInicio{
+    text-align: center;
+}
+
+#imgGoogle{
+    width: 15px;
+}
+
+.texto2 {
+    color: #E8E3E7;
+    text-align: center;
+}
+
+.texto2 a{
+    color: #E7B9E4;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.secaoCheckbox {
+    text-align: center;
+    font-size: 10px;
+}
+
+.iniciarSessao{
+    width: auto;
+    padding: 10px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #2b134b;
+    background: #44FFD1;
+    cursor: pointer;
+}
+
+.exibicaoError{
+    color: #EA4335;
+}
+
+.exibicaoRegistroSucesso{
+    color: #34A853;   
+}
+
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 5vh; 
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: #662F82;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+/* para tablet */
+@media screen and (min-width: 768px) {
+    .boxInterno1 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .left-login-img {
+        width: 25vw;
+    }
+
+    #Logo{
+        width: 60%;
+    }
+
+    #formIngresso, #formRegistro{
+        margin-left: 10vw;
+        margin-right: 10vw;
+    }
+
+    footer{
+        font-size: 15px;
+    }
+}
+
+/* para desktop */
+@media screen and (min-width: 1024px) {
+    #Logo{
+        width: 30%;
+    }
+}

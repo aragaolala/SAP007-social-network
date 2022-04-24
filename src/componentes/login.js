@@ -31,3 +31,42 @@ export const formInicioSessao = () => {
         <footer>By: Amanda Gusmão & Layssa Aragão</footer>`;
   return formIngresso;
 };
+
+ // inicio sessão com provedor google
+ const botaoGoogle = document.getElementById("imgGoogle");
+ botaoGoogle.addEventListener("click", () => {
+   sessionStorage.clear();
+   googleInicioSessao(provedor)
+     .then((result) => {
+       const googleUser = result.user;
+       searchUser(result.user.uid).then((user) => {
+         if (user.exists()) {
+           const data = user.data();
+           data.id = googleUser.uid;
+           sessionStorage.setItem("userSession", JSON.stringify(data));
+           window.location.hash = "#/timeline";
+           return;
+         }
+         adicionarUsuarioGoogle(googleUser.uid, googleUser).then(() => {
+           const data = {
+             email: googleUser.email,
+             username: googleUser.displayName,
+             id: googleUser.uid,
+             pronomes: "",
+             local: " ",
+             imgUsuario: googleUser.photoURL,
+             imgCapa: "imagens/img-de-capa.png",
+           };
+           // adicionado dados ao sessionStorage
+           sessionStorage.setItem("userSession", JSON.stringify(data));
+           window.location.hash = "#/timeline";
+         });
+       });
+     })
+     .catch((error) => {
+       const credential = GoogleAuthProvider.credentialFromError(error);
+       // eslint-disable-next-line no-console
+       console.log(credential);
+     });
+ });
+};

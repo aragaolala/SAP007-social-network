@@ -1,7 +1,11 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+/* eslint-disable import/no-unresolved */
+// Configuração do Firebase
+
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
 
 import {
   onAuthStateChanged,
+  signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
@@ -27,6 +31,14 @@ import {
   onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
 
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  // eslint-disable-next-line import/no-unresolved
+} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js';
+
 // A Configuração de Firebase de Nossa Aplicação Web
 const firebaseConfig = {
   apiKey: "AIzaSyDYuZfFIZPCxXmDcw9j3_dlkuyM-57OKWA",
@@ -35,7 +47,7 @@ const firebaseConfig = {
   projectId: "girl-talk-app",
   storageBucket: "girl-talk-app.appspot.com",
   messagingSenderId: "994363584873",
-  appId: "1:994363584873:web:6cf262fb179661b8b00df8",
+  appId: "1:994363584873:web:6cf262fb179661b8b00df8"
 };
 
 // Inicializar Firebase
@@ -51,6 +63,7 @@ const provedor = new GoogleAuthProvider();
 
 export {
   onAuthStateChanged,
+  signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
@@ -72,5 +85,7 @@ export {
   deleteDoc,
   onSnapshot,
   getStorage,
-  ref
+  ref,
+  uploadBytes,
+  getDownloadURL,
 };
