@@ -54,6 +54,12 @@ export const handleLikes = async (e) => {
 export const btnLikes = () => {
     const botoesPost = document.getElementsByClassName('botoesReacao');
 
+    // Procura onde está o alvo de reação neste caso 'like'
+  Array.from(botoesPost).forEach((botaoPost) => {
+    const btnLike = botaoPost.querySelector('.like');
+
+
+
 
 
 
