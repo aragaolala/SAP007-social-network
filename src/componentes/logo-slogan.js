@@ -20,7 +20,7 @@ export const fundoHome = (divFormulario) => {
 };
 
 // Botão para mostrar e ocultar senha
-export const mostrarEocultarSenha = (boton, idInput) => {
+export const mostrarEOcultarSenha = (boton, idInput) => {
   const botaoSenha = document.getElementById(boton);
   const chave = document.querySelector(`input[id=${idInput}]`);
   botaoSenha.addEventListener('click', () => {

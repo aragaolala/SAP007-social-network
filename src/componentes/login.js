@@ -5,7 +5,7 @@ import {
 } from "../firebase/funcoesAuth.js";
 import { provedor, GoogleAuthProvider } from "../firebase/config.js";
 import { modoInicioSecao } from "./erros.js";
-import { mostrarEocultarSenha } from "./logo-slogan.js";
+import { mostrarEOcultarSenha } from "./logo-slogan.js";
 
 
 // Criação do formulário de login
@@ -36,7 +36,7 @@ export const formInicioSessao = () => {
 
 // Função que se encarrega do inicio de Sessão por email
 export const login = (selectorForm, containerError) => {
-  mostrarEocultarSenha("botaoSenha", "senhaIngresso"); // função de mostrar e ocultar senha
+  mostrarEOcultarSenha("botaoSenha", "senhaIngresso"); // função de mostrar e ocultar senha
   encerrarAtividadeUsuario(); // vê que não há atividade de usuário
   sessionStorage.clear(); // limpa o Storage
   const iniciarCon = document.getElementById(selectorForm);

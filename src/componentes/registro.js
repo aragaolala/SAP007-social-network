@@ -35,7 +35,7 @@ export const formRegistros = () => {
 
 // Função que se encarrega do registro por email
 export const registroEmail = (selectorForm, containerError) => {
-  mostrarEocultarSenha('botaoSenha', 'senhaRegistro'); // função de mostrar e ocultar senha
+  mostrarEOcultarSenha('botaoSenha', 'senhaRegistro'); // função de mostrar e ocultar senha
   const registroComEmail = document.getElementById(selectorForm);
   registroComEmail.addEventListener('submit', (e) => {
     e.preventDefault();
