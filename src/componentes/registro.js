@@ -1,39 +1,30 @@
-import { Login } from "./login.js";
-import { registerUser } from "../lib/librariesfirebase.js";
-
-export const Register = () => {
-  document.getElementById("root").innerHTML = `
-    <div id="div-login">
-        <div id="divLogo">
-            <img src="images/logo.png" class="logo"/>
-         </div>
-        <div class="div-username">
-            <i class="fa-solid fa-circle-info e-mailIcon"></i>
-            <input type="text" class="register-input"  id="name" placeholder="Nome e Sobrenome"></input>
+// Criação de formulário de registro
+export const formRegistros = () => {
+  const formRegistro = `
+    <div id='registro' class='boxInterno2'>
+      <form id="formRegistro">
+        <p class="texto">Criar Conta</p>
+        <div class="secaoRegistro">
+          <input type="text" id="usuarioRegistro" class="dadosIngresso" placeholder="Nome de usuária" required>
+          <i class="ph-user"></i>
         </div>
-        <div class="div-username">
-            <i class="fa-solid fa-envelope e-mailIcon"></i>
-            <input type="text" class="register-input" id="e-mail" placeholder="Email"></input>
+        <div class="secaoRegistro">
+          <input type="text" id="emailRegistro" class="dadosIngresso" placeholder="E-mail" required>
+          <i class="ph-envelope"></i>
         </div>
-        <div class="div-username">
-            <i class="fa-solid fa-lock passwordIcon"></i>
-            <input type="password" class="register-input" id="password" placeholder="Senha"></input>
+        <div class="secaoRegistro">
+          <input type="password" id="senhaRegistro" class="dadosIngresso" placeholder="Senha" required>
+          <i id="botaoSenha" class="ph-eye-closed"></i>
         </div>
-        <div class="div-username">
-            <i class="fa-solid fa-lock passwordIcon"></i>
-            <input type="password" class="register-input" id="confirmPassword" placeholder="Confirmar senha"></input>
+        <div class="secaoCheckbox">
+          <input type="checkbox" id="checkRegistro" class="checkRegistro" required/><label class="texto">Aceito os termos 
+          e condições das Políticas de Privacidade.</label>
         </div>
-        <button class="register-btn" id="register">Registrar-se</button><br>
-        <i class="fa-solid fa-circle-chevron-left" id="register-icon-back"></i>
-        </div>
-        <div class="div__imageLogin"><img src="images/wall2.jpeg" class="img-login"/>
-    </div>`;
-
-  document
-    .getElementById("Register__iconBack")
-    .addEventListener("click", () => {
-      window.location.hash = "#/login";
-    });
-
-  document.getElementById("register").addEventListener("click", registerUser);
+        <button type="submit" class="iniciarSessao">Registrar-se</button> 
+        <p class="texto2">Já tem tem uma conta? <a id="registrar-se" href="#/inicio">Iniciar sessão</a></p>
+      </form>
+      
+    </div>
+    <footer>By: Amanda Gusmão & Layssa Aragão</footer>`;
+  return formRegistro;
 };
