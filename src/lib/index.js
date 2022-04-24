@@ -1,6 +1,6 @@
 // importando as funções que necessito
-import { Register } from '../Components/Register.js';
-import { Login } from '../Components/Login.js';
+import { Register } from '../componentes/registro.js';
+import { Login } from '../componentes/login.js';
 import { app } from './configurationfirebase.js';
 
 // carregamento falha

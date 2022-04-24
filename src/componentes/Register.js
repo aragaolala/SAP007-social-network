@@ -1,4 +1,4 @@
-import { Login } from "./Login.js";
+import { Login } from "./login.js";
 import { registerUser } from "../lib/librariesfirebase.js";
 
 export const Register = () => {

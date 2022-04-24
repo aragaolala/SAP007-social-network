@@ -18,9 +18,9 @@ window.addEventListener("hashchange", () => {
   routes(window.location.hash);
 });
 
-// import { Home } from './Components/Home.js';
-// import { Login } from './Components/Login.js';
-// import { Register } from './Components/Register.js';
+// import { Home } from './componentes/home-mobile.js';
+// import { Login } from './componentes/login.js';
+// import { Register } from './componentes/registro.js';
 
 // const rootDiv = document.getElementById('root');
 

@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-cycle
-import { Register } from "./Register.js";
-import { Home } from "./Home.js";
+import { Register } from "./registro.js";
+import { Home } from "./home-mobile.js";
 import { startGoogleToExport } from "../lib/librariesfirebase.js";
 
 export const Login = () => {

@@ -1,6 +1,6 @@
-import { Register } from '../Components/Register.js';
-import { Login } from '../Components/Login.js';
-import { Home } from '../Components/Home.js';
+import { Register } from '../componentes/registro.js';
+import { Login } from '../componentes/login.js';
+import { Home } from '../componentes/home-mobile.js';
 
 export const routes = (hash) => {
   const containerRoot = document.getElementById('root');
@@ -20,6 +20,6 @@ export const routes = (hash) => {
 
     // Caso o URL não esteja correto, ele nos redirecionará para a página "Não disponível".
     default:
-      containerRoot.innerHTML = 'Esta página no esta disponible';
+      containerRoot.innerHTML = 'Página nao disponível';
   }
 };
