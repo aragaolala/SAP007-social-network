@@ -1,6 +1,15 @@
 import { obterPeloId, obterUsuarios } from "../firebase/funcoesFirestore.js";
 import { subirFileStorage } from "../firebase/funcoesStorage.js";
 
+// Mostrar todos os posts
+export const mostrarPost = (idPost, dataPost, dataCriador) => {
+  const divPainel = document.createElement('div');
+  divPainel.classList.add('painelPost');
+
+  divPainel.innerHTML =
+
+  
+
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
 painelCompartilhar.classList.add("painelCompartilhar");
@@ -25,3 +34,4 @@ painelCompartilhar.innerHTML = `
           
     </div>
   `;
+
