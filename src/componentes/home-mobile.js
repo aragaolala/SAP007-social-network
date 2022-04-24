@@ -71,6 +71,20 @@ export const btnLikes = () => {
 // Mostrar todos os posts na timeline principal
 const userData = JSON.parse(sessionStorage.userSession);
   const usuarios = await obterUsuarios();
+  await obterPosts((querySnapshot) => {
+    querySnapshot.docChanges().forEach((change) => {
+      if (window.location.hash === '#/timeline') {
+        if (change.type === 'added') {
+          const criadorPost = usuarios
+            .filter((user) => user.userId === change.doc.data().usuarioId);
+          // console.log(criadorPost[0]);
+          containerPost.prepend(mostrarPost(change.doc.id, change.doc.data(), criadorPost[0]));
+
+          if (change.doc.data().likes.includes(userData.id)) {
+            document.getElementsByName(change.doc.id)[0].style.color = '#E7B9E4';
+          }
+          btnLikes();
+        }
 
 
 
