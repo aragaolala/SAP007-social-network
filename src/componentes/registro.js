@@ -32,3 +32,15 @@ export const formRegistros = () => {
     <footer>By: Amanda Gusmão & Layssa Aragão</footer>`;
   return formRegistro;
 };
+
+// Função que se encarrega do registro por email
+export const registroemail = (selectorForm, containerError) => {
+  mostrarEocultarSenha('botaoSenha', 'senhaRegistro'); // função de mostrar e ocultar senha
+  const registroComEmail = document.getElementById(selectorForm);
+  registroComEmail.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const usuarioRegistro = document.getElementById('usuarioRegistro').value;
+    const emailRegistro = document.getElementById('emailRegistro').value;
+    const senhaRegistro = document.getElementById('senhaRegistro').value;
+    // aqui chama o container dos modos de erros 
+    const localExibicao = document.getElementById(containerError);
