@@ -58,6 +58,11 @@ export const btnLikes = () => {
   Array.from(botoesPost).forEach((botaoPost) => {
     const btnLike = botaoPost.querySelector('.like');
 
+    // Reconhece o botão
+    btnLike.addEventListener('click', handleLikes);
+  });
+};
+
 
 
 
