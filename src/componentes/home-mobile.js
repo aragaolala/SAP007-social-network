@@ -35,6 +35,9 @@ return divPainel;
 export const handleLikes = async (e) => {
     const btnLike = e.target;
     const userData = JSON.parse(sessionStorage.userSession);
+    // o id do post que está associado ao atributo name é encontrado e salvo no idLike
+  const idLike = btnLike.getAttribute('name');
+  const dataPost = await obterPeloId(idLike, 'posts');
 
 
 
