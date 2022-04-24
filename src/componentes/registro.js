@@ -44,3 +44,18 @@ export const registroemail = (selectorForm, containerError) => {
     const senhaRegistro = document.getElementById('senhaRegistro').value;
     // aqui chama o container dos modos de erros 
     const localExibicao = document.getElementById(containerError);
+
+    registroUsuario(emailRegistro, senhaRegistro)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // é enviada a mensagem de verificação por email
+        envioEmailVerificacao().then(() => {
+          adicionarDataUserFS(user.uid, usuarioRegistro, emailRegistro, '', '', 'imagens/imgDoUsuario.png', 'imagens/img-de-capa.png');
+        });
+        localExibicao.innerHTML = funcRegistro.registroSucesso();
+        setTimeout(() => {
+          const exibicaoRegistroSucesso = document.getElementById('exibicaoRegistroSucesso');// mostra msg de registro com sucesso
+          exibicaoRegistroSucesso.style.display = 'none';
+          window.location.hash = '#/inicio';
+        }, 5000);
+      })
