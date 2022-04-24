@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import {
   auth,
-  onAuthStateChanged
+  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -23,6 +23,8 @@ export const googleInicioSessao = (provedor) => signInWithPopup(auth, provedor);
 
 // Fechar Sessão do Usuário
 
-export const envioEmailVerificacao = () => sendEmailVerification(auth.currentUser);
+export const envioEmailVerificacao = () =>
+  sendEmailVerification(auth.currentUser);
 
-export const estadoAuthUsuario = (callback) => onAuthStateChanged(auth, callback);
+export const estadoAuthUsuario = (callback) =>
+  onAuthStateChanged(auth, callback);
