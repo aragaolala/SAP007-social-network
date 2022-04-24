@@ -38,6 +38,17 @@ export const handleLikes = async (e) => {
     // o id do post que está associado ao atributo name é encontrado e salvo no idLike
   const idLike = btnLike.getAttribute('name');
   const dataPost = await obterPeloId(idLike, 'posts');
+  // verificando se o id do usuário está na lista de likes de cada post
+  if (dataPost.likes.includes(userData.id)) {
+    // isto é para remover o like por usuário
+    subirLikes(idLike, dataPost.likes.filter((item) => item !== userData.id));
+    btnLike.style.color = '#8F7D7D';
+  } else {
+    // isto é para adicionar like por usuário
+    subirLikes(idLike, [...dataPost.likes, userData.id]);
+    btnLike.style.color = '#E7B9E4';
+  }
+};
 
 
 
