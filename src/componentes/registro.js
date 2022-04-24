@@ -1,4 +1,5 @@
 import { registroUsuario, envioEmailVerificacao } from '../firebase/funcoesAuth.js';
+import { funcRegistro } from './erros.js';
 
 // Criação de formulário de registro
 export const formRegistros = () => {
