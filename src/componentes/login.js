@@ -1,11 +1,11 @@
 import {
-    loginUsuario,
-    googleInicioSessao,
-    encerrarAtividadeUsuario,
-  } from "../firebase/funcoesAuth.js";
-  import { provedor, GoogleAuthProvider } from "../firebase/config.js";
-  import { modoInicioSecao } from "./erros.js";
-  import { mostrarEocultarSenha } from "./logo-slogan.js";
+  loginUsuario,
+  googleInicioSessao,
+  encerrarAtividadeUsuario,
+} from "../firebase/funcoesAuth.js";
+import { provedor, GoogleAuthProvider } from "../firebase/config.js";
+import { modoInicioSecao } from "./erros.js";
+import { mostrarEOcultarSenha } from "./logo-slogan.js";
 
 
 // Criação do formulário de login
@@ -36,7 +36,7 @@ export const formInicioSessao = () => {
 
 // Função que se encarrega do inicio de Sessão por email
 export const login = (selectorForm, containerError) => {
-  mostrarEocultarSenha("botaoSenha", "senhaIngresso"); // função de mostrar e ocultar senha
+  mostrarEOcultarSenha("botaoSenha", "senhaIngresso"); // função de mostrar e ocultar senha
   encerrarAtividadeUsuario(); // vê que não há atividade de usuário
   sessionStorage.clear(); // limpa o Storage
   const iniciarCon = document.getElementById(selectorForm);
@@ -62,8 +62,8 @@ export const login = (selectorForm, containerError) => {
           // mostra mensagem de erro se nao verifico por email
           localExibicao.innerHTML = modoInicioSecao.confirmar();
           setTimeout(() => {
-            const exibicaoes = document.getElementById("exibicaoConfirmar");
-            exibicaoes.style.display = "none";
+            const exibicoes = document.getElementById("exibicaoConfirmar");
+            exibicoes.style.display = "none";
           }, 5000);
         }
       })
@@ -75,56 +75,56 @@ export const login = (selectorForm, containerError) => {
         ) {
           localExibicao.innerHTML = modoInicioSecao.dadosInvalidos();
           setTimeout(() => {
-            const exibicaoes = document.getElementById("exibicaoDadosInvalidos");
-            exibicaoes.style.display = "none";
+            const exibicoes = document.getElementById("exibicaoDadosInvalidos");
+            exibicoes.style.display = "none";
           }, 5000);
         } else if (error.message === "Firebase: Error (auth/user-not-found).") {
           localExibicao.innerHTML = modoInicioSecao.usuarioInvalido();
           setTimeout(() => {
-            const exibicaoes = document.getElementById("exibicaoUsuarioInvalido");
-            exibicaoes.style.display = "none";
+            const exibicoes = document.getElementById("exibicaoUsuarioInvalido");
+            exibicoes.style.display = "none";
           }, 5000);
         } else {
           localExibicao.textContent = "Ocorreu um erro";
         }
       });
   });
-  
- // inicio sessão com provedor google
- const botaoGoogle = document.getElementById("imgGoogle");
- botaoGoogle.addEventListener("click", () => {
-   sessionStorage.clear();
-   googleInicioSessao(provedor)
-     .then((result) => {
-       const googleUser = result.user;
-       searchUser(result.user.uid).then((user) => {
-         if (user.exists()) {
-           const data = user.data();
-           data.id = googleUser.uid;
-           sessionStorage.setItem("userSession", JSON.stringify(data));
-           window.location.hash = "#/timeline";
-           return;
-         }
-         adicionarUsuarioGoogle(googleUser.uid, googleUser).then(() => {
-           const data = {
-             email: googleUser.email,
-             username: googleUser.displayName,
-             id: googleUser.uid,
-             pronomes: "",
-             local: " ",
-             imgUsuario: googleUser.photoURL,
-             imgCapa: "imagens/img-de-capa.png",
-           };
-           // adicionado dados ao sessionStorage
-           sessionStorage.setItem("userSession", JSON.stringify(data));
-           window.location.hash = "#/timeline";
-         });
-       });
-     })
-     .catch((error) => {
-       const credential = GoogleAuthProvider.credentialFromError(error);
-       // eslint-disable-next-line no-console
-       console.log(credential);
-     });
- });
+
+  // inicio sessão com provedor google
+  const botaoGoogle = document.getElementById("imgGoogle");
+  botaoGoogle.addEventListener("click", () => {
+    sessionStorage.clear();
+    googleInicioSessao(provedor)
+      .then((result) => {
+        const googleUser = result.user;
+        searchUser(result.user.uid).then((user) => {
+          if (user.exists()) {
+            const data = user.data();
+            data.id = googleUser.uid;
+            sessionStorage.setItem("userSession", JSON.stringify(data));
+            window.location.hash = "#/timeline";
+            return;
+          }
+          adicionarUsuarioGoogle(googleUser.uid, googleUser).then(() => {
+            const data = {
+              email: googleUser.email,
+              username: googleUser.displayName,
+              id: googleUser.uid,
+              pronomes: "",
+              local: " ",
+              imgUsuario: googleUser.photoURL,
+              imgCapa: "imagens/img-de-capa.png",
+            };
+            // adicionado dados ao sessionStorage
+            sessionStorage.setItem("userSession", JSON.stringify(data));
+            window.location.hash = "#/timeline";
+          });
+        });
+      })
+      .catch((error) => {
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // eslint-disable-next-line no-console
+        console.log(credential);
+      });
+  });
 };

@@ -1,4 +1,4 @@
-Estiliza a tela de Login e Criar Conta */
+/* Estiliza a tela de Login e Criar Conta */
 *{
     margin: 0;
     padding: 0;
@@ -130,10 +130,12 @@ textarea:focus, input:focus, select:focus {
 
 .exibicaoError{
     color: #EA4335;
+    text-align: center;
 }
 
 .exibicaoRegistroSucesso{
-    color: #34A853;   
+    color: #34A853;
+    text-align: center;   
 }
 
 footer{
@@ -181,7 +183,31 @@ footer{
 
 /* para desktop */
 @media screen and (min-width: 1024px) {
+    /* body{
+        background-image: url(https://storyset.com/illustration/pinky-promise/pana/animate?share=42521);
+        background-repeat: no-repeat;
+        background-position-y: center;
+    } */
+
     #Logo{
         width: 30%;
+    }
+
+    /* .artRegistro{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+    } */
+
+    .div-logo-slogan{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-login-img{
+        width: 15vw;
     }
 }

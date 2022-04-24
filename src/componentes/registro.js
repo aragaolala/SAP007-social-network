@@ -1,5 +1,6 @@
 import { registroUsuario, envioEmailVerificacao } from '../firebase/funcoesAuth.js';
 import { funcRegistro } from './erros.js';
+import { mostrarEOcultarSenha } from './logo-slogan.js';
 import { adicionarDataUserFS } from '../firebase/funcoesFirestore.js';
 
 // Criação de formulário de registro
@@ -34,8 +35,8 @@ export const formRegistros = () => {
 };
 
 // Função que se encarrega do registro por email
-export const registroemail = (selectorForm, containerError) => {
-  mostrarEocultarSenha('botaoSenha', 'senhaRegistro'); // função de mostrar e ocultar senha
+export const registroEmail = (selectorForm, containerError) => {
+  mostrarEOcultarSenha('botaoSenha', 'senhaRegistro'); // função de mostrar e ocultar senha
   const registroComEmail = document.getElementById(selectorForm);
   registroComEmail.addEventListener('submit', (e) => {
     e.preventDefault();
