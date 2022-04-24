@@ -14,6 +14,13 @@ import {
   onSnapshot,
 } from "./config.js";
 
+// Obter todos os documentos da coleção 'post' usando onsnapshot
+export const obterPosts = async (callback) => {
+  const colRef = collection(db, 'posts');
+  const q = query(colRef, orderBy('timestamp'));
+  await onSnapshot(q, callback);
+};
+
 // Obter dados de todos os usuários
 export const obterUsuarios = async () => {
   const colRef = collection(db, 'usuarios');
@@ -54,6 +61,21 @@ export const adicionarDataUserFS = async (
     imgCapa: srcImgCapa,
   });
 };
+
+// Enviar dados para a coleção posts no firestore
+export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
+  const colRefPost = collection(db, 'posts');
+  const functionAdd = addDoc(colRefPost, {
+    usuarioId: criadorPost,
+    publicacao : post,
+    categoria: Categoria,
+    imgPost: urlImg,
+    timestamp: serverTimestamp(),
+    likes: [],
+  });
+  return functionAdd;
+};
+
 
 // Adicionar usuário ao firestore ao registrar com google
 export const adicionarUsuarioGoogle = (id, user) => {
