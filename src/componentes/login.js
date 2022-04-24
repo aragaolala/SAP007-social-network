@@ -5,6 +5,7 @@ import {
   } from "../firebase/funcoesAuth.js";
   import { provedor, GoogleAuthProvider } from "../firebase/config.js";
   import { modoInicioSecao } from "./erros.js";
+  import { mostrarEocultarSenha } from "./logo-slogan.js";
 
 
 // Criação do formulário de login
