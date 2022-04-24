@@ -64,7 +64,31 @@ export const login = (selectorForm, containerError) => {
             const exibicaoes = document.getElementById("exibicaoConfirmar");
             exibicaoes.style.display = "none";
           }, 5000);
-
+        }
+      })
+      .catch((error) => {
+        // todas as mensagens de erro são definidas
+        if (
+          error.message === "Firebase: Error (auth/invalid-email)." ||
+          error.message === "Firebase: Error (auth/wrong-password)."
+        ) {
+          localExibicao.innerHTML = modoInicioSecao.dadosInvalidos();
+          setTimeout(() => {
+            const exibicaoes = document.getElementById("exibicaoDadosInvalidos");
+            exibicaoes.style.display = "none";
+          }, 5000);
+        } else if (error.message === "Firebase: Error (auth/user-not-found).") {
+          localExibicao.innerHTML = modoInicioSecao.usuarioInvalido();
+          setTimeout(() => {
+            const exibicaoes = document.getElementById("exibicaoUsuarioInvalido");
+            exibicaoes.style.display = "none";
+          }, 5000);
+        } else {
+          localExibicao.textContent = "Ocorreu um erro";
+        }
+      });
+  });
+  
  // inicio sessão com provedor google
  const botaoGoogle = document.getElementById("imgGoogle");
  botaoGoogle.addEventListener("click", () => {
