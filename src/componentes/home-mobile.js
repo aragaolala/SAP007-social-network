@@ -1,5 +1,7 @@
-import { obterPeloId, obterUsuarios } from "../firebase/funcoesFirestore.js";
-import { subirFileStorage } from "../firebase/funcoesStorage.js";
+import {
+    obterPosts, obterPeloId, subirDataHomeCol, subirLikes, obterUsuarios,
+  } from '../firebase/funcoesFirestore.js';
+  import { subirFileStorage } from '../firebase/funcoesStorage.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
