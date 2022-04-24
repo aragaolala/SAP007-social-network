@@ -76,6 +76,14 @@ export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
   return functionAdd;
 };
 
+// Para atualizar o arranjo de likes
+export const subirLikes = async (idPost, dataLikes) => {
+  const docId = doc(db, 'posts', idPost);
+  await updateDoc(docId, {
+    likes: dataLikes,
+  });
+};
+
 
 // Adicionar usuário ao firestore ao registrar com google
 export const adicionarUsuarioGoogle = (id, user) => {
