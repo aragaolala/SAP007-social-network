@@ -10,6 +10,15 @@ export const funcRegistro = {
         </div>
       `;
       return invalidoEmailMsg;
+    },
+  
+    emailExistente: () => {
+      const msgEmailJaExistente = `
+        <div class= "exibicaoError" id="exibicaoEmailExistente">
+          <i class="fas fa-check-circle"></i>
+          <p>Esse e-mail já existe</p>
+        </div>
+      `;
+      return msgEmailJaExistente;
     }
 };
-
