@@ -4,6 +4,7 @@ import {
     encerrarAtividadeUsuario,
   } from "../firebase/funcoesAuth.js";
   import { provedor, GoogleAuthProvider } from "../firebase/config.js";
+  import { modoInicioSecao } from "./erros.js";
 
 
 // Criação do formulário de login
@@ -31,6 +32,19 @@ export const formInicioSessao = () => {
         <footer>By: Amanda Gusmão & Layssa Aragão</footer>`;
   return formIngresso;
 };
+
+// Função que se encarrega do inicio de Sessão por email
+export const login = (selectorForm, containerError) => {
+  mostrarEocultarSenha("botaoSenha", "senhaIngresso"); // função de mostrar e ocultar senha
+  encerrarAtividadeUsuario(); // vê que não há atividade de usuário
+  sessionStorage.clear(); // limpa o Storage
+  const iniciarCon = document.getElementById(selectorForm);
+  iniciarCon.addEventListener("submit", (e) => {
+    e.preventDefault(); // faz com que o formulario nao atualize - refresh
+    const emailIngresso = document.getElementById("emailIngresso").value;
+    const senhaIngresso = document.getElementById("senhaIngresso").value;
+    // aqui chama o container com os erros
+    const localExibicao = document.getElementById(containerError);
 
  // inicio sessão com provedor google
  const botaoGoogle = document.getElementById("imgGoogle");
