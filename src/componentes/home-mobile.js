@@ -6,9 +6,33 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
   const divPainel = document.createElement('div');
   divPainel.classList.add('painelPost');
 
-  divPainel.innerHTML =
+  divPainel.innerHTML = divPainel.innerHTML = `
+  <div class="usuarioPost" id= "${idPost}">
+      <div class="imgUsuarioPost"><img class="imgPost"src="${dataCriador.imgUsuario}"></div>
+      <div class="infoUsuarioPost">
+          <div class="nomeUsuarioPost"><p>${dataCriador.username}</p></div>
+          <div class="descricaoUsuarioPost"><p>${dataCriador.pronomes}</p></div>
+      </div>
+  </div>
+  <div class="postsCompartilhado">
+      <div class="conteudoCompartilhado">
+          <p>${dataPost.publicacao }</p>
+          <img src="${dataPost.imgPost}">
+      </div>
+  </div>
+  <div class="botoesReacao">
+      <i class="ph-heart-bold like" name= "${idPost}"}></i>
+      <p>${dataPost.likes.length}</p>
+      <i class="ph-chat-circle" name= "${idPost}"}></i>
+      <p>${dataPost.likes.length}</p>
+  </div>
+  `;
 
-  
+return divPainel;
+};
+
+
+
 
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
