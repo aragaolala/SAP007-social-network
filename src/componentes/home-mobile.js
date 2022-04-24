@@ -1,3 +1,9 @@
+import {
+   obterPeloId, obterUsuarios,
+  } from '../firebase/funcoesFirestore.js';
+  import { subirFileStorage } from '../firebase/funcoesStorage.js';
+
+
 const painelCompartilhar = document.createElement('form');
   painelCompartilhar.setAttribute('id', 'formCompartilhar');
   painelCompartilhar.classList.add('painelCompartilhar');
