@@ -21,3 +21,16 @@ const divFundo = document.createElement('article');
   divFundo.innerHTML = fundo;
   return divFundo;
 };
+
+// Botão para mostrar e ocultar senha
+export const mostrarEocultarSenha = (boton, idInput) => {
+    const botaoSenha = document.getElementById(boton);
+    const chave = document.querySelector(`input[id=${idInput}]`);
+    botaoSenha.addEventListener('click', () => {
+      const type = chave.getAttribute('type') === 'password' ? 'text' : 'password';
+      chave.setAttribute('type', type);
+      botaoSenha.classList.toggle('ph-eye');
+      botaoSenha.classList.toggle('ph-eye-closed');
+    });
+  };
+  
