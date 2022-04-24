@@ -41,3 +41,16 @@ export const adicionarDataUserFS = async (
     imgCapa: srcImgCapa,
   });
 };
+
+// Adicionar usuário ao firestore ao registrar com google
+export const adicionarUsuarioGoogle = (id, user) => {
+  const colRefId = doc(db, "usuarios", id);
+  return setDoc(colRefId, {
+    username: user.displayName,
+    email: user.email,
+    pronomes: "",
+    local: "",
+    imgUsuario: user.photoURL,
+    imgCapa: "imagens/img-de-capa.png",
+  });
+};
