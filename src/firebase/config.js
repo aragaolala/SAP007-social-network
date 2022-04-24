@@ -50,10 +50,27 @@ export const storage = getStorage(app);
 const provedor = new GoogleAuthProvider();
 
 export {
+  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
   provedor,
   GoogleAuthProvider,
+  getFirestore,
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  setDoc,
+  addDoc,
+  updateDoc,
+  query,
+  orderBy,
+  where,
+  serverTimestamp,
+  deleteDoc,
+  onSnapshot,
+  getStorage,
+  ref
 };
