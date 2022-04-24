@@ -1,13 +1,10 @@
-import {
-   obterPeloId, obterUsuarios,
-  } from '../firebase/funcoesFirestore.js';
-  import { subirFileStorage } from '../firebase/funcoesStorage.js';
+import { obterPeloId, obterUsuarios } from "../firebase/funcoesFirestore.js";
+import { subirFileStorage } from "../firebase/funcoesStorage.js";
 
-
-const painelCompartilhar = document.createElement('form');
-  painelCompartilhar.setAttribute('id', 'formCompartilhar');
-  painelCompartilhar.classList.add('painelCompartilhar');
-  painelCompartilhar.innerHTML = `
+const painelCompartilhar = document.createElement("form");
+painelCompartilhar.setAttribute("id", "formCompartilhar");
+painelCompartilhar.classList.add("painelCompartilhar");
+painelCompartilhar.innerHTML = `
     <textarea id="inputCompartilhar" placeholder="O que gostaria de compartilhar?" rows="8" cols="76"></textarea>  
     
     <div class="botoes">
