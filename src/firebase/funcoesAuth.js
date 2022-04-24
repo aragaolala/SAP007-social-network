@@ -23,6 +23,7 @@ export const loginUsuario = (email, senha) =>
 export const googleInicioSessao = (provedor) => signInWithPopup(auth, provedor);
 
 // Fechar Sessão do Usuário
+export const encerrarAtividadeUsuario = () => signOut(auth);
 
 export const envioEmailVerificacao = () =>
   sendEmailVerification(auth.currentUser);
