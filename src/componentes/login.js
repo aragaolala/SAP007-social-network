@@ -47,7 +47,23 @@ export const login = (selectorForm, containerError) => {
     const localExibicao = document.getElementById(containerError);
 
     loginUsuario(emailIngresso, senhaIngresso)
-      .then((userCredential) =>
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user.emailVerified === true) {
+          // obter dados do usuário logado para adicionar à sessionStorage
+          obterPeloId(user.uid, "usuarios").then((data) => {
+            const dataa = data;
+            dataa.id = user.uid;
+            sessionStorage.setItem("userSession", JSON.stringify(dataa));
+            window.location.hash = "#/timeline";
+          });
+        } else {
+          // mostra mensagem de erro se nao verifico por email
+          localExibicao.innerHTML = modoInicioSecao.confirmar();
+          setTimeout(() => {
+            const exibicaoes = document.getElementById("exibicaoConfirmar");
+            exibicaoes.style.display = "none";
+          }, 5000);
 
  // inicio sessão com provedor google
  const botaoGoogle = document.getElementById("imgGoogle");
