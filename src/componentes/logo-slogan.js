@@ -14,4 +14,10 @@ export const fundoHome = (divFormulario) => {
       
       
     `;
+
+const divFundo = document.createElement('article');
+  divFundo.setAttribute('id', 'artRegistro');
+  divFundo.classList.add('artRegistro');
+  divFundo.innerHTML = fundo;
+  return divFundo;
 };
