@@ -3,8 +3,8 @@ import { subirFileStorage } from "../firebase/funcoesStorage.js";
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
-  const divPainel = document.createElement('div');
-  divPainel.classList.add('painelPost');
+  const divPainel = document.createElement("div");
+  divPainel.classList.add("painelPost");
 
   divPainel.innerHTML = divPainel.innerHTML = `
   <div class="usuarioPost" id= "${idPost}">
@@ -16,7 +16,7 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
   </div>
   <div class="postsCompartilhado">
       <div class="conteudoCompartilhado">
-          <p>${dataPost.publicacao }</p>
+          <p>${dataPost.publicacao}</p>
           <img src="${dataPost.imgPost}">
       </div>
   </div>
@@ -28,45 +28,43 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
   </div>
   `;
 
-return divPainel;
+  return divPainel;
 };
 
 // Simula o contador no Firestore como array de usuários que dão click
 export const handleLikes = async (e) => {
-    const btnLike = e.target;
-    const userData = JSON.parse(sessionStorage.userSession);
-    // o id do post que está associado ao atributo name é encontrado e salvo no idLike
-  const idLike = btnLike.getAttribute('name');
-  const dataPost = await obterPeloId(idLike, 'posts');
+  const btnLike = e.target;
+  const userData = JSON.parse(sessionStorage.userSession);
+  // o id do post que está associado ao atributo name é encontrado e salvo no idLike
+  const idLike = btnLike.getAttribute("name");
+  const dataPost = await obterPeloId(idLike, "posts");
   // verificando se o id do usuário está na lista de likes de cada post
   if (dataPost.likes.includes(userData.id)) {
     // isto é para remover o like por usuário
-    subirLikes(idLike, dataPost.likes.filter((item) => item !== userData.id));
-    btnLike.style.color = '#8F7D7D';
+    subirLikes(
+      idLike,
+      dataPost.likes.filter((item) => item !== userData.id)
+    );
+    btnLike.style.color = "#8F7D7D";
   } else {
     // isto é para adicionar like por usuário
     subirLikes(idLike, [...dataPost.likes, userData.id]);
-    btnLike.style.color = '#E7B9E4';
+    btnLike.style.color = "#E7B9E4";
   }
 };
 
 // Reconhece todos os botões like em cada Publicação
 export const btnLikes = () => {
-    const botoesPost = document.getElementsByClassName('botoesReacao');
+  const botoesPost = document.getElementsByClassName("botoesReacao");
 
-    // Procura onde está o alvo de reação neste caso 'like'
+  // Procura onde está o alvo de reação neste caso 'like'
   Array.from(botoesPost).forEach((botaoPost) => {
-    const btnLike = botaoPost.querySelector('.like');
+    const btnLike = botaoPost.querySelector(".like");
 
     // Reconhece o botão
-    btnLike.addEventListener('click', handleLikes);
+    btnLike.addEventListener("click", handleLikes);
   });
 };
-
-
-
-
-
 
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
@@ -92,4 +90,3 @@ painelCompartilhar.innerHTML = `
           
     </div>
   `;
-
