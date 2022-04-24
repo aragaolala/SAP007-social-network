@@ -1,25 +1,23 @@
-import { Register } from '../componentes/registro.js';
-import { Login } from '../componentes/login.js';
-import { Home } from '../componentes/home-mobile.js';
+import { formRegistros, registroemail } from "../componentes/registro.js";
+import { formInicioSessao, login } from "../componentes/login.js";
 
-export const routes = (hash) => {
-  const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = ''; 
-  switch (hash) {
-    case '#/login':
-      Login();
+
+
+export const visualizacaoTelas = () => {
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+  // devolve o ponto de ancoragem do URL (caminho/rota )
+  switch (window.location.hash.toLowerCase()) {
+    case "":
+    case "#/":
+    case "#/inicio":
+      main.appendChild(fundoHome(formInicioSessao()));
+      login("formIngresso", "localExibicao");
       break;
 
-    case '#/register':
-      Register();
+    case "#/registro":
+      main.appendChild(fundoHome(formRegistros()));
+      registroemail("formRegistro", "localExibicao");
       break;
-
-    case '#/home':
-      Home();
-      break;
-
-    // Caso o URL não esteja correto, ele nos redirecionará para a página "Não disponível".
-    default:
-      containerRoot.innerHTML = 'Página nao disponível';
   }
 };
