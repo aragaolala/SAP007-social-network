@@ -20,5 +20,15 @@ export const funcRegistro = {
         </div>
       `;
       return msgEmailJaExistente;
+    },
+  
+    senhaInvalida: () => {
+      const msgSenhaFraca = `
+        <div class= "exibicaoError" id="exibicaoSenhaInvalida">
+          <i class="fas fa-check-circle"></i>
+          <p>A senha deve conter pelo menos 6 caracteres</p>
+        </div>
+      `;
+      return msgSenhaFraca;
     }
 };
