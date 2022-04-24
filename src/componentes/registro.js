@@ -59,3 +59,29 @@ export const registroemail = (selectorForm, containerError) => {
           window.location.hash = '#/inicio';
         }, 5000);
       })
+      .catch((error) => {
+        // todas as mensagens de erro são definidas
+        if (error.message === 'Firebase: Error (auth/invalid-email).') {
+          localExibicao.innerHTML = funcRegistro.emailInvalido();
+          setTimeout(() => {
+            const exibicaoemailInvalido = document.getElementById('exibicaoemailInvalido');
+            exibicaoemailInvalido.style.display = 'none';
+          }, 5000);
+        } else if (error.message === 'Firebase: Password should be at least 6 characters (auth/weak-password).') {
+          localExibicao.innerHTML = funcRegistro.senhaInvalida();
+          setTimeout(() => {
+            const exibicaoSenhaInvalida = document.getElementById('exibicaoSenhaInvalida');
+            exibicaoSenhaInvalida.style.display = 'none';
+          }, 5000);
+        } else if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+          localExibicao.innerHTML = funcRegistro.emailExistente();
+          setTimeout(() => {
+            const exibicaoEmailExistente = document.getElementById('exibicaoEmailExistente');
+            exibicaoEmailExistente.style.display = 'none';
+          }, 5000);
+        } else {
+          localExibicao.textContent = error.message;
+        }
+      });
+  });
+};
