@@ -1,3 +1,11 @@
+import {
+    loginUsuario,
+    googleInicioSessao,
+    encerrarAtividadeUsuario,
+  } from "../firebase/funcoesAuth.js";
+  import { provedor, GoogleAuthProvider } from "../firebase/config.js";
+
+
 // Criação do formulário de login
 export const formInicioSessao = () => {
   const formIngresso = `
