@@ -46,6 +46,9 @@ export const login = (selectorForm, containerError) => {
     // aqui chama o container com os erros
     const localExibicao = document.getElementById(containerError);
 
+    loginUsuario(emailIngresso, senhaIngresso)
+      .then((userCredential) =>
+
  // inicio sessão com provedor google
  const botaoGoogle = document.getElementById("imgGoogle");
  botaoGoogle.addEventListener("click", () => {
