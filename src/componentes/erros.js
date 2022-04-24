@@ -62,5 +62,14 @@ export const modoInicioSecao = {
       </div>
     `;
     return emailOuSenhaInvalidosMsg;
-  }
+  },
+  usuarioInvalido: () => {
+    const userInvalidoMsg = `
+      <div class= "exibicaoError" id="exibicaoUsuarioInvalido">
+        <i class="fas fa-exclamation-triangle"></i>
+        <p>Você não tem um registro</p>
+      </div>
+    `;
+    return userInvalidoMsg;
+  },
 };
