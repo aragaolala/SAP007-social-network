@@ -115,14 +115,13 @@ export const secaoCategorias = (img, tituloCategoria) => {
   divSecoes.appendChild(homeParaDesktop());
   divSecoes.appendChild(conteudoCategoria(img, tituloCategoria));
 
-  articleRelacionam.appendChild(headerFeed);
-  articleRelacionam.appendChild(secaoExibicaoCategoria);
-  articleRelacionam.appendChild(divSecoes);
-
   const footer = document.createElement('footer');
   footer.classList.add('footerDesktop');
   footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
 
+  articleRelacionam.appendChild(headerFeed);
+  articleRelacionam.appendChild(secaoExibicaoCategoria);
+  articleRelacionam.appendChild(divSecoes);
   articleRelacionam.appendChild(footer);
 
   return articleRelacionam;

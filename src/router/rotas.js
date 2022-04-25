@@ -142,8 +142,12 @@ export const visualizacaoTelas = () => {
         userState();
         main.appendChild(sobreNos());
         encerrarSessao();
-        exibicaoCategorias();
         menuHamburguerHeader();
+        exibicaoCategorias();
+        
+   
+        
+       
         break;
 
     default:

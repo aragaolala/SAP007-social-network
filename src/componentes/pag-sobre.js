@@ -1,28 +1,58 @@
-import { conteudoHeader, encerrarSessao } from './headerFeed.js';
+import { conteudoHeader, secaoDeExibicao } from "./headerFeed.js";
+import { conteudoCategoria } from './categorias.js';
+import { validarSessaoStorage } from "./validacoes.js";
 
 
-export const sobreNos = (divFormulario) => {
-    const headerFeed = document.createElement('header');
-  headerFeed.classList.add('item1');
+export const sobreNos = (img, tituloCategoria) => {
+  const articleSobreNos = document.createElement("article");
+
+  const headerFeed = document.createElement("header");
+  headerFeed.classList.add("item1");
   headerFeed.innerHTML = conteudoHeader();
-  
-    const fundo = `
-        <section class="div-logo-slogan">
-          <div class="boxInterno1">
-            <img src="imagens/pinky-promise.svg" class="left-login-img" alt="powerful woman">
-            <img id="Logo" src="imagens/logo.png">
-            <p class="slogan">Speak your mind and find support</p>
-          </div>
-            ${divFormulario}
-          </div>    
-        </section>
-        <div id="localExibicao"></div>
-      `;
-    const divFundo = document.createElement('article');
-    divFundo.setAttribute('id', 'artRegistro');
-    divFundo.classList.add('artRegistro');
-    divFundo.innerHTML = fundo;
-    return divFundo;
 
-    
-  };
+ /* const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+  secaoExibicaoCategoria.innerHTML = secaoDeExibicao(); */
+
+  const navInferior = document.createElement("nav");
+  navInferior.classList.add("barraNavegacaoInferior");
+  const userData = validarSessaoStorage();
+  navInferior.innerHTML = `
+        <ul>
+        <li class="list">
+            <a class="abrirExibicao">
+                <span class="icon">
+                    <img src="imagens/users-three.png">
+                </span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#/timeline">
+                <span class="icon">
+                    <img src="imagens/house-fill.png">
+                </span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#/meuperfil">
+                <span class="icon">
+                    <img src="${userData.imgUsuario}">
+                </span>
+            </a>
+        </li>
+        </ul>
+      `;
+  
+
+  const footer = document.createElement("footer");
+  footer.classList.add("footerDesktop");
+  footer.innerHTML = "By: Amanda Gusmão e Layssa Aragão";
+
+  articleSobreNos.appendChild(headerFeed);
+  // articleSobreNos.appendChild(secaoExibicaoCategoria);
+  articleSobreNos.appendChild(navInferior);
+  articleSobreNos.appendChild(footer);
+
+  return articleSobreNos;
+};
+
