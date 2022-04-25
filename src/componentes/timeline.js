@@ -66,3 +66,9 @@ export const painelPerfil = () => {
 
   return articlePainelPerfil;
 };
+
+// Renderizar a seção de perfil do usuário para editar
+export const painelEditarPerfil = () => {
+    const articlePainelEditarPerfil = document.createElement('article');
+    articlePainelEditarPerfil.classList.add('EditarPerfil');
+    articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
