@@ -135,15 +135,6 @@ export const homeMobile = () => {
     </li>
     </ul>
     `;
-
-
-
-
-
-
-
-
-
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
 painelCompartilhar.classList.add("painelCompartilhar");
@@ -168,3 +159,7 @@ painelCompartilhar.innerHTML = `
           
     </div>
   `;
+
+  const containerExibicaoCategorias = document.createElement('div');
+  containerExibicaoCategorias.classList.add('categorias-container');
+  containerExibicaoCategorias.setAttribute('id', 'categoriasContainer');
