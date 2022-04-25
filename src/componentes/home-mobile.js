@@ -168,3 +168,9 @@ painelCompartilhar.innerHTML = `
   containerPublicacoes.classList.add('container-post');
   containerPublicacoes.setAttribute('id', 'container-post');
   preencherHome(containerPublicacoes);
+
+  secaoMobile.appendChild(navInferior);
+  secaoMobile.appendChild(painelCompartilhar);
+  secaoMobile.appendChild(containerPublicacoes);
+  return secaoMobile;
+};
