@@ -39,3 +39,21 @@ export const visualizacaoTelas = () => {
         menuPontosVerticais();
         exibicaoCategorias();
         break;
+
+        case "#/web":
+          userState();
+          main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
+          encerrarSessao();
+          menuPontosVerticais();
+          exibicaoCategorias();
+          break;
+    
+        case "#/saude":
+          userState();
+          main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
+          encerrarSessao();
+          menuPontosVerticais();
+          exibicaoCategorias();
+          break;
+
+        
