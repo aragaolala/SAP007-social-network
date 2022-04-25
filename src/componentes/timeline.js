@@ -69,11 +69,11 @@ export const painelPerfil = () => {
 
 // Renderizar a seção de perfil do usuário para editar
 export const painelEditarPerfil = () => {
-    const articlePainelEditarPerfil = document.createElement('article');
-    articlePainelEditarPerfil.classList.add('EditarPerfil');
-    articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
+  const articlePainelEditarPerfil = document.createElement('article');
+  articlePainelEditarPerfil.classList.add('EditarPerfil');
+  articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
 
-    const headerFeed = document.createElement('header');
+  const headerFeed = document.createElement('header');
   headerFeed.classList.add('item1');
   headerFeed.innerHTML = conteudoHeader();
 
