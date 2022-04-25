@@ -39,3 +39,17 @@ export const encerrarSessao = () => {
         });
     });
   };
+
+  // Funcionalidade do menu hamburguer - encerrar sessão
+export const menuHamburguerHeader = () => {
+    const menuHambHeader = document.querySelector(".menuHambHeader");
+    const middle = document.querySelector(".middle");
+    const sair = document.querySelector(".sair");
+    const dropDown = document.querySelector(".dropDown");
+  
+    menuHambHeader.addEventListener("click", () => {
+      middle.classList.toggle("active");
+      sair.classList.toggle("active");
+      dropDown.classList.toggle("active");
+    });
+  };
