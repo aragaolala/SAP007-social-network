@@ -33,3 +33,24 @@ export const conteudoEditarPerfil = () => {
                   </li>
               </ul>
           </nav>
+
+          <div class= "fundoExibicao" id="fundoExibicao">
+          <div class="exibicao-perfil-container" id="exibicaoPerfilCont">
+              <p class="close" id="close"></p>
+              <div class="exibicaoContent exibicaoClose" id="exibicao">
+                  <div class="container-superior-perfil">
+                      <div class="fundoImagemSecaoPerfil">
+                          <img id="imgDeCapaUsuario"src="${userData.imgCapa}">
+                      </div>
+                      <div class="imgAtualDoUser" id="imgAtualDoUser">
+                          <div class="imgPerfilUsuario">
+                              <img id="imgUsuario" src="${userData.imgUsuario}">
+                          </div>
+
+                          <div class="conteudoTextoPerfil">
+                              <h2 id="nomeDoUsuario">${userData.username}</h2>
+                              <p id="descricaoDoPerfil">${userData.pronomes}</p>
+                              <p id="localDoPerfil">${userData.local}</p>
+                          </div>
+                      </div>
+                  </div>
