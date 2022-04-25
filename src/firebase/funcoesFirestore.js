@@ -90,3 +90,17 @@ export const adicionarUsuarioGoogle = (id, user) => {
   });
 };
 
+// Obter posts de grupos por categoria
+export const obterPostsGrupo = async (grupo) => {
+  const colRef = collection(db, 'posts');
+  const q = query(colRef, orderBy('timestamp'));
+  const querySnapshot = await getDocs(q).then((snapshot) => {
+    const posts = [];
+    snapshot.docs.forEach((docs) => {
+      posts.push({ ...docs.data(), postId: docs.id });
+    });
+    const postFiltrado = posts.filter((e) => e.categoria === grupo);
+    return postFiltrado;
+  });
+  return querySnapshot;
+};
