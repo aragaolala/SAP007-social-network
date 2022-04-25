@@ -184,3 +184,6 @@ export const criacaoPost = (formCompartilhar) => {
         // escolha da categoria / tema onde o usuario quer subir o post
         const selectCategoria = e.target.querySelector('#Grupo');
         const categoria = selectCategoria.options[selectCategoria.selectedIndex].value;
+
+        // Escolha do arquivo que o usuário deseja enviar para o post
+    const arquivoLocal = e.target.querySelector('#compartilharImg').files[0];
