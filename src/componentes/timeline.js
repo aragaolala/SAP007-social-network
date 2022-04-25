@@ -35,3 +35,17 @@ export const painel = () => {
   articlePainel.appendChild(footer);
   return articlePainel;
 };
+
+/ Renderizar a seção de perfil do usuário
+export const painelPerfil = () => {
+  const articlePainelPerfil = document.createElement('article');
+  articlePainelPerfil.classList.add('meuPerfil');
+  articlePainelPerfil.setAttribute('id', 'meuPerfil');
+
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
+  headerFeed.innerHTML = conteudoHeader();
+
+  const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+  secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
