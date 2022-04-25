@@ -35,3 +35,113 @@ export const painel = () => {
   articlePainel.appendChild(footer);
   return articlePainel;
 };
+
+/ Renderizar a seção de perfil do usuário
+export const painelPerfil = () => {
+  const articlePainelPerfil = document.createElement('article');
+  articlePainelPerfil.classList.add('meuPerfil');
+  articlePainelPerfil.setAttribute('id', 'meuPerfil');
+
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
+  headerFeed.innerHTML = conteudoHeader();
+
+  const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+  secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+  const divSecaoPerfilUsuario = document.createElement('div');
+  divSecaoPerfilUsuario.classList.add('container-perfil');
+  divSecaoPerfilUsuario.appendChild(conteudoPerfil());
+
+  articlePainelPerfil.appendChild(headerFeed);
+  articlePainelPerfil.appendChild(secaoExibicaoCategoria);
+  articlePainelPerfil.appendChild(divSecaoPerfilUsuario);
+
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  articlePainelPerfil.appendChild(footer);
+
+  return articlePainelPerfil;
+};
+
+// Renderizar a seção de perfil do usuário para editar
+export const painelEditarPerfil = () => {
+  const articlePainelEditarPerfil = document.createElement('article');
+  articlePainelEditarPerfil.classList.add('EditarPerfil');
+  articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
+
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
+  headerFeed.innerHTML = conteudoHeader();
+
+  const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+  secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+  const divSecaoEditarPerfilUsuario = document.createElement('div');
+  divSecaoEditarPerfilUsuario.classList.add('container-editarPerfil');
+  divSecaoEditarPerfilUsuario.appendChild(conteudoEditarPerfil());
+
+  articlePainelEditarPerfil.appendChild(headerFeed);
+  articlePainelEditarPerfil.appendChild(secaoExibicaoCategoria);
+  articlePainelEditarPerfil.appendChild(divSecaoEditarPerfilUsuario);
+
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  articlePainelEditarPerfil.appendChild(footer);
+
+  return articlePainelEditarPerfil;
+};
+
+// Renderizar a seção de perfil do usuário para editar
+export const painelEditarPerfil = () => {
+    const articlePainelEditarPerfil = document.createElement('article');
+    articlePainelEditarPerfil.classList.add('EditarPerfil');
+    articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
+  
+    const headerFeed = document.createElement('header');
+    headerFeed.classList.add('item1');
+    headerFeed.innerHTML = conteudoHeader();
+
+    const secaoExibicaoCategoria = document.createElement('div');
+    secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+    secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+    const divSecaoEditarPerfilUsuario = document.createElement('div');
+    divSecaoEditarPerfilUsuario.classList.add('container-editarPerfil');
+    divSecaoEditarPerfilUsuario.appendChild(conteudoEditarPerfil());
+
+    articlePainelEditarPerfil.appendChild(headerFeed);
+    articlePainelEditarPerfil.appendChild(secaoExibicaoCategoria);
+    articlePainelEditarPerfil.appendChild(divSecaoEditarPerfilUsuario);
+
+    const footer = document.createElement('footer');
+    footer.classList.add('footerDesktop');
+    footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+    articlePainelEditarPerfil.appendChild(footer);
+
+    return articlePainelEditarPerfil;
+};
+
+// Render da sessão categoria dependendo do tipo de post
+export const secaoCategorias = (img, tituloCategoria) => {
+    const articleRelacionam = document.createElement('article');
+  
+    const headerFeed = document.createElement('header');
+    headerFeed.classList.add('item1');
+    headerFeed.innerHTML = conteudoHeader();
+
+    const secaoExibicaoCategoria = document.createElement('div');
+    secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+    secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+    const divSecoes = document.createElement('div');
+    divSecoes.classList.add('grid-container');
+    divSecoes.appendChild(homeParaDesktop());
+    divSecoes.appendChild(conteudoCategoria(img, tituloCategoria));
