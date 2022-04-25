@@ -4,3 +4,9 @@ import { homeMobile } from './home-mobile.js';
 import { conteudoPerfil } from './secao-perfil.js';
 import { conteudoEditarPerfil } from './editar-perfil.js';
 import { conteudoCategoria } from './categorias.js';
+
+// Render da seção timeline
+export const painel = () => {
+    const articlePainel = document.createElement('article');
+    articlePainel.classList.add('artPainel');
+    articlePainel.setAttribute('id', 'artPainel');
