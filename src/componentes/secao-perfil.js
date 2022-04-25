@@ -165,3 +165,22 @@ export const conteudoPerfil = () => {
       </li>
       </ul>
     `;
+    const informacaoPainelUsuario = document.createElement('div');
+    informacaoPainelUsuario.classList.add('fundo1');
+    informacaoPainelUsuario.innerHTML = `
+          <div class="fundoImagenPerfil">
+              <img src="${userData.imgCapa}">
+          </div>
+          <div class="fundo2">
+              <div class="imgPerfilUsuario">
+                  <img src="${userData.imgUsuario}">
+              </div>
+  
+              <div class="conteudoTextoPerfil">
+                  <h2>${userData.username}</h2>
+                  <p>${userData.pronomes}</p>
+                  <p>${userData.local}</p>
+              </div>
+          </div>
+      `;
+  
