@@ -11,3 +11,8 @@ import {
 async function LikeFunctionHandler(e) {
     const btnLike = e.target;
     const userData = JSON.parse(sessionStorage.userSession);
+
+    //  o id do post que está associado ao atributo name é encontrado e salvo no idLike
+  const idLike = btnLike.getAttribute("name");
+  const contadorLike = btnLike.nextElementSibling;
+  const dataPost = await obterPeloId(idLike, "posts");
