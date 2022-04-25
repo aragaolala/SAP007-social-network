@@ -53,3 +53,8 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
     const usuarios = await obterUsuarios();
   // Obter os post conforme sua categoria correspondente
   const dadosPost = await obterPostsGrupo(grupo);
+  dadosPost.forEach((docs) => {
+    // procurar informações do criador de cada post
+    const criadorPost = usuarios.filter(
+      (user) => user.userId === docs.usuarioId
+    );
