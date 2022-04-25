@@ -58,3 +58,13 @@ export const btnExcluirPost = () => {
 
   / Função que é responsável por editar o post
 const editarPost = (postCard) => {
+    // renderizando o formulário necessário para inserir os dados que serão alterados
+  const formularioEditar = document.createElement('form');
+  formularioEditar.classList.add('editForm');
+  formularioEditar.innerHTML = `
+    <textarea id="inputEditar" name="inputEditar" rows="5" cols="33"></textarea>    
+    <div class="secBtnEditarPost">
+        <button class="botaoSalvarMudancas">Salvar</button>
+        <button class="botaoCancelarMudancas">Cancelar</button>  
+    </div>
+  `;
