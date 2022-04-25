@@ -40,3 +40,18 @@ export const btnExcluirPost = () => {
     const postsCards = document.getElementsByClassName('usuarioPost');
     Array.from(postsCards).forEach((postCard) => {
       const btnExcluir = postCard.querySelector('.btnDelete');
+      btnExcluir.addEventListener('click', async () => {
+        const confirmarcao = window.confirm('Deseja mesmo excluir essa publicação?');
+        // confirm foi usado para verificar se o usuário queria excluir a postagem
+        if (!confirmarcao) {
+          // se a confirmação for falsa, não faz nada, do contrário exclui o post
+          return;
+        }
+        const postExcluido = document.getElementById(postCard.id);
+        await excluirPost(postCard.id);
+        // // console.log('se apago o post');
+        // uma vez que a postagem é excluída no firestore, a postagem é excluída na interface
+        postExcluido.parentElement.remove();
+      });
+    });
+  };
