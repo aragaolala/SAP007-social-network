@@ -88,3 +88,12 @@ export const painelEditarPerfil = () => {
   articlePainelEditarPerfil.appendChild(headerFeed);
   articlePainelEditarPerfil.appendChild(secaoExibicaoCategoria);
   articlePainelEditarPerfil.appendChild(divSecaoEditarPerfilUsuario);
+
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  articlePainelEditarPerfil.appendChild(footer);
+
+  return articlePainelEditarPerfil;
+};
