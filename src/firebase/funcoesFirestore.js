@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {
   db,
   collection,
@@ -12,7 +13,7 @@ import {
   serverTimestamp,
   deleteDoc,
   onSnapshot,
-} from "./config.js";
+} from './config.js';
 
 // Obter todos os documentos da coleção 'post' usando onsnapshot
 export const obterPosts = async (callback) => {
@@ -76,17 +77,70 @@ export const subirLikes = async (idPost, dataLikes) => {
   });
 };
 
+// Para atualizar os dados do perfil na coleção de usuários
+export const atualizarPerfil = (userId, username, pronomes, local, imgUsuario, imgCapa) => {
+  const colRefId = doc(db, 'usuarios', userId);
+
+  const dadosParaAtualizar = {
+    username,
+    pronomes,
+    local,
+  };
+
+  if (imgUsuario) {
+    dadosParaAtualizar.imgUsuario = imgUsuario
+  }
+
+  if (imgCapa) {
+    dadosParaAtualizar.imgCapa = imgCapa
+  }
+  
+  return updateDoc(colRefId, dadosParaAtualizar);
+};
+
+export const searchUser = async (userId) => {
+  const colRef = doc(db, 'usuarios', userId);
+  const user = getDoc(colRef);
+  return user;
+};
 
 // Adicionar usuário ao firestore ao registrar com google
 export const adicionarUsuarioGoogle = (id, user) => {
-  const colRefId = doc(db, "usuarios", id);
+  const colRefId = doc(db, 'usuarios', id);
   return setDoc(colRefId, {
     username: user.displayName,
     email: user.email,
-    pronomes: "",
-    local: "",
+    pronomes: '',
+    local: '',
     imgUsuario: user.photoURL,
-    imgCapa: "imagens/img-de-capa.png",
+    imgCapa: 'imagens/img-de-capa.png',
+  });
+};
+
+// Buscar posts criados pelo usuario logado
+export const obterUserPosts = async () => {
+  const userId = JSON.parse(sessionStorage.userSession).id;
+  const colRef = collection(db, 'posts');
+  const q = query(colRef, orderBy('timestamp'));
+  const querySnapshot = await getDocs(q);
+  const posts = [];
+  querySnapshot.forEach((docs) => {
+    posts.push({ ...docs.data(), id: docs.id });
+  });
+  const postFiltrado = posts.filter((e) => e.usuarioId === userId);
+  return postFiltrado;
+};
+
+// Remover um post a respeito do postid
+export const excluirPost = async (postId) => {
+  await deleteDoc(doc(db, 'posts', postId));
+};
+
+// Editar um post em especifico
+export const atualizarPost = (postId, publicacao ) => {
+  const colRefId = doc(db, 'posts', postId);
+  return updateDoc(colRefId, {
+    publicacao ,
   });
 };
 
