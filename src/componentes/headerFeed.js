@@ -22,3 +22,20 @@ export const conteudoHeader = () => {
         `;
     return headerFeed;
   };
+
+// Função do botão encerrar sessão, limpando o sessionStorage
+// volta ao inicio
+export const encerrarSessao = () => {
+    const botaoSair = document.getElementById("encerrar-sessao");
+    botaoSair.addEventListener("click", () => {
+      encerrarAtividadeUsuario()
+        .then(() => {
+          sessionStorage.clear();
+          window.location.hash = "#/inicio";
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        });
+    });
+  };
