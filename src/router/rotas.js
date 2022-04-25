@@ -29,3 +29,13 @@ export const visualizacaoTelas = () => {
       criacaoPost("formCompartilhar", "container-post");
       exibicaoCategorias();
       break;
+
+      case "#/relacionamentos":
+        userState();
+        main.appendChild(
+          secaoCategorias("imagens/coracoes.png", "Relacionamentos")
+        );
+        encerrarSessao();
+        menuPontosVerticais();
+        exibicaoCategorias();
+        break;
