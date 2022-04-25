@@ -79,3 +79,23 @@ const editarPost = (postCard) => {
   postsCompartilhado.innerHTML = '';
   postsCompartilhado.appendChild(formularioEditar);
   // formulário tem dois botões para salvar ou cancelar as alterações
+  botaoCancelarMudancas.addEventListener('click', (e) => {
+    e.preventDefault();
+    postsCompartilhado.innerHTML = '';
+    postsCompartilhado.appendChild(conteudoCompartilhado);
+  });
+
+  botaoSalvarMudancas.addEventListener('click', (e) => {
+    e.preventDefault();
+    const postId = postCard.firstElementChild.id;
+    const form = e.target.parentElement.parentElement;
+    const postAtualizado = form.firstElementChild.value;
+    atualizarPost(postId, postAtualizado)
+      .then(() => {
+        // console.log('aqui sabemos se funfou');
+        conteudoCompartilhado.firstElementChild.textContent = postAtualizado;
+        postsCompartilhado.innerHTML = '';
+        postsCompartilhado.appendChild(conteudoCompartilhado);
+      });
+  });
+};
