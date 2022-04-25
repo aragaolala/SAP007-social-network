@@ -97,3 +97,4 @@ export const adicionarUsuarioGoogle = (id, user) => {
     imgCapa: "imagens/img-de-capa.png",
   });
 };
+
