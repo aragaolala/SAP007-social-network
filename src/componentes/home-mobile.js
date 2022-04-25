@@ -190,3 +190,5 @@ export const criacaoPost = (formCompartilhar) => {
 
     // obter o campo txt do formulário (falta validar o formulário, atenção!)
     const postTxt = e.target.querySelector('#inputCompartilhar').value;
+
+    const userData = JSON.parse(sessionStorage.userSession);
