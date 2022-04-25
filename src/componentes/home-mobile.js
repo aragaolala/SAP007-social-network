@@ -102,6 +102,19 @@ const preencherHome = async (containerPost) => {
   };
 
 
+  // Renderizando Barra de Navegação Inferior, Painel de Compartilhamento e Container Categorias
+export const homeMobile = () => {
+    const secaoMobile = document.createElement('section');
+    secaoMobile.classList.add('item3');
+
+
+
+
+
+
+    
+
+
 const painelCompartilhar = document.createElement("form");
 painelCompartilhar.setAttribute("id", "formCompartilhar");
 painelCompartilhar.classList.add("painelCompartilhar");
