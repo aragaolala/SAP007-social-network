@@ -163,3 +163,8 @@ painelCompartilhar.innerHTML = `
   const containerExibicaoCategorias = document.createElement('div');
   containerExibicaoCategorias.classList.add('categorias-container');
   containerExibicaoCategorias.setAttribute('id', 'categoriasContainer');
+
+  const containerPublicacoes = document.createElement('div');
+  containerPublicacoes.classList.add('container-post');
+  containerPublicacoes.setAttribute('id', 'container-post');
+  preencherHome(containerPublicacoes);
