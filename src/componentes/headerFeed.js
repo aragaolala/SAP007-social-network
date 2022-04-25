@@ -1,0 +1,1 @@
+import { encerrarAtividadeUsuario } from "../firebase/funcoesAuth.js";
