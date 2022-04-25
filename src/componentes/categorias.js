@@ -70,10 +70,10 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
 
 // Exibindo o conteúdo da categoria
 export const conteudoCategoria = (imgsrc, tituloCategoria) => {
-    const categoriaSecao = document.createElement("section");
-    categoriaSecao.classList.add("item3");
+  const categoriaSecao = document.createElement("section");
+  categoriaSecao.classList.add("item3");
 
-    const navInferior = document.createElement("nav");
+  const navInferior = document.createElement("nav");
   navInferior.classList.add("barraNavegacaoInferior");
   const userData = validarSessaoStorage();
   navInferior.innerHTML = `
@@ -101,11 +101,22 @@ export const conteudoCategoria = (imgsrc, tituloCategoria) => {
         </li>
         </ul>
       `;
-      const divCategoriaMaisBtn = document.createElement("div");
-      divCategoriaMaisBtn.setAttribute("id", "tituloCategoria");
-      divCategoriaMaisBtn.innerHTML = `
+  const divCategoriaMaisBtn = document.createElement("div");
+  divCategoriaMaisBtn.setAttribute("id", "tituloCategoria");
+  divCategoriaMaisBtn.innerHTML = `
         <div class="categoriaUnica">
             <img src=${imgsrc}>
             <p>${tituloCategoria}</p>
         </div>
         `;
+  const containerPostTema = document.createElement("div");
+  containerPostTema.classList.add("container-post");
+  containerPostTema.setAttribute("id", "container-post");
+  mostrarPostPorCategoria(containerPostTema, tituloCategoria);
+
+  categoriaSecao.appendChild(navInferior);
+  categoriaSecao.appendChild(divCategoriaMaisBtn);
+  categoriaSecao.appendChild(containerPostTema);
+
+  return categoriaSecao;
+};
