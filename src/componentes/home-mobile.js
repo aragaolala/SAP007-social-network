@@ -187,3 +187,6 @@ export const criacaoPost = (formCompartilhar) => {
 
         // Escolha do arquivo que o usuário deseja enviar para o post
     const arquivoLocal = e.target.querySelector('#compartilharImg').files[0];
+
+    // obter o campo txt do formulário (falta validar o formulário, atenção!)
+    const postTxt = e.target.querySelector('#inputCompartilhar').value;
