@@ -1,3 +1,4 @@
+import { sobreNos}  from "../componentes/pag-sobre.js"
 import { fundoHome } from "../componentes/logo-slogan.js";
 import { formRegistros, registroEmail } from "../componentes/registro.js";
 import { formInicioSessao, login } from "../componentes/login.js";
@@ -136,6 +137,14 @@ export const visualizacaoTelas = () => {
       exibicaoCategorias();
       btnEditarPerfil();
       break;
+
+      case "#/sobre":
+        userState();
+        main.appendChild(sobreNos());
+        encerrarSessao();
+        exibicaoCategorias();
+        menuHamburguerHeader();
+        break;
 
     default:
       main.innerHTML = "Página Não Encontrada";
