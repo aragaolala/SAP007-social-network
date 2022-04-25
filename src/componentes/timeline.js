@@ -128,3 +128,11 @@ export const painelEditarPerfil = () => {
 
     return articlePainelEditarPerfil;
 };
+
+// Render da sessão categoria dependendo do tipo de post
+export const secaoCategorias = (img, tituloCategoria) => {
+    const articleRelacionam = document.createElement('article');
+  
+    const headerFeed = document.createElement('header');
+    headerFeed.classList.add('item1');
+    headerFeed.innerHTML = conteudoHeader();
