@@ -110,6 +110,31 @@ export const homeMobile = () => {
     const navInferior = document.createElement('nav');
   navInferior.classList.add('barraNavegacaoInferior');
   const userData = JSON.parse(sessionStorage.userSession);
+  navInferior.innerHTML = `
+    <ul>
+    <li class="list">
+        <a class="abrirExibicao">
+            <span class="icon">
+                <img src="imagens/users-three.png">
+            </span>
+        </a>
+    </li>
+    <li class="list">
+        <a href="#/timeline">
+            <span class="icon">
+                <img src="imagens/house-fill.png">
+            </span>
+        </a>
+    </li>
+    <li class="list">
+        <a href="#/meuperfil">
+            <span class="icon">
+                <img src="${userData.imgUsuario}">
+            </span>
+        </a>
+    </li>
+    </ul>
+    `;
 
 
 
