@@ -68,3 +68,14 @@ const editarPost = (postCard) => {
         <button class="botaoCancelarMudancas">Cancelar</button>  
     </div>
   `;
+  const botaoSalvarMudancas = formularioEditar.querySelector('.botaoSalvarMudancas');
+  const botaoCancelarMudancas = formularioEditar.querySelector('.botaoCancelarMudancas');
+  const postsCompartilhado = postCard.querySelector('.postsCompartilhado');
+
+  const conteudoCompartilhado = postsCompartilhado.firstElementChild;
+  formularioEditar.firstElementChild.value = conteudoCompartilhado.firstElementChild.textContent;
+
+  // exclui o texto e adiciona o formulário de edição
+  postsCompartilhado.innerHTML = '';
+  postsCompartilhado.appendChild(formularioEditar);
+  // formulário tem dois botões para salvar ou cancelar as alterações
