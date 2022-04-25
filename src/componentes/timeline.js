@@ -1,0 +1,1 @@
+import { conteudoHeader, secaoDeExibicao } from './headerFeed.js';
