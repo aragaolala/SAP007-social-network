@@ -6,7 +6,11 @@ import {
 import { provedor, GoogleAuthProvider } from "../firebase/config.js";
 import { modoInicioSecao } from "./erros.js";
 import { mostrarEOcultarSenha } from "./logo-slogan.js";
-
+import {
+  obterPeloId,
+  adicionarUsuarioGoogle,
+  searchUser,
+} from "../firebase/funcoesFirestore.js";
 
 // Criação do formulário de login
 export const formInicioSessao = () => {
