@@ -95,3 +95,11 @@ export const conteudoEditarPerfil = () => {
 `;
   return editarSecao;
 };
+
+// Funcionalidade do botão Editar Perfil
+export const btnEditarPerfil = () => {
+    const btnSalvarMudancas = document.getElementById('salvarMudancas');
+    const btnarquivoLocal = document.getElementById('selbtn');
+    const btnarquivoLocalCapa = document.getElementById('ImgCapaUpdate');
+    const arquivoImgUsuario = [];
+    const arquivoImgCapa = [];
