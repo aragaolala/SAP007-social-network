@@ -55,3 +55,6 @@ export const btnExcluirPost = () => {
       });
     });
   };
+
+  / Função que é responsável por editar o post
+const editarPost = (postCard) => {
