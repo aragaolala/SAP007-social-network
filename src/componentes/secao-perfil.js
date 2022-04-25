@@ -35,3 +35,8 @@ const postsUsuario = (idPost, dataCriador, dataPost) => {
   return divPost;
 };
   
+// Funcionalidade do botao Eliminar post
+export const btnExcluirPost = () => {
+    const postsCards = document.getElementsByClassName('usuarioPost');
+    Array.from(postsCards).forEach((postCard) => {
+      const btnExcluir = postCard.querySelector('.btnDelete');
