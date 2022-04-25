@@ -36,3 +36,12 @@ async function LikeFunctionHandler(e) {
 // Reconhece todos os botões like em cada Publicação
 export const btnLikes1 = () => {
     const botoesPost = document.getElementsByClassName("botoesReacao");
+
+    // Procura onde está o alvo de reação, neste caso 'like'
+  Array.from(botoesPost).forEach((botaoPost) => {
+    const btnLike = botaoPost.querySelector(".like");
+
+    // Reconhece o botão like e contador de likes ao lado
+    btnLike.addEventListener("click", LikeFunctionHandler);
+  });
+};
