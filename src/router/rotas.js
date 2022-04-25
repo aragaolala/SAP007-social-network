@@ -20,5 +20,12 @@ export const visualizacaoTelas = () => {
       main.appendChild(fundoHome(formRegistros()));
       registroEmail("formRegistro", "localExibicao");
       break;
-  }
-};
+
+    case "#/timeline":
+      userState();
+      main.appendChild(painel());
+      encerrarSessao();
+      menuPontosVerticais();
+      criacaoPost("formCompartilhar", "container-post");
+      exibicaoCategorias();
+      break;
