@@ -67,3 +67,8 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
   });
   btnLikes1();
 };
+
+// Exibindo o conteúdo da categoria
+export const conteudoCategoria = (imgsrc, tituloCategoria) => {
+    const categoriaSecao = document.createElement("section");
+    categoriaSecao.classList.add("item3");
