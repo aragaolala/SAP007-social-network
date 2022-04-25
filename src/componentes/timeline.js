@@ -23,3 +23,7 @@ export const painel = () => {
   divSecoes.classList.add('grid-container');
   divSecoes.appendChild(homeParaDesktop());
   divSecoes.appendChild(homeMobile());
+
+  articlePainel.appendChild(headerFeed);
+  articlePainel.appendChild(secaoExibicaoCategoria);
+  articlePainel.appendChild(divSecoes);
