@@ -27,3 +27,11 @@ export const painel = () => {
   articlePainel.appendChild(headerFeed);
   articlePainel.appendChild(secaoExibicaoCategoria);
   articlePainel.appendChild(divSecoes);
+
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  articlePainel.appendChild(footer);
+  return articlePainel;
+};
