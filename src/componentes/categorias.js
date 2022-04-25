@@ -1,0 +1,1 @@
+import { mostrarPost } from "./home-mobile.js";
