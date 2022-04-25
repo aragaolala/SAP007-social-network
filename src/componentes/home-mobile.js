@@ -174,3 +174,5 @@ painelCompartilhar.innerHTML = `
   secaoMobile.appendChild(containerPublicacoes);
   return secaoMobile;
 };
+
+// Funcionalidade para a Criação de posts com texto e/ou imagem
