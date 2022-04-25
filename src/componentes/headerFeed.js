@@ -116,3 +116,12 @@ export const exibicaoCategorias = () => {
     btnEncerrar.addEventListener("click", () => {
       exibicaoCategoria.style.display = "none";
     });
+
+    /* outside click */
+  window.addEventListener("click", (e) => {
+    // eslint-disable-next-line
+    if (e.target == exibicaoCategoria) {
+      exibicaoCategoria.style.display = "none";
+    }
+  });
+};
