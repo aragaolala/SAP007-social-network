@@ -39,21 +39,36 @@ export const visualizacaoTelas = () => {
         menuPontosVerticais();
         exibicaoCategorias();
         break;
-
-        case "#/web":
+      
+      case "#/web":
+        userState();
+        main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
+        encerrarSessao();
+        menuPontosVerticais();
+        exibicaoCategorias();
+        break;
+  
+      case "#/saude":
+        userState();
+        main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
+        encerrarSessao();
+        menuPontosVerticais();
+        exibicaoCategorias();
+        break;
+  
+        case "#/viagens":
           userState();
-          main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
+          main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
           encerrarSessao();
           menuPontosVerticais();
           exibicaoCategorias();
           break;
     
-        case "#/saude":
+        case "#/amizades":
           userState();
-          main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
+          main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
           encerrarSessao();
           menuPontosVerticais();
           exibicaoCategorias();
           break;
-
-        
+  
