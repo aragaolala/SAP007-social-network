@@ -2,7 +2,8 @@ import { formRegistros, registroEmail } from "../componentes/registro.js";
 import { formInicioSessao, login } from "../componentes/login.js";
 import { fundoHome } from "../componentes/logo-slogan.js";
 
-
+import { userState } from "../componentes/validacoes.js";
+import { criacaoPost } from "../componentes/home-mobile.js";
 
 export const visualizacaoTelas = () => {
   const main = document.getElementById("main");
@@ -30,80 +31,81 @@ export const visualizacaoTelas = () => {
       exibicaoCategorias();
       break;
 
-      case "#/relacionamentos":
-        userState();
-        main.appendChild(
-          secaoCategorias("imagens/coracoes.png", "Relacionamentos")
-        );
-        encerrarSessao();
-        menuPontosVerticais();
-        exibicaoCategorias();
-        break;
-      
-      case "#/web":
-        userState();
-        main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
-        encerrarSessao();
-        menuPontosVerticais();
-        exibicaoCategorias();
-        break;
-  
-      case "#/saude":
-        userState();
-        main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
-        encerrarSessao();
-        menuPontosVerticais();
-        exibicaoCategorias();
-        break;
-  
-        case "#/viagens":
-          userState();
-          main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
-          encerrarSessao();
-          menuPontosVerticais();
-          exibicaoCategorias();
-          break;
-    
-        case "#/amizades":
-          userState();
-          main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
-          encerrarSessao();
-          menuPontosVerticais();
-          exibicaoCategorias();
-          break;
+    case "#/relacionamentos":
+      userState();
+      main.appendChild(
+        secaoCategorias("imagens/coracoes.png", "Relacionamentos")
+      );
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
 
-          case "#/moda":
-            userState();
-            main.appendChild(secaoCategorias("imagens/cabide.png", "Moda"));
-            encerrarSessao();
-            menuPontosVerticais();
-            exibicaoCategorias();
-            break;
-      
-          /* Só posta se inserir a string "estudos" dentro da categoria no firestore. 
+    case "#/web":
+      userState();
+      main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    case "#/saude":
+      userState();
+      main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    case "#/viagens":
+      userState();
+      main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    case "#/amizades":
+      userState();
+      main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    case "#/moda":
+      userState();
+      main.appendChild(secaoCategorias("imagens/cabide.png", "Moda"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    /* Só posta se inserir a string "estudos" dentro da categoria no firestore. 
           Descobrir pq nao esta automático como os outros */
-          /* RESOLVIDO: precisava mudar o valor no home-mobile.js */
-          case "#/estudos":
-            userState();
-            main.appendChild(secaoCategorias("imagens/open-book.png", "Estudos"));
-            encerrarSessao();
-            menuPontosVerticais();
-            exibicaoCategorias();
-            break;
+    /* RESOLVIDO: precisava mudar o valor no home-mobile.js */
+    case "#/estudos":
+      userState();
+      main.appendChild(secaoCategorias("imagens/open-book.png", "Estudos"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
 
-            case "#/maternidade":
-              userState();
-              main.appendChild(secaoCategorias("imagens/bebe.png", "Maternidade"));
-              encerrarSessao();
-              menuPontosVerticais();
-              exibicaoCategorias();
-              break;
-        
-            case "#/outros":
-              userState();
-              main.appendChild(secaoCategorias("imagens/more.png", "Outros"));
-              encerrarSessao();
-              menuPontosVerticais();
-              exibicaoCategorias();
-              break;
-  
+    case "#/maternidade":
+      userState();
+      main.appendChild(secaoCategorias("imagens/bebe.png", "Maternidade"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+
+    case "#/outros":
+      userState();
+      main.appendChild(secaoCategorias("imagens/more.png", "Outros"));
+      encerrarSessao();
+      menuPontosVerticais();
+      exibicaoCategorias();
+      break;
+  }
+};
