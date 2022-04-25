@@ -51,7 +51,7 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
   const userData = JSON.parse(sessionStorage.userSession);
   // Obter dados dos usuários
   const usuarios = await obterUsuarios();
-  // Obter os post conforme sua categoria correspondente
+  // Obter os post com a categoria que corresponde ao grupo de parametro
   const dadosPost = await obterPostsGrupo(grupo);
   dadosPost.forEach((docs) => {
     // procurar informações do criador de cada post
@@ -104,11 +104,11 @@ export const conteudoCategoria = (imgsrc, tituloCategoria) => {
   const divCategoriaMaisBtn = document.createElement("div");
   divCategoriaMaisBtn.setAttribute("id", "tituloCategoria");
   divCategoriaMaisBtn.innerHTML = `
-        <div class="categoriaUnica">
-            <img src=${imgsrc}>
-            <p>${tituloCategoria}</p>
-        </div>
-        `;
+    <div class="categoriaUnica">
+        <img src=${imgsrc}>
+        <p>${tituloCategoria}</p>
+    </div>
+    `;
   const containerPostTema = document.createElement("div");
   containerPostTema.classList.add("container-post");
   containerPostTema.setAttribute("id", "container-post");
