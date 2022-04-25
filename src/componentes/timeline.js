@@ -104,3 +104,10 @@ export const painelEditarPerfil = () => {
     articlePainelEditarPerfil.classList.add('EditarPerfil');
     articlePainelEditarPerfil.setAttribute('id', 'EditarPerfil');
   
+    const headerFeed = document.createElement('header');
+    headerFeed.classList.add('item1');
+    headerFeed.innerHTML = conteudoHeader();
+
+    const secaoExibicaoCategoria = document.createElement('div');
+    secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+    secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
