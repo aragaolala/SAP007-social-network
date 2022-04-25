@@ -1,13 +1,13 @@
-import { atualizarPerfil } from '../firebase/funcoesFirestore.js';
-import { validarSessaoStorage } from './validacoes.js';
-import { subirFileStorage } from '../firebase/funcoesStorage.js';
+import { atualizarPerfil } from "../firebase/funcoesFirestore.js";
+import { validarSessaoStorage } from "./validacoes.js";
+import { subirFileStorage } from "../firebase/funcoesStorage.js";
 
 // Renderizar sessão editar perfil
 export const conteudoEditarPerfil = () => {
-    const editarSecao = document.createElement('section');
-    editarSecao.classList.add('corpoEditarPerfil');
-    const userData = validarSessaoStorage();
-    editarSecao.innerHTML = `
+  const editarSecao = document.createElement("section");
+  editarSecao.classList.add("corpoEditarPerfil");
+  const userData = validarSessaoStorage();
+  editarSecao.innerHTML = `
           <nav class= "barraNavegacaoInferior">
               <ul>
                   <li class="list">
@@ -54,3 +54,44 @@ export const conteudoEditarPerfil = () => {
                           </div>
                       </div>
                   </div>
+
+                  <div class="exibicaoFormulario" id="exibicaoFormulario">
+                  <form id="formIngresso">
+
+                      <div class="caixaInputDadosImg">
+                          <p class="txtDosCamposAtualizarPerfil">Foto de perfil</p>
+                          <input type="file" id="selbtn" class="imgParaAtualizar"></input>
+                      </div>
+
+                      <div class="caixaInputDadosImg">
+                          <p class="txtDosCamposAtualizarPerfil">Foto de capa</p>
+                          <input type="file" id="ImgCapaUpdate" class="imgParaAtualizar"></input>
+                      </div>
+
+                      <div class="caixaInputDados">
+                          <p class="txtDosCamposAtualizarPerfil">Usuária</p>
+                          <input type="text" id="atualizacaoUsuario" class="dadosParaAtualizar" autocapitalize="sentence" value="${userData.username}">
+                      </div>
+
+                      <div class="caixaInputDados">
+                          <p class="txtDosCamposAtualizarPerfil">Pronomes</p>
+                          <input type="text" id="atualizacaoPronome" class="dadosParaAtualizar" autocapitalize="sentence" value="${userData.pronomes}">
+                      </div>
+
+                      <div class="caixaInputDados">
+                          <p class="txtDosCamposAtualizarPerfil">Cidade</p>
+                          <input type="text" id="atualizacaoLocal" class="dadosParaAtualizar" autocapitalize="sentence" value="${userData.local}">
+                      </div>
+                      <div class="botoesFormularios">
+                          <button type="submit" id="salvarMudancas" class="salvarMudancas">Salvar</button>  
+                          <button class="btnInicio"><a href="#/timeline">Início</a></button> 
+                      </div>
+                  </form>
+              </div>
+      
+          </div>
+      </div>
+  </div>
+`;
+  return editarSecao;
+};
