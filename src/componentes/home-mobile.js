@@ -193,3 +193,16 @@ export const criacaoPost = (formCompartilhar) => {
 
     // JSON.parse() recebe uma string JSON e a transforma em um objeto JavaScript
     const userData = JSON.parse(sessionStorage.userSession);
+
+    if (arquivoLocal === undefined) {
+        // se nenhum arquivo é selecionado, é enviado vazio
+        await subirDataHomeCol(userData.id, postTxt, categoria, '');
+      } else {
+        // obtenção do url do arquivo carregado do storage
+        const urlImagem = await subirFileStorage(arquivoLocal, 'imgPosts');
+        await subirDataHomeCol(userData.id, postTxt, categoria, urlImagem);
+      }
+      e.target.reset();
+    });
+  };
+  
