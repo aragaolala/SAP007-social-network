@@ -110,3 +110,9 @@ export const btnEditarPost = () => {
       });
     });
   };
+
+  // Função para fazer upload (carregar) da postagem por usuário para sua sessão de perfil
+const preencherPerfil = async (containerPost) => {
+    const userData = JSON.parse(sessionStorage.userSession);
+    const usuarios = await obterUsuarios();
+    const dadosPost = await obterUserPosts();
