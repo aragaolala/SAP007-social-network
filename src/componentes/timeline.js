@@ -18,3 +18,8 @@ export const painel = () => {
   const secaoExibicaoCategoria = document.createElement('div');
   secaoExibicaoCategoria.classList.add('exibicaoCategoria');
   secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+  const divSecoes = document.createElement('div');
+  divSecoes.classList.add('grid-container');
+  divSecoes.appendChild(homeParaDesktop());
+  divSecoes.appendChild(homeMobile());
