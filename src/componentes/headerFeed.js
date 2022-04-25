@@ -54,7 +54,7 @@ export const menuHamburguerHeader = () => {
     });
   };
 
-  // Renderizando exibicao categorias
+  // Exibindo categorias
 export const secaoDeExibicao = () => {
     const secaoExibicaoCategoria = `<section class="secaoDeExibicao">
       <div class="tituloExibicao">
@@ -102,3 +102,17 @@ export const secaoDeExibicao = () => {
       </section>`;
     return secaoExibicaoCategoria;
   };
+
+  // funcionalidade do exibicao categorias
+export const exibicaoCategorias = () => {
+    const exibicaoCategoria = document.querySelector(".exibicaoCategoria");
+    const abrirExibicao = document.querySelector(".abrirExibicao");
+    const btnEncerrar = document.querySelector(".btnEncerrar");
+  
+    abrirExibicao.addEventListener("click", () => {
+      exibicaoCategoria.style.display = "block";
+    });
+  
+    btnEncerrar.addEventListener("click", () => {
+      exibicaoCategoria.style.display = "none";
+    });
