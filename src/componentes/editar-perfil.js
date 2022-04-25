@@ -103,3 +103,25 @@ export const btnEditarPerfil = () => {
     const btnarquivoLocalCapa = document.getElementById('ImgCapaUpdate');
     const arquivoImgUsuario = [];
     const arquivoImgCapa = [];
+    btnarquivoLocal.addEventListener('change', (e) => {
+        arquivoImgUsuario.push(e.target.files[0]);
+      });
+      btnarquivoLocalCapa.addEventListener('change', (e) => {
+        arquivoImgCapa.push(e.target.files[0]);
+      });
+      btnSalvarMudancas.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const inputUsuarioAtualizado = document.getElementById('atualizacaoUsuario').value;
+        const inputPronomesAtualizado = document.getElementById('atualizacaoPronome').value;
+        const inputLocalAtualizado = document.getElementById('atualizacaoLocal').value;
+        const userData = JSON.parse(sessionStorage.userSession);
+        const urlImagem = await subirFileStorage(arquivoImgUsuario[arquivoImgUsuario.length - 1], 'imgUsuarios');
+        const urlCapa = await subirFileStorage(arquivoImgCapa[arquivoImgCapa.length - 1], 'imgCapa');
+        atualizarPerfil(
+          userData.id,
+          inputUsuarioAtualizado,
+          inputPronomesAtualizado,
+          inputLocalAtualizado,
+          urlImagem,
+          urlCapa,
+        )
