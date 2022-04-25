@@ -116,3 +116,17 @@ const preencherPerfil = async (containerPost) => {
     const userData = JSON.parse(sessionStorage.userSession);
     const usuarios = await obterUsuarios();
     const dadosPost = await obterUserPosts();
+
+    console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
+  
+  dadosPost.forEach((post) => {
+    const dataCriador = usuarios.filter((user) => user.userId === post.usuarioId);
+    containerPost.prepend(postsUsuario(post.id, dataCriador[0], post));
+    if (post.likes.includes(userData.id)) {
+      document.getElementsByName(post.id)[0].style.color = '#E7B9E4';
+    }
+  });
+  btnLikes1();
+  btnExcluirPost();
+  btnEditarPost();
+};
