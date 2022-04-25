@@ -42,16 +42,8 @@ export const obterPeloId = (idUser, nameColeccion) => {
 };
 
 // Adicionar dados iniciais para o momento de registro para a coleção de usuários
-export const adicionarDataUserFS = async (
-  id,
-  Username,
-  email,
-  Pronomes,
-  Local,
-  srcImg,
-  srcImgCapa
-) => {
-  const colRefId = doc(db, "usuarios", id);
+export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, srcImg, srcImgCapa) => {
+  const colRefId = doc(db, 'usuarios', id);
   await setDoc(colRefId, {
     username: Username,
     email: email,
