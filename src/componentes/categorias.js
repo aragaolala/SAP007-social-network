@@ -1,18 +1,18 @@
 import { mostrarPost } from "./home-mobile.js";
 import {
-    obterPostsGrupo,
-    obterUsuarios,
-    obterPeloId,
-    subirLikes,
-  } from "../firebase/funcoesFirestore.js";
-  import { validarSessaoStorage } from "./validacoes.js";
+  obterPostsGrupo,
+  obterUsuarios,
+  obterPeloId,
+  subirLikes,
+} from "../firebase/funcoesFirestore.js";
+import { validarSessaoStorage } from "./validacoes.js";
 
-  // Handler: Ações que devem ser executadas quando o usuário clicar em um botão
+// Handler: Ações que devem ser executadas quando o usuário clicar em um botão
 async function LikeFunctionHandler(e) {
-    const btnLike = e.target;
-    const userData = JSON.parse(sessionStorage.userSession);
+  const btnLike = e.target;
+  const userData = JSON.parse(sessionStorage.userSession);
 
-    //  o id do post que está associado ao atributo name é encontrado e salvo no idLike
+  //  o id do post que está associado ao atributo name é encontrado e salvo no idLike
   const idLike = btnLike.getAttribute("name");
   const contadorLike = btnLike.nextElementSibling;
   const dataPost = await obterPeloId(idLike, "posts");
@@ -35,9 +35,9 @@ async function LikeFunctionHandler(e) {
 
 // Reconhece todos os botões like em cada Publicação
 export const btnLikes1 = () => {
-    const botoesPost = document.getElementsByClassName("botoesReacao");
+  const botoesPost = document.getElementsByClassName("botoesReacao");
 
-    // Procura onde está o alvo de reação, neste caso 'like'
+  // Procura onde está o alvo de reação, neste caso 'like'
   Array.from(botoesPost).forEach((botaoPost) => {
     const btnLike = botaoPost.querySelector(".like");
 
@@ -48,9 +48,9 @@ export const btnLikes1 = () => {
 
 // Preencher sessão de categorias
 const mostrarPostPorCategoria = async (containerPost, grupo) => {
-    const userData = JSON.parse(sessionStorage.userSession);
-    // Obter dados dos usuários
-    const usuarios = await obterUsuarios();
+  const userData = JSON.parse(sessionStorage.userSession);
+  // Obter dados dos usuários
+  const usuarios = await obterUsuarios();
   // Obter os post conforme sua categoria correspondente
   const dadosPost = await obterPostsGrupo(grupo);
   dadosPost.forEach((docs) => {
@@ -67,4 +67,3 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
   });
   btnLikes1();
 };
-
