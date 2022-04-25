@@ -107,12 +107,16 @@ export const homeMobile = () => {
     const secaoMobile = document.createElement('section');
     secaoMobile.classList.add('item3');
 
+    const navInferior = document.createElement('nav');
+  navInferior.classList.add('barraNavegacaoInferior');
+  const userData = JSON.parse(sessionStorage.userSession);
 
 
 
 
 
-    
+
+
 
 
 const painelCompartilhar = document.createElement("form");
