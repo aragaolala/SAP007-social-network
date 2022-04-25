@@ -49,3 +49,11 @@ export const painelPerfil = () => {
   const secaoExibicaoCategoria = document.createElement('div');
   secaoExibicaoCategoria.classList.add('exibicaoCategoria');
   secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+  const divSecaoPerfilUsuario = document.createElement('div');
+  divSecaoPerfilUsuario.classList.add('container-perfil');
+  divSecaoPerfilUsuario.appendChild(conteudoPerfil());
+
+  articlePainelPerfil.appendChild(headerFeed);
+  articlePainelPerfil.appendChild(secaoExibicaoCategoria);
+  articlePainelPerfil.appendChild(divSecaoPerfilUsuario);
