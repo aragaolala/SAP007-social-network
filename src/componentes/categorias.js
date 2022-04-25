@@ -58,3 +58,13 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
     const criadorPost = usuarios.filter(
       (user) => user.userId === docs.usuarioId
     );
+    containerPost.prepend(mostrarPost(docs.postId, docs, criadorPost[0]));
+    // verificando se o id do usuário logado está na lista de likes
+    // se funcionar fica rosa
+    if (docs.likes.includes(userData.id)) {
+      document.getElementsByName(docs.postId)[0].style.color = "#E7B9E4";
+    }
+  });
+  btnLikes1();
+};
+
