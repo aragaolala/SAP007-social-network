@@ -136,3 +136,12 @@ export const secaoCategorias = (img, tituloCategoria) => {
     const headerFeed = document.createElement('header');
     headerFeed.classList.add('item1');
     headerFeed.innerHTML = conteudoHeader();
+
+    const secaoExibicaoCategoria = document.createElement('div');
+    secaoExibicaoCategoria.classList.add('exibicaoCategoria');
+    secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+    const divSecoes = document.createElement('div');
+    divSecoes.classList.add('grid-container');
+    divSecoes.appendChild(homeParaDesktop());
+    divSecoes.appendChild(conteudoCategoria(img, tituloCategoria));
