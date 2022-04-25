@@ -16,3 +16,20 @@ async function LikeFunctionHandler(e) {
   const idLike = btnLike.getAttribute("name");
   const contadorLike = btnLike.nextElementSibling;
   const dataPost = await obterPeloId(idLike, "posts");
+  // verificando se o id do usuário está na lista de likes de cada post
+  if (dataPost.likes.includes(userData.id)) {
+    // isto é para remover o like por usuário
+    subirLikes(
+      idLike,
+      dataPost.likes.filter((item) => item !== userData.id)
+    );
+    contadorLike.textContent = dataPost.likes.length - 1;
+    btnLike.style.color = "#8F7D7D";
+  } else {
+    // isto é para adicionar like por usuário
+    subirLikes(idLike, [...dataPost.likes, userData.id]);
+    contadorLike.textContent = dataPost.likes.length + 1;
+    btnLike.style.color = "#E7B9E4";
+  }
+}
+
