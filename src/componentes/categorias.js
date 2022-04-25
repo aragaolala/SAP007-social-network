@@ -72,3 +72,32 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
 export const conteudoCategoria = (imgsrc, tituloCategoria) => {
     const categoriaSecao = document.createElement("section");
     categoriaSecao.classList.add("item3");
+
+    const navInferior = document.createElement("nav");
+  navInferior.classList.add("barraNavegacaoInferior");
+  const userData = validarSessaoStorage();
+  navInferior.innerHTML = `
+        <ul>
+        <li class="list">
+            <a class="abrirExibicao">
+                <span class="icon">
+                    <img src="imagens/users-three.png">
+                </span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#/timeline">
+                <span class="icon">
+                    <img src="imagens/house-fill.png">
+                </span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#/meuperfil">
+                <span class="icon">
+                    <img src="${userData.imgUsuario}">
+                </span>
+            </a>
+        </li>
+        </ul>
+      `;
