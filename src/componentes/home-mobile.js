@@ -176,3 +176,5 @@ painelCompartilhar.innerHTML = `
 };
 
 // Funcionalidade para a Criação de posts com texto e/ou imagem
+export const criacaoPost = (formCompartilhar) => {
+    const divCompartilhar = document.getElementById(formCompartilhar);
