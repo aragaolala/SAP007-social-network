@@ -14,6 +14,26 @@ import {
   onSnapshot,
 } from "./config.js";
 
+// Obter todos os documentos da coleção 'post' usando onsnapshot
+export const obterPosts = async (callback) => {
+  const colRef = collection(db, 'posts');
+  const q = query(colRef, orderBy('timestamp'));
+  await onSnapshot(q, callback);
+};
+
+// Obter dados de todos os usuários
+export const obterUsuarios = async () => {
+  const colRef = collection(db, 'usuarios');
+  const querySnapshot = await getDocs(colRef).then((snapshot) => {
+    const posts = [];
+    snapshot.docs.forEach((docs) => {
+      posts.push({ ...docs.data(), userId: docs.id });
+    });
+    return posts;
+  });
+  return querySnapshot;
+};
+
 // Obter os dados de cada usuario salvo no Firestore, procurar por id
 export const obterPeloId = (idUser, nameColeccion) => {
   const docRef = doc(db, nameColeccion, idUser);
@@ -22,16 +42,8 @@ export const obterPeloId = (idUser, nameColeccion) => {
 };
 
 // Adicionar dados iniciais para o momento de registro para a coleção de usuários
-export const adicionarDataUserFS = async (
-  id,
-  Username,
-  email,
-  Pronomes,
-  Local,
-  srcImg,
-  srcImgCapa
-) => {
-  const colRefId = doc(db, "usuarios", id);
+export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, srcImg, srcImgCapa) => {
+  const colRefId = doc(db, 'usuarios', id);
   await setDoc(colRefId, {
     username: Username,
     email: email,
@@ -41,6 +53,29 @@ export const adicionarDataUserFS = async (
     imgCapa: srcImgCapa,
   });
 };
+
+// Enviar dados para a coleção posts no firestore
+export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
+  const colRefPost = collection(db, 'posts');
+  const functionAdd = addDoc(colRefPost, {
+    usuarioId: criadorPost,
+    publicacao : post,
+    categoria: Categoria,
+    imgPost: urlImg,
+    timestamp: serverTimestamp(),
+    likes: [],
+  });
+  return functionAdd;
+};
+
+// Para atualizar o arranjo de likes
+export const subirLikes = async (idPost, dataLikes) => {
+  const docId = doc(db, 'posts', idPost);
+  await updateDoc(docId, {
+    likes: dataLikes,
+  });
+};
+
 
 // Adicionar usuário ao firestore ao registrar com google
 export const adicionarUsuarioGoogle = (id, user) => {
@@ -53,4 +88,19 @@ export const adicionarUsuarioGoogle = (id, user) => {
     imgUsuario: user.photoURL,
     imgCapa: "imagens/img-de-capa.png",
   });
+};
+
+// Obter posts de grupos por categoria
+export const obterPostsGrupo = async (grupo) => {
+  const colRef = collection(db, 'posts');
+  const q = query(colRef, orderBy('timestamp'));
+  const querySnapshot = await getDocs(q).then((snapshot) => {
+    const posts = [];
+    snapshot.docs.forEach((docs) => {
+      posts.push({ ...docs.data(), postId: docs.id });
+    });
+    const postFiltrado = posts.filter((e) => e.categoria === grupo);
+    return postFiltrado;
+  });
+  return querySnapshot;
 };
