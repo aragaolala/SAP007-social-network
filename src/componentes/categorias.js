@@ -101,3 +101,11 @@ export const conteudoCategoria = (imgsrc, tituloCategoria) => {
         </li>
         </ul>
       `;
+      const divCategoriaMaisBtn = document.createElement("div");
+      divCategoriaMaisBtn.setAttribute("id", "tituloCategoria");
+      divCategoriaMaisBtn.innerHTML = `
+        <div class="categoriaUnica">
+            <img src=${imgsrc}>
+            <p>${tituloCategoria}</p>
+        </div>
+        `;
