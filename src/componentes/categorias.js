@@ -45,3 +45,8 @@ export const btnLikes1 = () => {
     btnLike.addEventListener("click", LikeFunctionHandler);
   });
 };
+
+// Preencher sessão de categorias
+const mostrarPostPorCategoria = async (containerPost, grupo) => {
+    const userData = JSON.parse(sessionStorage.userSession);
+    // Obter dados dos usuários
