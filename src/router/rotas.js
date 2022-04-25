@@ -71,4 +71,23 @@ export const visualizacaoTelas = () => {
           menuPontosVerticais();
           exibicaoCategorias();
           break;
+
+          case "#/moda":
+            userState();
+            main.appendChild(secaoCategorias("imagens/cabide.png", "Moda"));
+            encerrarSessao();
+            menuPontosVerticais();
+            exibicaoCategorias();
+            break;
+      
+          /* Só posta se inserir a string "estudos" dentro da categoria no firestore. 
+          Descobrir pq nao esta automático como os outros */
+          /* RESOLVIDO: precisava mudar o valor no home-mobile.js */
+          case "#/estudos":
+            userState();
+            main.appendChild(secaoCategorias("imagens/open-book.png", "Estudos"));
+            encerrarSessao();
+            menuPontosVerticais();
+            exibicaoCategorias();
+            break;
   
