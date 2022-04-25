@@ -53,3 +53,52 @@ export const menuHamburguerHeader = () => {
       dropDown.classList.toggle("active");
     });
   };
+
+  // Renderizando exibicao categorias
+export const secaoDeExibicao = () => {
+    const secaoExibicaoCategoria = `<section class="secaoDeExibicao">
+      <div class="tituloExibicao">
+        <h1>Tema</h1>
+        <span class="btnEncerrar">&times;</span>
+      </div>
+      <div class= "containerCategorias">
+          <a href="#/relacionamentos" class="categoriaUnica">
+              <img src="imagens/coracoes.png" >
+              <p>Relacionamento</p>
+          <a>
+          <a href="#/web" class="categoriaUnica">
+              <img src="imagens/codigo.png" >
+              <p>Web</p>
+          </a>
+          <a href="#/saude" class="categoriaUnica">
+              <img src="imagens/saude.png" >
+              <p>Saúde</p>
+          </a>
+          <a href="#/viagens" class="categoriaUnica">
+              <img src="imagens/aviao.png" >
+              <p>Viagens</p>
+          </a>
+          <a href="#/amizades" class="categoriaUnica">
+              <img src="imagens/pulseira.png" >
+              <p>Amizade</p>
+          </a>
+          <a href="#/moda" class="categoriaUnica">
+              <img src="imagens/cabide.png" >
+              <p>Moda/Beleza</p>
+          </a>
+          <a href="#/estudos" class="categoriaUnica">
+              <img src="imagens/open-book.png" >
+              <p>Estudos</p>
+          </a>
+          <a href="#/maternidade" class="categoriaUnica">
+              <img src="imagens/bebe.png" >
+              <p>Maternidade</p>
+          </a>
+          <a href="#/outros" class="categoriaUnica">
+              <img src="imagens/more.png" >
+              <p>Outros</p>
+          </a>
+      </div>
+      </section>`;
+    return secaoExibicaoCategoria;
+  };
