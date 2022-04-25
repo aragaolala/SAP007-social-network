@@ -178,3 +178,9 @@ painelCompartilhar.innerHTML = `
 // Funcionalidade para a Criação de posts com texto e/ou imagem
 export const criacaoPost = (formCompartilhar) => {
     const divCompartilhar = document.getElementById(formCompartilhar);
+
+    divCompartilhar.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // escolha da categoria / tema onde o usuario quer subir o post
+        const selectCategoria = e.target.querySelector('#Grupo');
+        const categoria = selectCategoria.options[selectCategoria.selectedIndex].value;
