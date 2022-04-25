@@ -1,25 +1,26 @@
 import { encerrarAtividadeUsuario } from "../firebase/funcoesAuth.js";
+// import { validarSessaoStorage } from "./validacoes.js";
 
 // Renderizando o header
 export const conteudoHeader = () => {
   // const userData = validarSessaoStorage();
   const headerFeed = `
-          <div class="titulo-header">
-              <img src="imagens/logo.png" id="Logo">
-          </div>
-          <div class="pontosVerticais">
-            <figure></figure>
-            <figure class="middle"></figure>
-            <p class="sair"></p>
-            <figure></figure>
-            <ul class="dropDown">
-              <li><a href='#/timeline'><img id="img-encerrar" src="imagens/home.png"><span>Início</span></a></li>
-              <li><a href='#/meuperfil'><img id="img-encerrar" src="imagens/do-utilizador.png"><span>Meu Perfil</span></a></li>
-              <li><a href='#/editarperfil'><img id="img-encerrar" src="imagens/configuracoes.png"><span>Configurações</span></a></li>
-              <li><a id="encerrar-sessao"><img id="img-encerrar" src="imagens/sign-out.png"><span>Sair</span></a></li>
-            </ul>
-          </div>
-        `;
+        <div class="titulo-header">
+            <img src="imagens/logo.png" id="Logo">
+        </div>
+        <div class="menuHambHeader">
+          <figure></figure>
+          <figure class="middle"></figure>
+          <p class="sair"></p>
+          <figure></figure>
+          <ul class="dropDown">
+            <li><a href='#/timeline'><img id="img-encerrar" src="imagens/home.png"><span>Início</span></a></li>
+            <li><a href='#/meuperfil'><img id="img-encerrar" src="imagens/do-utilizador.png"><span>Meu Perfil</span></a></li>
+            <li><a href='#/editarperfil'><img id="img-encerrar" src="imagens/configuracoes.png"><span>Configurações</span></a></li>
+            <li><a id="encerrar-sessao"><img id="img-encerrar" src="imagens/sign-out.png"><span>Sair</span></a></li>
+          </ul>
+        </div>
+      `;
   return headerFeed;
 };
 
@@ -54,52 +55,52 @@ export const menuHamburguerHeader = () => {
   });
 };
 
-// Exibindo categorias
+// Renderizando exibicao categorias
 export const secaoDeExibicao = () => {
   const secaoExibicaoCategoria = `<section class="secaoDeExibicao">
-      <div class="tituloExibicao">
-        <h1>Tema</h1>
-        <span class="btnEncerrar">&times;</span>
-      </div>
-      <div class= "containerCategorias">
-          <a href="#/relacionamentos" class="categoriaUnica">
-              <img src="imagens/coracoes.png" >
-              <p>Relacionamento</p>
-          <a>
-          <a href="#/web" class="categoriaUnica">
-              <img src="imagens/codigo.png" >
-              <p>Web</p>
-          </a>
-          <a href="#/saude" class="categoriaUnica">
-              <img src="imagens/saude.png" >
-              <p>Saúde</p>
-          </a>
-          <a href="#/viagens" class="categoriaUnica">
-              <img src="imagens/aviao.png" >
-              <p>Viagens</p>
-          </a>
-          <a href="#/amizades" class="categoriaUnica">
-              <img src="imagens/pulseira.png" >
-              <p>Amizade</p>
-          </a>
-          <a href="#/moda" class="categoriaUnica">
-              <img src="imagens/cabide.png" >
-              <p>Moda/Beleza</p>
-          </a>
-          <a href="#/estudos" class="categoriaUnica">
-              <img src="imagens/open-book.png" >
-              <p>Estudos</p>
-          </a>
-          <a href="#/maternidade" class="categoriaUnica">
-              <img src="imagens/bebe.png" >
-              <p>Maternidade</p>
-          </a>
-          <a href="#/outros" class="categoriaUnica">
-              <img src="imagens/more.png" >
-              <p>Outros</p>
-          </a>
-      </div>
-      </section>`;
+    <div class="tituloExibicao">
+      <h1>Tema</h1>
+      <span class="btnEncerrar">&times;</span>
+    </div>
+    <div class= "containerCategorias">
+        <a href="#/relacionamentos" class="categoriaUnica">
+            <img src="imagens/coracoes.png" >
+            <p>Relacionamento</p>
+        <a>
+        <a href="#/web" class="categoriaUnica">
+            <img src="imagens/codigo.png" >
+            <p>Web</p>
+        </a>
+        <a href="#/saude" class="categoriaUnica">
+            <img src="imagens/saude.png" >
+            <p>Saúde</p>
+        </a>
+        <a href="#/viagens" class="categoriaUnica">
+            <img src="imagens/aviao.png" >
+            <p>Viagens</p>
+        </a>
+        <a href="#/amizades" class="categoriaUnica">
+            <img src="imagens/pulseira.png" >
+            <p>Amizade</p>
+        </a>
+        <a href="#/moda" class="categoriaUnica">
+            <img src="imagens/cabide.png" >
+            <p>Moda/Beleza</p>
+        </a>
+        <a href="#/estudos" class="categoriaUnica">
+            <img src="imagens/open-book.png" >
+            <p>Estudos</p>
+        </a>
+        <a href="#/maternidade" class="categoriaUnica">
+            <img src="imagens/bebe.png" >
+            <p>Maternidade</p>
+        </a>
+        <a href="#/outros" class="categoriaUnica">
+            <img src="imagens/more.png" >
+            <p>Outros</p>
+        </a>
+    </div>
+    </section>`;
   return secaoExibicaoCategoria;
 };
 
