@@ -10,3 +10,7 @@ export const painel = () => {
     const articlePainel = document.createElement('article');
     articlePainel.classList.add('artPainel');
     articlePainel.setAttribute('id', 'artPainel');
+
+    const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
+  headerFeed.innerHTML = conteudoHeader();
