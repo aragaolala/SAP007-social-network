@@ -2,8 +2,8 @@ import { encerrarAtividadeUsuario } from "../firebase/funcoesAuth.js";
 
 // Renderizando o header
 export const conteudoHeader = () => {
-    // const userData = validarSessaoStorage();
-    const headerFeed = `
+  // const userData = validarSessaoStorage();
+  const headerFeed = `
           <div class="titulo-header">
               <img src="imagens/logo.png" id="Logo">
           </div>
@@ -20,43 +20,43 @@ export const conteudoHeader = () => {
             </ul>
           </div>
         `;
-    return headerFeed;
-  };
+  return headerFeed;
+};
 
 // Função do botão encerrar sessão, limpando o sessionStorage
 // volta ao inicio
 export const encerrarSessao = () => {
-    const botaoSair = document.getElementById("encerrar-sessao");
-    botaoSair.addEventListener("click", () => {
-      encerrarAtividadeUsuario()
-        .then(() => {
-          sessionStorage.clear();
-          window.location.hash = "#/inicio";
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
-        });
-    });
-  };
+  const botaoSair = document.getElementById("encerrar-sessao");
+  botaoSair.addEventListener("click", () => {
+    encerrarAtividadeUsuario()
+      .then(() => {
+        sessionStorage.clear();
+        window.location.hash = "#/inicio";
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
+  });
+};
 
-  // Funcionalidade do menu hamburguer - encerrar sessão
+// Funcionalidade do menu hamburguer - encerrar sessão
 export const menuHamburguerHeader = () => {
-    const menuHambHeader = document.querySelector(".menuHambHeader");
-    const middle = document.querySelector(".middle");
-    const sair = document.querySelector(".sair");
-    const dropDown = document.querySelector(".dropDown");
-  
-    menuHambHeader.addEventListener("click", () => {
-      middle.classList.toggle("active");
-      sair.classList.toggle("active");
-      dropDown.classList.toggle("active");
-    });
-  };
+  const menuHambHeader = document.querySelector(".menuHambHeader");
+  const middle = document.querySelector(".middle");
+  const sair = document.querySelector(".sair");
+  const dropDown = document.querySelector(".dropDown");
 
-  // Exibindo categorias
+  menuHambHeader.addEventListener("click", () => {
+    middle.classList.toggle("active");
+    sair.classList.toggle("active");
+    dropDown.classList.toggle("active");
+  });
+};
+
+// Exibindo categorias
 export const secaoDeExibicao = () => {
-    const secaoExibicaoCategoria = `<section class="secaoDeExibicao">
+  const secaoExibicaoCategoria = `<section class="secaoDeExibicao">
       <div class="tituloExibicao">
         <h1>Tema</h1>
         <span class="btnEncerrar">&times;</span>
@@ -100,24 +100,24 @@ export const secaoDeExibicao = () => {
           </a>
       </div>
       </section>`;
-    return secaoExibicaoCategoria;
-  };
+  return secaoExibicaoCategoria;
+};
 
-  // funcionalidade do exibicao categorias
+// funcionalidade do exibicao categorias
 export const exibicaoCategorias = () => {
-    const exibicaoCategoria = document.querySelector(".exibicaoCategoria");
-    const abrirExibicao = document.querySelector(".abrirExibicao");
-    const btnEncerrar = document.querySelector(".btnEncerrar");
-  
-    abrirExibicao.addEventListener("click", () => {
-      exibicaoCategoria.style.display = "block";
-    });
-  
-    btnEncerrar.addEventListener("click", () => {
-      exibicaoCategoria.style.display = "none";
-    });
+  const exibicaoCategoria = document.querySelector(".exibicaoCategoria");
+  const abrirExibicao = document.querySelector(".abrirExibicao");
+  const btnEncerrar = document.querySelector(".btnEncerrar");
 
-    /* outside click */
+  abrirExibicao.addEventListener("click", () => {
+    exibicaoCategoria.style.display = "block";
+  });
+
+  btnEncerrar.addEventListener("click", () => {
+    exibicaoCategoria.style.display = "none";
+  });
+
+  /* outside click */
   window.addEventListener("click", (e) => {
     // eslint-disable-next-line
     if (e.target == exibicaoCategoria) {

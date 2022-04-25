@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #E8E3E7;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    height: 15vh;
+    align-items: center;
+    padding: 0 20px;
+} 
+
+.titulo-header{
+    text-align: center;
+}
+
+.nomeUsuario a{
+    font-family: 'Cookie', cursive;
+    text-align: center;
+    color: #662F82;
+    font-size: 35px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-bottom: 25px;
+}
+
+#formCompartilhar{
+    display: block;
+    text-align: center;
+}
+
+#inputCompartilhar{
+    border: 1px solid #662F82;
+    height: 50px;
+    width: 280px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.barraNavegacaoInferior{
+    z-index: 50;
+    position:fixed;
+    bottom: 0;
+    background-color: #662F82;
+    width: 100%;    
+    height: 50px;
+    align-items: center;
+}
+
+.barraNavegacaoInferior ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.barraNavegacaoInferior ul li{
+    list-style: none;
+    height: 100%;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+}
+
+.icon img{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    background-repeat:no-repeat;
+    background-size: cover;  
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.nomeUsuarioPost{
+    display: flex;
+    color: #662F82;
+    font-size: 15px;
+}
+
+.botoesReacao{
+    display: flex;
+    bottom: 100%;
+    border-radius: 0 0 10px 10px;
+    padding: 2%;
+    align-items: center;
+    font-size: 12px;
+}
+
+.botoesReacao img{
+    width: 20px;
+    height: 20px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.botoesReacao i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #8F7D7D;
+}
+
+.imgUsuarioPost{
+    width: 40px;  
+    height: 40px; 
+    border-radius: 50%; 
+    border: 2px solid #662F82;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    margin-right: 6px;
+    object-fit: cover;
+}
+
+.imgUsuarioPost img{
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.descricaoUsuarioPost{
+    color: #662F82;
+    font-size: 10px;
+}
+
+.menuHambHeader, .pontosHorizontais {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 15px;
+    
+}
+
+figure, .pontos {
+    width: 20px;
+    height: 3px;
+    border-radius: 5px;
+    background: #662F82;
+}
+
+figure{
+    margin: 3px 0;
+}
+
+.pontos{
+    margin: 0 2px;
+}
+
+.middle, .middle2 {
+    transform: scale(1);
+    position: relative;
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+    -webkit-filter: blur(.1px);
+    filter: blur(.1px);
+}
+
+.middle.active, .middle2.active {
+    box-shadow: 0 0.1px 0.1px 0 rgba(0, 0, 0, 0.16), 0 0.1px 0.3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pontosHorizontais {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menuHambHeader ul, .pontosHorizontais ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 10px;
+    border: 1px solid #662F82;
+    background: #E8E3E7;
+    margin-right: 10%;
+    text-decoration: none;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.menuHambHeader ul{
+    width: auto;
+    padding: 30px;
+    font-size: 12px;
+}
+
+.pontosHorizontais ul{
+    width: 90px;
+    padding: 9px;
+}
+
+#img-encerrar{
+    width: 20%;
+}
+
+#encerrar-sessao img{
+    margin-left: 5px;
+}
+
+.dropDown, .dropDown2{
+    position: absolute;
+    height: 50px;
+    transition: all 0.25s ease-out;
+    transform: scale(0);
+    transform-origin: 100% 0;
+}
+
+.dropDown{
+    right: -20px;
+    top: 2em;
+}
+
+.dropDown2{
+    right: -40px;
+    top: 2em;
+}
+
+.dropDown.active, .dropDown2.active {
+    transform: scale(1);
+    transition: all 0.25s cubic-bezier(.5,1.8,.9,.8);
+}
+
+.dropDown li a, .dropDown2 li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #662F82;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.dropDown li a img, .dropDown2 li a img{
+    margin-right: 5px;
+}
+
+.painelCompartilhar{
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
+
+.painelCompartilhar{
+    padding: 2.5vh 3%;
+    background-color: white;
+    height:auto;
+}
+
+.grid-container{
+    display: grid;
+    background-color: #E8E3E7;
+    grid-template-columns: 1fr 2fr;
+    border:transparent;  
+}
+
+.botaoCompartilhar, .painelCompartilhar select{
+    background-color: #662F82;
+    border-radius: 10px;
+    border-style: none;
+    color: #E8E3E7;
+    overflow: hidden;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 8px;
+    height: 43px;
+    width: 29%;
+    font-size: 14px;
+}
+
+textarea{
+    font-size: 14px;
+}
+
+#compartilharImg::before{
+    content: 'Imagem';
+    display: flex;
+    background-color: #662F82;
+    color:#E8E3E7;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 95px;
+    border-style: none;
+    border-radius: 10px;
+    padding: 2%;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.botaoSalvarMudancas, .botaoCancelarMudancas{
+    background-color: #662F82;
+    border-radius: 10px;
+    border-style: none;
+    color: #E8E3E7;
+    overflow: hidden;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 8px;
+    height: 35px;
+    width: 40%;
+    font-size: 14px;
+}
+
+.exibicaoCategoria {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgb(102, 47, 130, 0.6);
+}
+
+.secaoDeExibicao{
+    background-color: #E8E3E7;
+    border-radius: 10px;
+    margin: 40% auto;
+    padding: 2% 5%;
+    width: 70%;
+}
+
+.tituloExibicao {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #662F82;
+}
+
+.btnEncerrar{
+    font-weight: bold;
+    color: #662F82;
+}
+
+.categoriaUnica p{
+    justify-content: left;
+    cursor: pointer;
+    font-size: 15px;
+    color: #662F82;
+}
+
+.categoriaUnica img {
+    align-items: center;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.footerDesktop{
+    display: none;
+}
+
+/* para tablet */
+@media screen and (min-width: 768px) {
+    #Logo{
+        width: 60%;
+    }
+
+    #inputCompartilhar{
+        width: 50vh;
+    }
+
+    .titulo-header{
+        width: 70%;
+        justify-content: center;
+    }
+
+    .postsCompartilhado{
+        margin-left: 75px;
+    }
+
+    .imgUsuarioPost{
+        width: 50px;
+        height: 50px;
+    }
+
+    .nomeUsuarioPost {
+        font-size: 17px;
+    }
+
+    .descricaoUsuarioPost{
+        font-size: 13px;
+    }
+
+    .botoesReacao {
+        font-size: 15px;
+    }
+
+    .botoesReacao i{
+        font-size: 25px;
+    }
+
+    .footerDesktop{
+        display: none;
+    }
+}
+
+/* para desktop */
+@media screen and (min-width: 1024px) {
+    #main{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .nomeUsuario{
+        font-size: 40px;
+    }
+
+    #Logo{
+        width: 30%;
+    }
+
+    .item1{
+        height: auto;
+        margin: 40px 85px;
+    }
+
+    .titulo-header{
+        text-align: initial;
+    }
+
+    .categoriaUnica p{
+        font-size: 20px;
+    }
+    
+    .categoriaUnica img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #tituloCategoria{
+        background-color: rgba(102, 47, 130, 0.3)
+    }
+
+    figure, .pontos{
+        width: 35px;
+        height: 5px;
+    }
+
+    .secUsuario{
+        margin: 0 3vh 7.5%;
+    }
+
+    #inputCompartilhar {
+        width: 600px;
+    }
+
+    .barraNavegacaoInferior{
+        display: none;
+    }
+
+    .footerDesktop{
+        position: relative;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        background-color: #662F82;
+        color: #E8E3E7;
+        padding: 40px;
+    }
+}
