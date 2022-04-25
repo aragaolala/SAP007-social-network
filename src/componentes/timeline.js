@@ -80,3 +80,11 @@ export const painelEditarPerfil = () => {
   const secaoExibicaoCategoria = document.createElement('div');
   secaoExibicaoCategoria.classList.add('exibicaoCategoria');
   secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+
+  const divSecaoEditarPerfilUsuario = document.createElement('div');
+  divSecaoEditarPerfilUsuario.classList.add('container-editarPerfil');
+  divSecaoEditarPerfilUsuario.appendChild(conteudoEditarPerfil());
+
+  articlePainelEditarPerfil.appendChild(headerFeed);
+  articlePainelEditarPerfil.appendChild(secaoExibicaoCategoria);
+  articlePainelEditarPerfil.appendChild(divSecaoEditarPerfilUsuario);
