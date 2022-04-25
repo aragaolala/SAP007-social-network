@@ -125,3 +125,22 @@ export const btnEditarPerfil = () => {
           urlImagem,
           urlCapa,
         )
+        .then(() => {
+            // recebendo os dados para atualizar no sessionStorage e metodo atualizarDadosPerfil
+            userData.username = inputUsuarioAtualizado;
+            userData.local = inputLocalAtualizado;
+            userData.pronomes = inputPronomesAtualizado;
+            userData.imgUsuario = urlImagem ? urlImagem : userData.imgUsuario;
+            userData.imgCapa = urlCapa ? urlCapa : userData.imgCapa;
+            sessionStorage.setItem('userSession', JSON.stringify(userData));
+            atualizarDadosPerfil(
+              inputUsuarioAtualizado,
+              inputLocalAtualizado,
+              inputPronomesAtualizado,
+              urlImagem,
+              urlCapa,
+            );
+          });
+      });
+    };
+    
