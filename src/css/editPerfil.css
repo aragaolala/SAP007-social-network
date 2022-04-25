@@ -270,12 +270,16 @@
         margin-right: 10%;
     }
 
+    .container-perfil{
+        background-color: white;
+    }
+
     .nomeUsuario{
         font-size: 40px;
     }
 
     #Logo{
-        width: 30%;
+        width: 50%;
     }
 
     .item1{
@@ -353,8 +357,8 @@
         bottom: 0;
         display: flex;
         width: 100%;
-        background-color: #662F82;
-        color: #E8E3E7;
+        background-color: white;
+        color: #662F82;
         padding: 40px;
     }
 }

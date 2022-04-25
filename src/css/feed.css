@@ -415,9 +415,21 @@ textarea{
 
 /* para desktop */
 @media screen and (min-width: 1024px) {
+    body, .grid-container{
+        background-color: white;
+    }
+    
     #main{
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .painelCompartilhar {
+        background-color: #E8E3E7;
+    }
+
+    .secUsuario, .secaoCategorias {
+        margin: 3vh 5%;
     }
 
     .nomeUsuario{
@@ -425,16 +437,19 @@ textarea{
     }
 
     #Logo{
-        width: 30%;
+        width: 50%;
     }
 
     .item1{
-        height: auto;
-        margin: 40px 85px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     .titulo-header{
         text-align: initial;
+        width: 70%;
     }
 
     .categoriaUnica p{
@@ -473,8 +488,8 @@ textarea{
         bottom: 0;
         display: flex;
         width: 100%;
-        background-color: #662F82;
-        color: #E8E3E7;
+        background-color: white;
+        color: #662F82;
         padding: 40px;
     }
 }

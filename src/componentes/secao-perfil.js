@@ -1,15 +1,16 @@
+/* eslint-disable no-alert */
 import {
-    obterUserPosts, excluirPost, atualizarPost, obterUsuarios,
-  } from '../firebase/funcoesFirestore.js';
-  import { btnLikes1 } from './categorias.js';
-  import { validarSessaoStorage } from './validacoes.js';
+  obterUserPosts, excluirPost, atualizarPost, obterUsuarios,
+} from '../firebase/funcoesFirestore.js';
+import { btnLikes1 } from './categorias.js';
+import { validarSessaoStorage } from './validacoes.js';
 
-  // Render do post conforme usuario
+// Render do post conforme usuario
 const postsUsuario = (idPost, dataCriador, dataPost) => {
-    const divPost = document.createElement('div');
-    divPost.classList.add('painelPost');
+  const divPost = document.createElement('div');
+  divPost.classList.add('painelPost');
 
-    divPost.innerHTML = `
+  divPost.innerHTML = `
     <div class="usuarioPost" id="${idPost}">
         <div class="imgUsuarioPost"><img class="imgPost"src="${dataCriador.imgUsuario}"></div>
         <div class="infoUsuarioPost">
@@ -34,31 +35,31 @@ const postsUsuario = (idPost, dataCriador, dataPost) => {
     `;
   return divPost;
 };
-  
+
 // Funcionalidade do botao Eliminar post
 export const btnExcluirPost = () => {
-    const postsCards = document.getElementsByClassName('usuarioPost');
-    Array.from(postsCards).forEach((postCard) => {
-      const btnExcluir = postCard.querySelector('.btnDelete');
-      btnExcluir.addEventListener('click', async () => {
-        const confirmarcao = window.confirm('Deseja mesmo excluir essa publicação?');
-        // confirm foi usado para verificar se o usuário queria excluir a postagem
-        if (!confirmarcao) {
-          // se a confirmação for falsa, não faz nada, do contrário exclui o post
-          return;
-        }
-        const postExcluido = document.getElementById(postCard.id);
-        await excluirPost(postCard.id);
-        // // console.log('se apago o post');
-        // uma vez que a postagem é excluída no firestore, a postagem é excluída na interface
-        postExcluido.parentElement.remove();
-      });
+  const postsCards = document.getElementsByClassName('usuarioPost');
+  Array.from(postsCards).forEach((postCard) => {
+    const btnExcluir = postCard.querySelector('.btnDelete');
+    btnExcluir.addEventListener('click', async () => {
+      const confirmarcao = window.confirm('Deseja mesmo excluir essa publicação?');
+      // confirm foi usado para verificar se o usuário queria excluir a postagem
+      if (!confirmarcao) {
+        // se a confirmação for falsa, não faz nada, do contrário exclui o post
+        return;
+      }
+      const postExcluido = document.getElementById(postCard.id);
+      await excluirPost(postCard.id);
+      // // console.log('se apago o post');
+      // uma vez que a postagem é excluída no firestore, a postagem é excluída na interface
+      postExcluido.parentElement.remove();
     });
-  };
+  });
+};
 
-  / Função que é responsável por editar o post
+// Função que é responsável por editar o post
 const editarPost = (postCard) => {
-    // renderizando o formulário necessário para inserir os dados que serão alterados
+  // renderizando o formulário necessário para inserir os dados a serem alterados
   const formularioEditar = document.createElement('form');
   formularioEditar.classList.add('editForm');
   formularioEditar.innerHTML = `
@@ -102,22 +103,22 @@ const editarPost = (postCard) => {
 
 // Funcionalidade do botão editar postagem
 export const btnEditarPost = () => {
-    const postsCards = document.getElementsByClassName('painelPost');
-    Array.from(postsCards).forEach((postCard) => {
-      const btnPencil = postCard.querySelector('.btnEdit');
-      btnPencil.addEventListener('click', async () => {
-        editarPost(postCard);
-      });
+  const postsCards = document.getElementsByClassName('painelPost');
+  Array.from(postsCards).forEach((postCard) => {
+    const btnPencil = postCard.querySelector('.btnEdit');
+    btnPencil.addEventListener('click', async () => {
+      editarPost(postCard);
     });
-  };
+  });
+};
 
-  // Função para fazer upload (carregar) da postagem por usuário para sua sessão de perfil
+// Função para fazer upload (carregar) da postagem por usuário para sua sessão de perfil
 const preencherPerfil = async (containerPost) => {
-    const userData = JSON.parse(sessionStorage.userSession);
-    const usuarios = await obterUsuarios();
-    const dadosPost = await obterUserPosts();
+  const userData = JSON.parse(sessionStorage.userSession);
+  const usuarios = await obterUsuarios();
+  const dadosPost = await obterUserPosts();
 
-    console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
+  console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
   
   dadosPost.forEach((post) => {
     const dataCriador = usuarios.filter((user) => user.userId === post.usuarioId);
@@ -133,12 +134,12 @@ const preencherPerfil = async (containerPost) => {
 
 // Render da seção conteúdo Perfil
 export const conteudoPerfil = () => {
-    const secaoPerfil = document.createElement('section');
-    secaoPerfil.classList.add('corpoPerfil');
-  
-    const userData = validarSessaoStorage();
+  const secaoPerfil = document.createElement('section');
+  secaoPerfil.classList.add('corpoPerfil');
 
-    const navInferior = document.createElement('nav');
+  const userData = validarSessaoStorage();
+
+  const navInferior = document.createElement('nav');
   navInferior.classList.add('barraNavegacaoInferior');
   navInferior.innerHTML = `
       <ul>
@@ -165,39 +166,40 @@ export const conteudoPerfil = () => {
       </li>
       </ul>
     `;
-    const informacaoPainelUsuario = document.createElement('div');
-    informacaoPainelUsuario.classList.add('fundo1');
-    informacaoPainelUsuario.innerHTML = `
-          <div class="fundoImagenPerfil">
-              <img src="${userData.imgCapa}">
-          </div>
-          <div class="fundo2">
-              <div class="imgPerfilUsuario">
-                  <img src="${userData.imgUsuario}">
-              </div>
-  
-              <div class="conteudoTextoPerfil">
-                  <h2>${userData.username}</h2>
-                  <p>${userData.pronomes}</p>
-                  <p>${userData.local}</p>
-              </div>
-          </div>
-      `;
-      const titlePerfilResponsive = document.createElement('div');
+  const informacaoPainelUsuario = document.createElement('div');
+  informacaoPainelUsuario.classList.add('fundo1');
+  informacaoPainelUsuario.innerHTML = `
+        <div class="fundoImagenPerfil">
+            <img src="${userData.imgCapa}">
+        </div>
+        <div class="fundo2">
+            <div class="imgPerfilUsuario">
+                <img src="${userData.imgUsuario}">
+            </div>
+
+            <div class="conteudoTextoPerfil">
+                <h2>${userData.username}</h2>
+                <p>${userData.pronomes}</p>
+                <p>${userData.local}</p>
+            </div>
+        </div>
+    `;
+
+  const titlePerfilResponsive = document.createElement('div');
   titlePerfilResponsive.classList.add('fundo3');
   titlePerfilResponsive.innerHTML = `
         <p>Meus posts</>
     `;
-  
-    const containerPublicacaoPerfil = document.createElement('div');
-    containerPublicacaoPerfil.classList.add('secPostUsuario');
-    containerPublicacaoPerfil.setAttribute('id', 'SecPublicacoesUsuario');
-    preencherPerfil(containerPublicacaoPerfil);
-  
-    secaoPerfil.appendChild(navInferior);
-    secaoPerfil.appendChild(informacaoPainelUsuario);
-    secaoPerfil.appendChild(titlePerfilResponsive);
-    secaoPerfil.appendChild(containerPublicacaoPerfil);
-  
-    return secaoPerfil;
-  };
+
+  const containerPublicacaoPerfil = document.createElement('div');
+  containerPublicacaoPerfil.classList.add('secPostUsuario');
+  containerPublicacaoPerfil.setAttribute('id', 'SecPublicacoesUsuario');
+  preencherPerfil(containerPublicacaoPerfil);
+
+  secaoPerfil.appendChild(navInferior);
+  secaoPerfil.appendChild(informacaoPainelUsuario);
+  secaoPerfil.appendChild(titlePerfilResponsive);
+  secaoPerfil.appendChild(containerPublicacaoPerfil);
+
+  return secaoPerfil;
+};
