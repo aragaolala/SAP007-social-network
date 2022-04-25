@@ -183,4 +183,9 @@ export const conteudoPerfil = () => {
               </div>
           </div>
       `;
+      const titlePerfilResponsive = document.createElement('div');
+  titlePerfilResponsive.classList.add('fundo3');
+  titlePerfilResponsive.innerHTML = `
+        <p>Meus posts</>
+    `;
   
