@@ -1,0 +1,360 @@
+.fundoImagemSecaoPerfil{
+    display: flex;
+}
+
+.fundoImagemSecaoPerfil img{
+    width: 100%;
+    border-radius: 10px;
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+    border: 2px solid #662F82;
+}
+
+.exibicao-perfil-container{
+    display: flex;
+    flex-direction: column;   
+    background-color: #E8E3E7;
+    width: 90%;
+    height: 80%;
+    padding: 1%;
+}
+
+.imgPerfilUsuario img{
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    border: 2px solid #662F82;
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.imgAtualDoUser{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.conteudoTextoPerfil{
+    display: flex;
+    flex-direction: column;
+    word-spacing: 2px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    text-transform: capitalize;
+}
+
+.caixaInputDadosImg{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    padding: 2% 5%;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8E3E7;
+    border-style: none;
+    border-radius: 10px;
+    margin: 2.5%;
+}
+
+.caixaInputDadosImg input{
+    display: flex;
+    justify-content: center;
+}
+
+.imgParaAtualizar::before {
+    content: 'Selecione uma imagem';
+    display: flex;
+    background-color: #662F82;
+    color:#E8E3E7;
+    align-items: center;
+    justify-content: space-around;
+    height: 30%;
+    width: 90%;
+    border-style: none;
+    border-radius: 7px;
+    padding: 2%;
+    margin: 2%;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.txtDosCamposAtualizarPerfil{
+    display: flex;
+    font-size: 15px;
+    font-weight: bolder;
+    color:#662F82;
+}
+
+.caixaInputDados{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 13vh;
+    padding: 1% 5%;
+    justify-content: center;
+    align-items: center;
+    background-color: #E8E3E7;
+    border-style: none;
+    border-radius: 10px;
+    margin: 2.5%;
+}
+
+.caixaInputDados input{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    min-height: 32px;
+    margin: 2% 0;
+    border-style: none;
+    border-radius: 7px;
+    padding: 0 2%;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
+
+.exibicaoContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 50px;
+}
+
+.botoesDoPerfil, .botoesDoPerfil .btnInicio, .salvarMudancas, .botoesFormularios .btnInicio{
+    display: flex;
+    background-color: #E8E3E7;
+    border-radius: 10px;
+    border-style: none;
+    overflow: hidden;
+    justify-content: center;
+    width: 70%;
+    min-width: 102px;
+    max-width: 160px;
+    height: 6vh;
+    cursor: pointer;
+    align-items: center;
+    padding: 3px;
+    margin-top: 15px;
+    color: #662F82;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.btnInicio a{
+    text-decoration: none;
+}
+
+.conteudoTextoPerfil h2{
+    margin: 5px 0;   
+    text-align: center;
+    font-family: 'Cookie', cursive;
+    color: #662F82;
+    font-size: 30px;
+}
+
+.conteudoTextoPerfil p{
+    display: flex;
+    font-size: 13px;
+    margin: 5px 0;   
+    text-align: center;
+    color: #662F82;
+}
+
+.fundo1{
+    display: flex;
+    overflow: hidden;
+    width: 85%;
+    height: auto;
+    background-color: #E8E3E7;
+    border-radius: 30px 30px 20px 20px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
+
+.btnEditar{
+    display: block;
+    background-color: #662F82;
+    border-radius: 10px;
+    border-style: none;
+    overflow: hidden;
+    justify-content: center;
+    width: 70%;
+    min-width: 102px;
+    max-width: 160px;
+    height: 6vh;
+    cursor: pointer;
+    align-items: center;
+    padding: 3px;
+    margin-top: 15px;
+}
+
+.btnEditar a{
+    text-decoration: none;
+    color: #E8E3E7;
+}
+
+.botoesDoPerfil{
+    display: none;
+}
+
+/* para tablet */
+@media screen and (min-width: 768px) {
+    #Logo{
+        width: 60%;
+    }
+
+    #inputCompartilhar{
+        width: 50vh;
+    }
+
+    .titulo-header{
+        width: 70%;
+        justify-content: center;
+    }
+
+    .postsCompartilhado{
+        margin-left: 75px;
+    }
+
+    .imgUsuarioPost{
+        width: 50px;
+        height: 50px;
+    }
+
+    .nomeUsuarioPost {
+        font-size: 17px;
+    }
+
+    .descricaoUsuarioPost{
+        font-size: 13px;
+    }
+
+    .botoesReacao {
+        font-size: 15px;
+    }
+
+    .botoesReacao i{
+        font-size: 25px;
+    }
+
+    .exibicaoFormulario{
+        display: block;
+        width: 85%;
+    }
+
+    .footerDesktop{
+        display: none;
+    }
+}
+
+/* para desktop */
+@media screen and (min-width: 1024px) {
+    #main{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .nomeUsuario{
+        font-size: 40px;
+    }
+
+    #Logo{
+        width: 30%;
+    }
+
+    .item1{
+        height: auto;
+        margin: 40px 85px;
+    }
+
+    .titulo-header{
+        text-align: initial;
+    }
+
+    .categoriaUnica p{
+        font-size: 20px;
+    }
+    
+    .categoriaUnica img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #tituloCategoria{
+        background-color: rgba(102, 47, 130, 0.3)
+    }
+
+    figure, .pontos{
+        width: 35px;
+        height: 5px;
+    }
+
+    .secUsuario{
+        margin: 0 3vh 7.5%;
+    }
+
+    #inputCompartilhar {
+        width: 600px;
+    }
+
+    .barraNavegacaoInferior{
+        display: none;
+    }
+
+    .container-superior-perfil {
+        width: 80%;
+    }
+
+    .imgPerfilUsuario img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .conteudoTextoPerfil h2{
+        font-size: 40px;
+    }
+
+    #selbtn, #ImgCapaUpdate{
+        width: 70%;
+    }
+
+    .caixaInputDados input{
+        width: 70%;
+    }
+
+    .imgUsuarioPost{
+        width: 60px;
+        height: 60px;
+    }
+
+    .infoUsuarioPost {
+        width: 80%;
+    }
+
+    .footerDesktop{
+        position: relative;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        background-color: #662F82;
+        color: #E8E3E7;
+        padding: 40px;
+    }
+}
