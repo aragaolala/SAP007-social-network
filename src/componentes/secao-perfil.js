@@ -99,3 +99,14 @@ const editarPost = (postCard) => {
       });
   });
 };
+
+// Funcionalidade do botão editar postagem
+export const btnEditarPost = () => {
+    const postsCards = document.getElementsByClassName('painelPost');
+    Array.from(postsCards).forEach((postCard) => {
+      const btnPencil = postCard.querySelector('.btnEdit');
+      btnPencil.addEventListener('click', async () => {
+        editarPost(postCard);
+      });
+    });
+  };
