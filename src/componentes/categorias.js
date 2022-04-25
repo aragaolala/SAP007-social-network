@@ -50,3 +50,6 @@ export const btnLikes1 = () => {
 const mostrarPostPorCategoria = async (containerPost, grupo) => {
     const userData = JSON.parse(sessionStorage.userSession);
     // Obter dados dos usuários
+    const usuarios = await obterUsuarios();
+  // Obter os post conforme sua categoria correspondente
+  const dadosPost = await obterPostsGrupo(grupo);
