@@ -90,4 +90,20 @@ export const visualizacaoTelas = () => {
             menuPontosVerticais();
             exibicaoCategorias();
             break;
+
+            case "#/maternidade":
+              userState();
+              main.appendChild(secaoCategorias("imagens/bebe.png", "Maternidade"));
+              encerrarSessao();
+              menuPontosVerticais();
+              exibicaoCategorias();
+              break;
+        
+            case "#/outros":
+              userState();
+              main.appendChild(secaoCategorias("imagens/more.png", "Outros"));
+              encerrarSessao();
+              menuPontosVerticais();
+              exibicaoCategorias();
+              break;
   
