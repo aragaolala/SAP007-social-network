@@ -189,3 +189,15 @@ export const conteudoPerfil = () => {
         <p>Meus posts</>
     `;
   
+    const containerPublicacaoPerfil = document.createElement('div');
+    containerPublicacaoPerfil.classList.add('secPostUsuario');
+    containerPublicacaoPerfil.setAttribute('id', 'SecPublicacoesUsuario');
+    preencherPerfil(containerPublicacaoPerfil);
+  
+    secaoPerfil.appendChild(navInferior);
+    secaoPerfil.appendChild(informacaoPainelUsuario);
+    secaoPerfil.appendChild(titlePerfilResponsive);
+    secaoPerfil.appendChild(containerPublicacaoPerfil);
+  
+    return secaoPerfil;
+  };
