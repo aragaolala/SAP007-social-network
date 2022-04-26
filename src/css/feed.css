@@ -10,10 +10,6 @@ body {
     background-color: #E8E3E7;
 }
 
-.titulo-header{
-    text-align: center;
-}
-
 .artPainel {
     margin: 0 9%;
 }
@@ -71,6 +67,16 @@ body {
 }
 
 .icon img{
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    background-repeat:no-repeat;
+    background-size: cover;  
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.iconUser img{
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -257,7 +263,7 @@ figure{
 .grid-container{
     display: grid;
     background-color: #E8E3E7;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
     grid-column-gap: 25px;
     border:transparent;  
 }
@@ -371,7 +377,6 @@ textarea{
 @media screen and (min-width: 768px) {
     .titulo-header{
         width: 70%;
-        justify-content: center;
     }
 
     .postsCompartilhado{
@@ -472,5 +477,6 @@ textarea{
         background-color: white;
         color: #662F82;
         padding: 40px;
+        text-align: center;
     }
 }

@@ -74,6 +74,7 @@
     text-transform: capitalize;
     font-size: 40px;
     line-height: 30px;
+    margin-bottom: 5px;
 }
 
 .dadosUsuario .localUsuario{
@@ -433,5 +434,6 @@
         background-color: #662F82;
         color: #E8E3E7;
         padding: 40px;
+        text-align: center;
     }
 }

@@ -117,6 +117,8 @@ const preencherPerfil = async (containerPost) => {
   const userData = JSON.parse(sessionStorage.userSession);
   const usuarios = await obterUsuarios();
   const dadosPost = await obterUserPosts();
+
+  console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
   
   dadosPost.forEach((post) => {
     const dataCriador = usuarios.filter((user) => user.userId === post.usuarioId);
@@ -142,22 +144,22 @@ export const conteudoPerfil = () => {
   navInferior.innerHTML = `
       <ul>
       <li class="list">
-          <a class="abrirExibicao">
+          <a href="#/timeline">
               <span class="icon">
-                  <img src="imagens/users-three.png">
+                  <img src="imagens/home2.png">
               </span>
           </a>
       </li>
       <li class="list">
-          <a href="#/timeline">
+          <a class="abrirExibicao">
               <span class="icon">
-                  <img src="imagens/house-fill.png">
+                  <img src="imagens/busca.png">
               </span>
           </a>
       </li>
       <li class="list">
           <a href="#/meuperfil">
-              <span class="icon">
+              <span class="iconUser">
                   <img src="${userData.imgUsuario}">
               </span>
           </a>

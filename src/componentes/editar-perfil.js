@@ -11,22 +11,22 @@ export const conteudoEditarPerfil = () => {
           <nav class= "barraNavegacaoInferior">
               <ul>
                   <li class="list">
-                      <a class="abrirExibicao">
+                      <a href="#/timeline">
                           <span class="icon">
-                              <img src="imagens/users-three.png">
+                              <img src="imagens/home2.png">
                           </span>
                       </a>
                   </li>
                   <li class="list">
-                      <a href="#/timeline">
+                      <a class="abrirExibicao">
                           <span class="icon">
-                              <img src="imagens/house-fill.png">
+                              <img src="imagens/busca.png">
                           </span>
                       </a>
                   </li>
                   <li class="list">
                       <a href="#/meuperfil">
-                          <span class="icon">
+                          <span class="iconUser">
                               <img src="${userData.imgUsuario}">
                           </span>
                       </a>

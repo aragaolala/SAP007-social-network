@@ -66,5 +66,11 @@ export const homeParaDesktop = () => {
         </section>       
     `;
 
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  secaoDesktop.appendChild(footer);
+
   return secaoDesktop;
 };

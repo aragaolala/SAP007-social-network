@@ -1,4 +1,4 @@
-.meuPerfil, .EditarPerfil {
+.meuPerfil, .EditarPerfil, .pagTema, .pagTema {
     max-width: 850px;
     margin: 0 9%;
 }
@@ -219,7 +219,6 @@
 @media screen and (min-width: 768px) {
     .titulo-header{
         width: 70%;
-        justify-content: center;
     }
 
     .postsCompartilhado{
@@ -263,7 +262,7 @@
         background-color: white;
     }
 
-    .meuPerfil, .EditarPerfil {
+    .meuPerfil, .EditarPerfil, .pagTema {
         margin: 0 auto;
     }
 
@@ -336,5 +335,6 @@
         background-color: white;
         color: #662F82;
         padding: 40px;
+        text-align: center;
     }
 }
