@@ -7,7 +7,7 @@ import { adicionarDataUserFS } from '../firebase/funcoesFirestore.js';
 export const formRegistros = () => {
   const formRegistro = `
     <div id='registro' class='boxInterno2'>
-      <form id="formRegistro" class="boxLogin">
+      <form id="formRegistro">
         <p class="texto">Criar Conta</p>
         <div class="secaoRegistro">
           <input type="text" id="usuarioRegistro" class="dadosIngresso" placeholder="Nome de usuária" required>
@@ -22,7 +22,7 @@ export const formRegistros = () => {
           <i id="botaoSenha" class="ph-eye-closed"></i>
         </div>
         <div class="secaoCheckbox">
-          <input type="checkbox" id="checkRegistro" class="checkRegistro" required/><label class="texto2">Aceito os termos 
+          <input type="checkbox" id="checkRegistro" class="checkRegistro" required/><label class="texto">Aceito os termos 
           e condições das Políticas de Privacidade.</label>
         </div>
         <button type="submit" class="iniciarSessao">Registrar-se</button> 

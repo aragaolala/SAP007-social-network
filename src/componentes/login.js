@@ -16,7 +16,7 @@ import {
 export const formInicioSessao = () => {
   const formIngresso = `
         <div id="inicio" class="boxInterno2">
-            <form id="formIngresso" class="boxLogin">
+            <form id="formIngresso">
                 <p class="texto">Olá, de novo!</p>
                 <div class="secaoRegistro">
                     <input type="text" id="emailIngresso" class="dadosIngresso" placeholder="E-mail" required>
@@ -27,8 +27,9 @@ export const formInicioSessao = () => {
                     <i id="botaoSenha" class="ph-eye-closed"></i>
                 </div>
                 <button type="submit" id="botaoIngressar" class="iniciarSessao">Login</button>
-                 <p class="texto2">Ou faça login com o Google</p>
-                 <p class="texto2"><img id="imgGoogle" src="imagens/GoogleOriginal.png"></p>
+                 <p class="texto">Ou faça login com o Google 
+                    <img id="imgGoogle" src="imagens/GoogleOriginal.png">
+                 </p>
                 <p class="texto2">Não tem uma conta?<a id="registrar-se" href="#/registro"> Registre-se</a></p>
             </form>
              

@@ -1,8 +1,3 @@
-.meuPerfil, .EditarPerfil, .pagTema, .pagTema {
-    max-width: 850px;
-    margin: 0 9%;
-}
-
 .fundoImagemSecaoPerfil{
     display: flex;
 }
@@ -20,7 +15,10 @@
 .exibicao-perfil-container{
     display: flex;
     flex-direction: column;   
-    width: 100%;
+    background-color: #E8E3E7;
+    width: 90%;
+    height: 80%;
+    padding: 1%;
 }
 
 .imgPerfilUsuario img{
@@ -106,7 +104,7 @@
     display: flex;
     flex-direction: column;
     width: 95%;
-    height: 75px;
+    height: 13vh;
     padding: 1% 5%;
     justify-content: center;
     align-items: center;
@@ -147,7 +145,7 @@
     width: 70%;
     min-width: 102px;
     max-width: 160px;
-    height: 35px;
+    height: 6vh;
     cursor: pointer;
     align-items: center;
     padding: 3px;
@@ -180,7 +178,7 @@
 .fundo1{
     display: flex;
     overflow: hidden;
-    width: 100%;
+    width: 85%;
     height: auto;
     background-color: #E8E3E7;
     border-radius: 30px 30px 20px 20px;
@@ -217,8 +215,17 @@
 
 /* para tablet */
 @media screen and (min-width: 768px) {
+    #Logo{
+        width: 60%;
+    }
+
+    #inputCompartilhar{
+        width: 50vh;
+    }
+
     .titulo-header{
         width: 70%;
+        justify-content: center;
     }
 
     .postsCompartilhado{
@@ -248,7 +255,7 @@
 
     .exibicaoFormulario{
         display: block;
-        /* width: 85%; */
+        width: 85%;
     }
 
     .footerDesktop{
@@ -258,16 +265,26 @@
 
 /* para desktop */
 @media screen and (min-width: 1024px) {
+    #main{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
     .container-perfil{
         background-color: white;
     }
 
-    .meuPerfil, .EditarPerfil, .pagTema {
-        margin: 0 auto;
-    }
-
     .nomeUsuario{
         font-size: 40px;
+    }
+
+    #Logo{
+        width: 50%;
+    }
+
+    .item1{
+        height: auto;
+        margin: 40px 85px;
     }
 
     .titulo-header{
@@ -292,12 +309,20 @@
         height: 5px;
     }
 
+    .secUsuario{
+        margin: 0 3vh 7.5%;
+    }
+
     #inputCompartilhar {
-        width: 100%;
+        width: 600px;
     }
 
     .barraNavegacaoInferior{
         display: none;
+    }
+
+    .container-superior-perfil {
+        width: 80%;
     }
 
     .imgPerfilUsuario img{
@@ -335,6 +360,5 @@
         background-color: white;
         color: #662F82;
         padding: 40px;
-        text-align: center;
     }
 }

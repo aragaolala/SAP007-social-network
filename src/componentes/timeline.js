@@ -21,13 +21,18 @@ export const painel = () => {
 
   const divSecoes = document.createElement('div');
   divSecoes.classList.add('grid-container');
-  divSecoes.appendChild(homeMobile());
   divSecoes.appendChild(homeParaDesktop());
+  divSecoes.appendChild(homeMobile());
 
   articlePainel.appendChild(headerFeed);
   articlePainel.appendChild(secaoExibicaoCategoria);
   articlePainel.appendChild(divSecoes);
 
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
+
+  articlePainel.appendChild(footer);
   return articlePainel;
 };
 
@@ -95,9 +100,7 @@ export const painelEditarPerfil = () => {
 
 // Render da sessão categoria dependendo do tipo de post
 export const secaoCategorias = (img, tituloCategoria) => {
-  const articleTema = document.createElement('article');
-
-  articleTema.classList.add('pagTema')
+  const articleRelacionam = document.createElement('article');
 
   const headerFeed = document.createElement('header');
   headerFeed.classList.add('item1');
@@ -109,18 +112,17 @@ export const secaoCategorias = (img, tituloCategoria) => {
 
   const divSecoes = document.createElement('div');
   divSecoes.classList.add('grid-container');
-  divSecoes.appendChild(conteudoCategoria(img, tituloCategoria));
   divSecoes.appendChild(homeParaDesktop());
-
-  articleTema.appendChild(headerFeed);
-  articleTema.appendChild(secaoExibicaoCategoria);
-  articleTema.appendChild(divSecoes);
+  divSecoes.appendChild(conteudoCategoria(img, tituloCategoria));
 
   const footer = document.createElement('footer');
   footer.classList.add('footerDesktop');
   footer.innerHTML = 'By: Amanda Gusmão e Layssa Aragão';
 
-  articleTema.appendChild(footer);
+  articleRelacionam.appendChild(headerFeed);
+  articleRelacionam.appendChild(secaoExibicaoCategoria);
+  articleRelacionam.appendChild(divSecoes);
+  articleRelacionam.appendChild(footer);
 
-  return articleTema;
+  return articleRelacionam;
 };
