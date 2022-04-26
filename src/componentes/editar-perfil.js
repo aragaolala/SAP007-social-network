@@ -96,6 +96,24 @@ export const conteudoEditarPerfil = () => {
   return editarSecao;
 };
 
+// Funcionalidade para sustituir dados da sessão perfil
+export const atualizarDadosPerfil = (username, local, pronomes, imgUsuario, imgCapa) => {
+    const nomeDoUsuario = document.getElementById('nomeDoUsuario');
+    const descricaoDoPerfil = document.getElementById('descricaoDoPerfil');
+    const localDoPerfil = document.getElementById('localDoPerfil');
+    const imgUsuarioElement = document.getElementById('imgUsuario');
+    const imgCapaElement = document.getElementById('imgDeCapaUsuario');
+    nomeDoUsuario.innerHTML = username;
+    descricaoDoPerfil.innerHTML = pronomes;
+    localDoPerfil.innerHTML = local;
+    if (imgUsuario) {
+        imgUsuarioElement.src = imgUsuario;
+    }
+    if (imgCapa) {
+        imgCapaElement.src = imgCapa;
+    }
+  };
+
 // Funcionalidade do botão Editar Perfil
 export const btnEditarPerfil = () => {
     const btnSalvarMudancas = document.getElementById('salvarMudancas');

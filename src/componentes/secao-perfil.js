@@ -118,7 +118,7 @@ const preencherPerfil = async (containerPost) => {
   const usuarios = await obterUsuarios();
   const dadosPost = await obterUserPosts();
 
-  console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
+  // console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
   
   dadosPost.forEach((post) => {
     const dataCriador = usuarios.filter((user) => user.userId === post.usuarioId);
