@@ -1,3 +1,4 @@
+import { sobreNos } from "../componentes/pag-sobre.js";
 import { fundoHome } from "../componentes/logo-slogan.js";
 import { formRegistros, registroEmail } from "../componentes/registro.js";
 import { formInicioSessao, login } from "../componentes/login.js";
@@ -51,7 +52,7 @@ export const visualizacaoTelas = () => {
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
-    
+
     case "#/web":
       userState();
       main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
@@ -68,21 +69,21 @@ export const visualizacaoTelas = () => {
       exibicaoCategorias();
       break;
 
-      case "#/viagens":
-        userState();
-        main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
-        encerrarSessao();
-        menuHamburguerHeader();
-        exibicaoCategorias();
-        break;
-  
-      case "#/amizades":
-        userState();
-        main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
-        encerrarSessao();
-        menuHamburguerHeader();
-        exibicaoCategorias();
-        break;
+    case "#/viagens":
+      userState();
+      main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
+      encerrarSessao();
+      menuHamburguerHeader();
+      exibicaoCategorias();
+      break;
+
+    case "#/amizades":
+      userState();
+      main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
+      encerrarSessao();
+      menuHamburguerHeader();
+      exibicaoCategorias();
+      break;
 
     case "#/moda":
       userState();
@@ -135,6 +136,14 @@ export const visualizacaoTelas = () => {
       menuHamburguerHeader();
       exibicaoCategorias();
       btnEditarPerfil();
+      break;
+
+    case "#/sobre":
+      userState();
+      main.appendChild(sobreNos());
+      encerrarSessao();
+      menuHamburguerHeader();
+
       break;
 
     default:
