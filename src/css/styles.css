@@ -9,13 +9,21 @@
 /* timeline *****/
 /****** seção à esquerda *********/
 
+.item1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
 .secUsuario, .secaoCategorias{
-    margin: 3vh 7.5%;
+    margin: 0;
     border-radius: 14px 14px 0 0;
+    margin-bottom: 25px;
 }
 
 .containerCapaDeFundo{
-    height: 20vh;
+    height: 120px;
 }
 
 .containerCapaDeFundo img{
@@ -30,7 +38,7 @@
 
 .containerPerfil{
     display: flex;
-    height: 20vh;
+    height: 160px;
     background-color: #E8E3E7;
     position: relative;
     justify-content: center;
@@ -64,6 +72,9 @@
     font-family: 'Cookie', cursive;
     color: #662F82;  
     text-transform: capitalize;
+    font-size: 40px;
+    line-height: 30px;
+    margin-bottom: 5px;
 }
 
 .dadosUsuario .localUsuario{
@@ -87,7 +98,7 @@
 .secaoCategorias h1{
     display: flex;
     color:#662F82;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     justify-content: left;
     padding-bottom: 5%;
@@ -168,7 +179,6 @@
 }
 
 .container-perfil{
-    padding: 3%;
     background: #E8E3E7;
 }
 
@@ -191,7 +201,7 @@
 
 .fundo2{
     width: 100%;
-    height: 25vh;
+    height: 180px;
     display: flex;
     align-content: center;
     align-items: center;
@@ -209,10 +219,6 @@
 .botoesDoPerfil .btnEditar p{
     display: inline-block;
     font-size: 17px;
-}
-
-.secPostUsuario{
-    width: 70%;
 }
 
 .secPostUsuario .painelPost{
@@ -238,7 +244,7 @@
 }
 
 .container-superior-perfil{
-    width: 90%;
+    width: 100%;
 }
 
 .imgPerfilUsuario{
@@ -249,6 +255,7 @@
 
 .exibicaoFormulario{
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -332,11 +339,7 @@
 }
 
 /***** MEDIA QUERIES ******/
-@media screen and (max-width:768px){
-    #Logo{
-        width: 60%;
-    }
-
+@media screen and (max-width: 1023px){
     .secUsuario, .secaoCategorias{
         display: none;
     }
@@ -349,9 +352,9 @@
     .item3 {
         grid-column: 1/-1;
     }
-    .painelCompartilhar, .painelPost{
+    /* .painelCompartilhar, .painelPost{
         margin: 1vh 9%;       
-    }
+    } */
     .barraNavegacaoInferior{
         display: block;
     }
@@ -384,22 +387,12 @@
 
 /* para desktop */
 @media screen and (min-width: 1024px) {
-    #main{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
     .nomeUsuario{
         font-size: 40px;
     }
 
-    #Logo{
-        width: 50%;
-    }
-
     .item1{
-        height: auto;
-        margin: 40px 85px;
+        margin: 40px 0px;
     }
 
     .titulo-header{
@@ -424,12 +417,8 @@
         height: 5px;
     }
 
-    .secUsuario{
-        margin: 0 3vh 7.5%;
-    }
-
     #inputCompartilhar {
-        width: 600px;
+        width: 100%;
     }
 
     .barraNavegacaoInferior{
@@ -445,5 +434,6 @@
         background-color: #662F82;
         color: #E8E3E7;
         padding: 40px;
+        text-align: center;
     }
 }

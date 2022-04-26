@@ -10,16 +10,8 @@ body {
     background-color: #E8E3E7;
 }
 
-header{
-    display: flex;
-    justify-content: space-evenly;
-    height: 15vh;
-    align-items: center;
-    padding: 0 20px;
-} 
-
-.titulo-header{
-    text-align: center;
+.artPainel {
+    margin: 0 9%;
 }
 
 .nomeUsuario a{
@@ -39,8 +31,8 @@ header{
 
 #inputCompartilhar{
     border: 1px solid #662F82;
-    height: 50px;
-    width: 280px;
+    height: 60px;
+    width: 100%;
     border-radius: 5px;
     padding: 3px;
 }
@@ -49,6 +41,7 @@ header{
     z-index: 50;
     position:fixed;
     bottom: 0;
+    left: 0;
     background-color: #662F82;
     width: 100%;    
     height: 50px;
@@ -74,6 +67,16 @@ header{
 }
 
 .icon img{
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    background-repeat:no-repeat;
+    background-size: cover;  
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.iconUser img{
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -192,8 +195,9 @@ figure{
 
 .menuHambHeader ul{
     width: auto;
-    padding: 30px;
-    font-size: 12px;
+    height: 120px;
+    padding: 0px 30px 0 5px;
+    font-size: 13px;
 }
 
 .pontosHorizontais ul{
@@ -235,7 +239,7 @@ figure{
 .dropDown li a, .dropDown2 li a{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: #662F82;
     font-weight: bolder;
     text-decoration: none;
@@ -259,7 +263,8 @@ figure{
 .grid-container{
     display: grid;
     background-color: #E8E3E7;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 25px;
     border:transparent;  
 }
 
@@ -370,17 +375,8 @@ textarea{
 
 /* para tablet */
 @media screen and (min-width: 768px) {
-    #Logo{
-        width: 60%;
-    }
-
-    #inputCompartilhar{
-        width: 50vh;
-    }
-
     .titulo-header{
         width: 70%;
-        justify-content: center;
     }
 
     .postsCompartilhado{
@@ -418,33 +414,27 @@ textarea{
     body, .grid-container{
         background-color: white;
     }
+
+    .artPainel{
+        max-width: 850px;
+        margin: 0 auto;
+    }
     
-    #main{
+    /* #main{
         margin-left: 10%;
         margin-right: 10%;
-    }
+    } */
 
     .painelCompartilhar {
         background-color: #E8E3E7;
     }
 
-    .secUsuario, .secaoCategorias {
-        margin: 3vh 5%;
-    }
+    /* .secUsuario, .secaoCategorias {
+        margin: 3vh 4.5%;
+    } */
 
     .nomeUsuario{
         font-size: 40px;
-    }
-
-    #Logo{
-        width: 50%;
-    }
-
-    .item1{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        margin-bottom: 40px;
     }
 
     .titulo-header{
@@ -470,12 +460,8 @@ textarea{
         height: 5px;
     }
 
-    .secUsuario{
-        margin: 0 3vh 7.5%;
-    }
-
     #inputCompartilhar {
-        width: 600px;
+        width: 100%;
     }
 
     .barraNavegacaoInferior{
@@ -491,5 +477,6 @@ textarea{
         background-color: white;
         color: #662F82;
         padding: 40px;
+        text-align: center;
     }
 }
