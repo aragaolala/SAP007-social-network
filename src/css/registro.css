@@ -11,6 +11,12 @@ body {
     background-color: #662F82;
 }
 
+#formIngresso.boxLogin, #formRegistro.boxLogin {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 0;
+}
+
 #formIngresso, #formRegistro{
     display: flex;
     align-items: center;
@@ -19,9 +25,8 @@ body {
     background: #662F82;
     border-radius: 37px;
     height: auto;
-    margin-left: 15px;
-    margin-right: 15px;
     box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+    margin-bottom: 20px;
 }
 
 .left-login-img {
@@ -86,12 +91,14 @@ textarea:focus, input:focus, select:focus {
 }
 
 .boxInterno1{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #Logo {
     margin: 0;
-    width: 70%;
+    width: 50%;
     height: auto;
 }
 
@@ -100,13 +107,15 @@ textarea:focus, input:focus, select:focus {
 }
 
 #imgGoogle{
-    width: 15px;
+    width: 20px;
+    cursor: pointer;
 }
 
 .texto2 {
     color: #E8E3E7;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .texto2 a{
@@ -174,15 +183,6 @@ footer{
         width: 25vw;
     }
 
-    #Logo{
-        width: 60%;
-    }
-
-    #formIngresso, #formRegistro{
-        margin-left: 10vw;
-        margin-right: 10vw;
-    }
-
     footer{
         font-size: 15px;
     }
@@ -191,17 +191,13 @@ footer{
 /* para desktop */
 @media screen and (min-width: 1024px) {
     .artRegistro{
-        margin: 15%;
-    }
-
-    #Logo{
-        width: 50%;
+        margin: 10%;
     }
 
     .div-logo-slogan{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -209,10 +205,16 @@ footer{
         width: 25vw;
     }
 
-    #formIngresso, #formRegistro{
+    #formIngresso, #formRegistro {
+        padding: 40px 40px;
+        justify-content: center;
+    }
+
+    #formIngresso.boxLogin, #formRegistro.boxLogin {
+        width: 450px;
+        height: 450px;
         margin-left: 0vw;
         margin-right: 0vw;
-        padding: 50px 50px;
     }
 
     .boxInterno1{
