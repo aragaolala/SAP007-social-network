@@ -143,7 +143,7 @@ export const visualizacaoTelas = () => {
       main.appendChild(sobreNos());
       encerrarSessao();
       menuHamburguerHeader();
-
+      exibicaoCategorias();
       break;
 
     default:
