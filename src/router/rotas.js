@@ -27,7 +27,7 @@ export const visualizacaoTelas = () => {
     case '#/':
     case '#/inicio':
       main.appendChild(fundoHome(formInicioSessao()));
-      login('formIngresso', 'localExibicao');
+      login('formDeLogin', 'localExibicao');
       break;
 
     case '#/registro':

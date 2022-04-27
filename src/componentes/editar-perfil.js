@@ -56,7 +56,7 @@ export const conteudoEditarPerfil = () => {
                   </div>
 
                   <div class="exibicaoFormulario" id="exibicaoFormulario">
-                  <form id="formIngresso">
+                  <form id="formDeLogin">
 
                       <div class="caixaInputDadosImg">
                           <p class="txtDosCamposAtualizarPerfil">Foto de perfil</p>

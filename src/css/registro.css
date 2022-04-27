@@ -11,13 +11,13 @@ body {
     background-color: #662F82;
 }
 
-#formIngresso.boxLogin, #formRegistro.boxLogin {
+#formDeLogin.boxLogin, #formRegistro.boxLogin {
     margin-left: 10vw;
     margin-right: 10vw;
     margin-bottom: 0;
 }
 
-#formIngresso, #formRegistro{
+#formDeLogin, #formRegistro{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -54,7 +54,7 @@ textarea:focus, input:focus, select:focus {
     margin: 10px;
 }
 
-.dadosIngresso {
+.dadosRegistro {
     width: 100%;
     border: none;
     border-radius: 8px;
@@ -205,12 +205,12 @@ footer{
         width: 25vw;
     }
 
-    #formIngresso, #formRegistro {
+    #formDeLogin, #formRegistro {
         padding: 40px 40px;
         justify-content: center;
     }
 
-    #formIngresso.boxLogin, #formRegistro.boxLogin {
+    #formDeLogin.boxLogin, #formRegistro.boxLogin {
         width: 450px;
         height: 450px;
         margin-left: 0vw;
