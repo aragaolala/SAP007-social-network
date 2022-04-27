@@ -22,7 +22,7 @@ const postsUsuario = (idPost, dataCriador, dataPost) => {
     </div>
     <div class="postsCompartilhado">
         <div class="conteudoCompartilhado">
-            <p class="postcontent">${dataPost.publicacao }</p>
+            <p class="postcontent">${dataPost.publicacao}</p>
             <img src="${dataPost.imgPost}">
         </div>
     </div>
@@ -119,7 +119,7 @@ const preencherPerfil = async (containerPost) => {
   const dadosPost = await obterUserPosts();
 
   // console.log('dadosPost', JSON.stringify(dadosPost, false, 2));
-  
+
   dadosPost.forEach((post) => {
     const dataCriador = usuarios.filter((user) => user.userId === post.usuarioId);
     containerPost.prepend(postsUsuario(post.id, dataCriador[0], post));

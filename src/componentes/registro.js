@@ -43,7 +43,7 @@ export const registroEmail = (selectorForm, containerError) => {
     const usuarioRegistro = document.getElementById('usuarioRegistro').value;
     const emailRegistro = document.getElementById('emailRegistro').value;
     const senhaRegistro = document.getElementById('senhaRegistro').value;
-    // aqui chama o container dos modos de erros 
+    // aqui chama o container dos modos de erros
     const localExibicao = document.getElementById(containerError);
 
     registroUsuario(emailRegistro, senhaRegistro)
