@@ -50,7 +50,7 @@ export const sobreNos = () => {
             <h1 class="subtitle-text">Speak your mind and find support: Fale o que pensa e encontre apoio</h1>
             <p class="info">A ideia da rede social surgiu de uma dupla de alunas da Laboratória que, cansadas de serem hostilizadas por esse mundo dominado por homens, principalmente quando se trata do imenso campo de tecnologia, resolveram criar um espaço apenas para garotas. O objetivo é ter um local para ser o que quisermos ser, e fazer o que quisermos fazer... Sem ofensas, sem conotações sexuais, sem palpites desnecessários e misóginos...</p>
             <h1 class="subtitle-text">Mas espera... grrrl talk? O que é isso?</h1>
-            <p class="info">O nome da rede social surgiu de uma junção de garota, que em inglês é "girl", com a onomatopeia que se refere ao grunhido, o "grrr", que muitas vezes significa um som de raiva/desaprovação. Assim Girl + Grrr = Grrrl, junto com o talk (falar), tentam resumir toda aquela "revirada de olhos" ao ouvir comentários machistas.</p>
+            <p class="info">O nome da rede social surgiu de uma junção de garota, que em inglês é "girl", com a onomatopeia que se refere ao grunhido, o "grrr", que muitas vezes significa um som de raiva e/ou desaprovação. Assim, Girl + Grrr = Grrrl, junto com o talk (falar), tentam resumir toda aquela "revirada de olhos" ao ouvir comentários machistas.</p>
             <h1 class="subtitle-text">Agora que já deu pra entender um pouquinho sobre nossa rede social cheia de amor, que tal conhecer as garotas desenvolvedoras por trás desse projeto?</h1>
             <div class="box-dev">
                 <p class="info-dev"><img src="imagens/AmandaG.jpeg"></p>
@@ -61,7 +61,7 @@ export const sobreNos = () => {
             <div class="box-dev">
                 <p class="info-dev"><img src="imagens/LayssaA.jpeg"></p>
                 <h1 class="subtitle-text">Layssa Aragão</h1>
-                <p class="info">Olá! Enquanto socióloga, e sobretudo uma mulher mestiça e latina, estudo e vivo na pele os impactos destrutivos da misoginia. Logo, nosso app é a realização de finalmente ter um ambiente de acolhimento. No mais, sou de Vitória, tenho uma dog surtada, tenho medo de minhoca, amo viajar e fazer cookies.</p>
+                <p class="info">Olá! Enquanto socióloga, e sobretudo uma mulher mestiça e latina, estudo e vivo na pele os impactos destrutivos da misoginia. Logo, nosso app é a realização de finalmente ter um ambiente de acolhimento. No mais, sou de Vitória, tenho uma dog surtada, amo viajar e fazer cookies. Mande um oi clicando no avatar abaixo:</p>
                 <p class="icon-dev"><a href="https://linktr.ee/layssaaragao" target="_blank"><img src="imagens/layssa-avatar.png">Vamos conversar</a></p>
             </div>
         `;
