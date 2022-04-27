@@ -1,24 +1,23 @@
 import { conteudoHeader, secaoDeExibicao } from "./headerFeed.js";
 import { validarSessaoStorage } from "./validacoes.js";
 
-
 export const sobreNos = () => {
-    const articlePainel = document.createElement('article');
-    articlePainel.classList.add('artPainel');
-    articlePainel.setAttribute('id', 'artPainel');
+  const articlePainel = document.createElement("article");
+  articlePainel.classList.add("artPainel");
+  articlePainel.setAttribute("id", "artPainel");
 
-    const headerFeed = document.createElement("header");
-    headerFeed.classList.add("item1");
-    headerFeed.innerHTML = conteudoHeader();
+  const headerFeed = document.createElement("header");
+  headerFeed.classList.add("item1");
+  headerFeed.innerHTML = conteudoHeader();
 
-    const secaoExibicaoCategoria = document.createElement('div');
-    secaoExibicaoCategoria.classList.add('exibicaoCategoria');
-    secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
+  const secaoExibicaoCategoria = document.createElement("div");
+  secaoExibicaoCategoria.classList.add("exibicaoCategoria");
+  secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
 
-    const navInferior = document.createElement("nav");
-    navInferior.classList.add("barraNavegacaoInferior");
-    const userData = validarSessaoStorage();
-    navInferior.innerHTML = `
+  const navInferior = document.createElement("nav");
+  navInferior.classList.add("barraNavegacaoInferior");
+  const userData = validarSessaoStorage();
+  navInferior.innerHTML = `
             <ul>
             <li class="list">
                 <a href="#/timeline">
@@ -44,9 +43,9 @@ export const sobreNos = () => {
             </ul>
         `;
 
-        const textInfo = document.createElement("nav");
-        textInfo.classList.add("texto-info");
-        textInfo.innerHTML = `
+  const textInfo = document.createElement("nav");
+  textInfo.classList.add("texto-info");
+  textInfo.innerHTML = `
             <h2 class="title-text">Um pouco sobre nós</h2>
             <h1 class="subtitle-text">Speak your mind and find support: Fale o que pensa e encontre apoio</h1>
             <p class="info">A ideia da rede social surgiu de uma dupla de alunas da Laboratoria, que, cansadas de serem hostilizadas por esse mundo dominado por homens, principalmente quando se trata desse imenso campo de tecnologia, resolveram criar um espaço apenas para garotas. O objetivo é ter um espaço para ser o que quisermos ser, e fazer o que quisermos fazer... sem hostilidades, sem conotações sexuais, sem palpites desnecessários e misóginos...</p>
@@ -62,23 +61,22 @@ export const sobreNos = () => {
             <div class="box-dev">
                 <p class="info-dev"><img src="imagens/LayssaA.jpeg"></p>
                 <h1 class="subtitle-text">Layssa Aragão</h1>
-                <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p class="icon-dev"><a href="https://linkr.bio/amandagusmao" target="_blank"><img src="imagens/gamer.png">A mãe tá on</a></p>
+                <p class="info">Olá! Enquanto socióloga, e sobretudo uma mulher mestiça e latina, estudo e vivo na pele os impactos destrutivos da misoginia. Logo, nosso app é a realização de finalmente ter um ambiente de acolhimento. No mais, sou de Vitória, tenho uma dog surtada, tenho medo de minhoca, amo viajar e fazer cookies.</p>
+                <p class="icon-dev"><a href="https://linktr.ee/layssaaragao" target="_blank"><img src="imagens/layssa-avatar.png">Vamos conversar</a></p>
             </div>
         `;
-    
-        const footer = document.createElement("footer");
-        footer.classList.add("footerDesktop");
-        footer.innerHTML = "";
 
-    articlePainel.appendChild(headerFeed);
-    articlePainel.appendChild(secaoExibicaoCategoria);
-    articlePainel.appendChild(navInferior);
-    articlePainel.appendChild(textInfo);
-    articlePainel.appendChild(footer);
+  const footer = document.createElement("footer");
+  footer.classList.add("footerDesktop");
+  footer.innerHTML = "";
+
+  articlePainel.appendChild(headerFeed);
+  articlePainel.appendChild(secaoExibicaoCategoria);
+  articlePainel.appendChild(navInferior);
+  articlePainel.appendChild(textInfo);
+  articlePainel.appendChild(footer);
 
   return articlePainel;
 };
-
 
 //a nav inferior some acima de 1024 x 863 px
