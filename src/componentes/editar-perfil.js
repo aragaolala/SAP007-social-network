@@ -11,22 +11,22 @@ export const conteudoEditarPerfil = () => {
           <nav class= "barraNavegacaoInferior">
               <ul>
                   <li class="list">
-                      <a class="abrirExibicao">
+                      <a href="#/timeline">
                           <span class="icon">
-                              <img src="imagens/users-three.png">
+                              <img src="imagens/home2.png">
                           </span>
                       </a>
                   </li>
                   <li class="list">
-                      <a href="#/timeline">
+                      <a class="abrirExibicao">
                           <span class="icon">
-                              <img src="imagens/house-fill.png">
+                              <img src="imagens/busca.png">
                           </span>
                       </a>
                   </li>
                   <li class="list">
                       <a href="#/meuperfil">
-                          <span class="icon">
+                          <span class="iconUser">
                               <img src="${userData.imgUsuario}">
                           </span>
                       </a>
@@ -95,6 +95,24 @@ export const conteudoEditarPerfil = () => {
 `;
   return editarSecao;
 };
+
+// Funcionalidade para sustituir dados da sessão perfil
+export const atualizarDadosPerfil = (username, local, pronomes, imgUsuario, imgCapa) => {
+    const nomeDoUsuario = document.getElementById('nomeDoUsuario');
+    const descricaoDoPerfil = document.getElementById('descricaoDoPerfil');
+    const localDoPerfil = document.getElementById('localDoPerfil');
+    const imgUsuarioElement = document.getElementById('imgUsuario');
+    const imgCapaElement = document.getElementById('imgDeCapaUsuario');
+    nomeDoUsuario.innerHTML = username;
+    descricaoDoPerfil.innerHTML = pronomes;
+    localDoPerfil.innerHTML = local;
+    if (imgUsuario) {
+        imgUsuarioElement.src = imgUsuario;
+    }
+    if (imgCapa) {
+        imgCapaElement.src = imgCapa;
+    }
+  };
 
 // Funcionalidade do botão Editar Perfil
 export const btnEditarPerfil = () => {

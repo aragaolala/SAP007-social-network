@@ -17,6 +17,8 @@ export const conteudoHeader = () => {
             <li><a href='#/timeline'><img id="img-encerrar" src="imagens/home.png"><span>Início</span></a></li>
             <li><a href='#/meuperfil'><img id="img-encerrar" src="imagens/do-utilizador.png"><span>Meu Perfil</span></a></li>
             <li><a href='#/editarperfil'><img id="img-encerrar" src="imagens/configuracoes.png"><span>Configurações</span></a></li>
+            <li><a href='#/sobre'><img id="img-encerrar" src="imagens/about.png"><span>Sobre</span></a></li>
+            <li><a href='#/ajuda'><img id="img-encerrar" src="imagens/care.png"><span>Ajuda</span></a></li>
             <li><a id="encerrar-sessao"><img id="img-encerrar" src="imagens/sign-out.png"><span>Sair</span></a></li>
           </ul>
         </div>

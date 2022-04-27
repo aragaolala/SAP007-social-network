@@ -1,0 +1,59 @@
+.texto-info{
+    color: #662F82;
+    line-height: 35px;
+}
+
+.title-text{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.subtitle-text{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 25px;
+}
+
+.info{
+    text-align: initial;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.box-dev, .box-frase{
+    margin-bottom: 60px;
+    border-bottom: 2px solid #662F82;
+}
+
+.box-frase{
+    margin-top: 40px;
+}
+
+.info-dev{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-dev img{
+    text-align: center;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #662F82;
+}
+
+.icon-dev{
+    text-align: center;
+}
+
+.icon-dev a{
+    text-decoration: none;
+    color: #662F82;
+}
+
+.icon-dev img{
+    width: 50px;
+}
