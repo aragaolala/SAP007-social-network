@@ -23,9 +23,13 @@
     margin-bottom: 20px;
 }
 
-.box-dev{
+.box-dev, .box-frase{
     margin-bottom: 60px;
     border-bottom: 2px solid #662F82;
+}
+
+.box-frase{
+    margin-top: 40px;
 }
 
 .info-dev{
@@ -47,6 +51,7 @@
 
 .icon-dev a{
     text-decoration: none;
+    color: #662F82;
 }
 
 .icon-dev img{

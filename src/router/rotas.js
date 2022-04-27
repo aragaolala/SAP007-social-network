@@ -1,4 +1,5 @@
 import { sobreNos } from "../componentes/pag-sobre.js";
+import { infoAjuda } from "../componentes/ajuda.js";
 import { fundoHome } from "../componentes/logo-slogan.js";
 import { formRegistros, registroEmail } from "../componentes/registro.js";
 import { formInicioSessao, login } from "../componentes/login.js";
@@ -141,6 +142,14 @@ export const visualizacaoTelas = () => {
     case "#/sobre":
       userState();
       main.appendChild(sobreNos());
+      encerrarSessao();
+      menuHamburguerHeader();
+      exibicaoCategorias();
+      break;
+
+    case "#/ajuda":
+      userState();
+      main.appendChild(infoAjuda());
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
