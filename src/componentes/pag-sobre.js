@@ -48,9 +48,9 @@ export const sobreNos = () => {
   textInfo.innerHTML = `
             <h2 class="title-text">Um pouco sobre nós</h2>
             <h1 class="subtitle-text">Speak your mind and find support: Fale o que pensa e encontre apoio</h1>
-            <p class="info">A ideia da rede social surgiu de uma dupla de alunas da Laboratoria, que, cansadas de serem hostilizadas por esse mundo dominado por homens, principalmente quando se trata desse imenso campo de tecnologia, resolveram criar um espaço apenas para garotas. O objetivo é ter um espaço para ser o que quisermos ser, e fazer o que quisermos fazer... sem hostilidades, sem conotações sexuais, sem palpites desnecessários e misóginos...</p>
+            <p class="info">A ideia da rede social surgiu de uma dupla de alunas da Laboratória que, cansadas de serem hostilizadas por esse mundo dominado por homens, principalmente quando se trata do imenso campo de tecnologia, resolveram criar um espaço apenas para garotas. O objetivo é ter um local para ser o que quisermos ser, e fazer o que quisermos fazer... Sem ofensas, sem conotações sexuais, sem palpites desnecessários e misóginos...</p>
             <h1 class="subtitle-text">Mas espera... grrrl talk? O que é isso?</h1>
-            <p class="info">O nome dessa rede social surgiu de uma junção de garota, que em inglês é traduzido para girl, com uma onomatopeia que se refere, geralmente, a um grunhido, o grrr, que muitas vezes significa um som de raiva/desaprovação. Assim Girl + Grrr = Grrrl, junto com o talk (falar), tentam resumir toda aquela "revirada de olhos" ao ouvir comentários machistas.</p>
+            <p class="info">O nome da rede social surgiu de uma junção de garota, que em inglês é "girl", com a onomatopeia que se refere ao grunhido, o "grrr", que muitas vezes significa um som de raiva/desaprovação. Assim Girl + Grrr = Grrrl, junto com o talk (falar), tentam resumir toda aquela "revirada de olhos" ao ouvir comentários machistas.</p>
             <h1 class="subtitle-text">Agora que já deu pra entender um pouquinho sobre nossa rede social cheia de amor, que tal conhecer as garotas desenvolvedoras por trás desse projeto?</h1>
             <div class="box-dev">
                 <p class="info-dev"><img src="imagens/AmandaG.jpeg"></p>
