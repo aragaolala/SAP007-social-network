@@ -1,21 +1,21 @@
-import { conteudoHeader, secaoDeExibicao } from "./headerFeed.js";
-import { validarSessaoStorage } from "./validacoes.js";
+import { conteudoHeader, secaoDeExibicao } from './headerFeed.js';
+import { validarSessaoStorage } from './validacoes.js';
 
 export const infoAjuda = () => {
-  const articlePainel = document.createElement("article");
-  articlePainel.classList.add("artPainel");
-  articlePainel.setAttribute("id", "artPainel");
+  const articlePainel = document.createElement('article');
+  articlePainel.classList.add('artPainel');
+  articlePainel.setAttribute('id', 'artPainel');
 
-  const headerFeed = document.createElement("header");
-  headerFeed.classList.add("item1");
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
   headerFeed.innerHTML = conteudoHeader();
 
-  const secaoExibicaoCategoria = document.createElement("div");
-  secaoExibicaoCategoria.classList.add("exibicaoCategoria");
+  const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
   secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
 
-  const navInferior = document.createElement("nav");
-  navInferior.classList.add("barraNavegacaoInferior");
+  const navInferior = document.createElement('nav');
+  navInferior.classList.add('barraNavegacaoInferior');
   const userData = validarSessaoStorage();
   navInferior.innerHTML = `
             <ul>
@@ -43,8 +43,8 @@ export const infoAjuda = () => {
             </ul>
         `;
 
-  const textHelp = document.createElement("nav");
-  textHelp.classList.add("texto-info");
+  const textHelp = document.createElement('nav');
+  textHelp.classList.add('texto-info');
   textHelp.innerHTML = `
             <h2 class="title-text">Aqui você não vai ficar sozinha!</h2>
             <p class="info">Nessa rede social, temos a ciência de que infelizmente nós não conseguiríamos dar um auxílio conveniente, em se tratando de violência física e psicológica. O que podemos fazer é dar a você, que precisa desse auxílio mais sério e específico, a oportunidade de conhecer e ter acesso a alguns canais de comunicação, que irão te auxiliar de forma adequada e justa.</p>
@@ -77,9 +77,9 @@ export const infoAjuda = () => {
             </div>
         `;
 
-  const footer = document.createElement("footer");
-  footer.classList.add("footerDesktop");
-  footer.innerHTML = "";
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = '';
 
   articlePainel.appendChild(headerFeed);
   articlePainel.appendChild(secaoExibicaoCategoria);
