@@ -57,7 +57,7 @@ export const sobreNos = () => {
                 <p class="info-dev"><img src="imagens/AmandaG.jpeg"></p>
                 <h1 class="subtitle-text">Amanda Gusmão</h1>
                 <p class="info">Engenheira Civil e Ambiental, apaixonada por geociências, e com algumas aspirações bem específicas para querer tornar esse app uma realidade: ela é gamer, streamer e aspirante a blogueira nas horas vagas. Um prato cheio pra quem quer fazer comentários completamente desnecessários! E você pode a conhecer melhor através do avatar abaixo:</p>
-                <p class="icon-dev"><a href="https://linkr.bio/amandagusmao" target="_blank"><img src="imagens/gamer.png">A mãe tá on</a></p>
+                <p class="icon-dev"><a href="https://linkr.bio/amandagusmao" target="_blank"><img src="imagens/gamer.png">A mãe tá on e codando</a></p>
             </div>
             <div class="box-dev">
                 <p class="info-dev"><img src="imagens/LayssaA.jpeg"></p>
