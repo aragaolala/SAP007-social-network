@@ -2,7 +2,7 @@ import { atualizarPerfil } from "../firebase/funcoesFirestore.js";
 import { validarSessaoStorage } from "./validacoes.js";
 import { subirFileStorage } from "../firebase/funcoesStorage.js";
 
-// Renderizar sessão editar perfil
+// Renderizar seção editar perfil
 export const conteudoEditarPerfil = () => {
   const editarSecao = document.createElement("section");
   editarSecao.classList.add("corpoEditarPerfil");

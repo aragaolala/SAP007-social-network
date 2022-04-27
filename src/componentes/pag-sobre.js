@@ -79,4 +79,3 @@ export const sobreNos = () => {
   return articlePainel;
 };
 
-//a nav inferior some acima de 1024 x 863 px
