@@ -56,7 +56,7 @@ export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, 
 };
 
 // Enviar dados para a coleção posts no firestore
-export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
+export const subirPosts = (criadorPost, post, Categoria, urlImg) => {
   const colRefPost = collection(db, 'posts');
   const functionAdd = addDoc(colRefPost, {
     usuarioId: criadorPost,
@@ -65,15 +65,24 @@ export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
     imgPost: urlImg,
     timestamp: serverTimestamp(),
     likes: [],
+    comments: [],
   });
   return functionAdd;
 };
 
-// Para atualizar o arranjo de likes
+// Para atualizar a estrutura de likes
 export const subirLikes = async (idPost, dataLikes) => {
   const docId = doc(db, 'posts', idPost);
   await updateDoc(docId, {
     likes: dataLikes,
+  });
+};
+
+// Para atualizar a estrutura de comentários
+export const subirComments = async (idPost, dataComments) => {
+  const docId = doc(db, 'posts', idPost);
+  await updateDoc(docId, {
+    comments: dataComments,
   });
 };
 

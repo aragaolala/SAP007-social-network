@@ -113,6 +113,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   color: #8f7d7d;
+  padding-left: 10px;
 }
 
 .imgUsuarioPost {
@@ -260,7 +261,10 @@ figure {
   margin-right: 5px;
 }
 
-
+.painelCompartilhar{
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
 
 .painelCompartilhar {
   padding: 2.5vh 3%;
@@ -413,6 +417,7 @@ textarea {
 
   .botoesReacao i {
     font-size: 25px;
+    padding-left: 10px;
   }
 
   .footerDesktop {

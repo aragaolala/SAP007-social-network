@@ -1,11 +1,13 @@
 import {
   obterPosts,
   obterPeloId,
-  subirDataHomeCol,
+  subirPosts,
   subirLikes,
   obterUsuarios,
+  subirComments,
 } from '../firebase/funcoesFirestore.js';
 import { subirFileStorage } from '../firebase/funcoesStorage.js';
+import { serverTimestamp } from '../firebase/config.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
@@ -26,11 +28,13 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
           <img src="${dataPost.imgPost}">
       </div>
   </div>
-  <div class="botoesReacao">
-      <i class="ph-heart-bold like" name= "${idPost}"}></i>
-      <p>${dataPost.likes.length}</p>
-      <i class="ph-chat-circle" name= "${idPost}"}></i>
-      <p>${dataPost.likes.length}</p>
+  <div class="botoesReacao"> 
+    <i class="ph-heart-straight-fill like" name= "${idPost}"}></i>
+    <p>${dataPost.likes.length}</p>
+    <i class="ph-chat-centered-dots comment" name= "${idPost}"}></i>
+    <p>${dataPost.comments.length}</p>
+    <i class="ph-share-network" name= "${idPost}"}></i>
+    <p>${dataPost.likes.length}</p>   
   </div>
   `;
 
@@ -59,6 +63,28 @@ export const handleLikes = async (e) => {
   }
 };
 
+// Simula o contador no Firestore como array de usuários que dão click
+export const handleComments = async (e) => {
+  const btnComment = e.target;
+  const userData = JSON.parse(sessionStorage.userSession);
+  // o id do post que está associado ao atributo name é encontrado e salvo no idComment
+  const idComment = btnComment.getAttribute('name');
+  const contadorComment = btnComment.nextElementSibling;
+  const dataPost = await obterPeloId(idComment, 'posts');
+
+  const comment = {
+    comment: 'Olá, mundo',
+    // timestamp: serverTimestamp(),
+    usuarioId: userData.id,
+  };
+
+  // const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
+  
+  // isto é para adicionar o comentário
+  subirComments(idComment, [...dataPost.comments, comment]);
+  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
+};
+
 // Reconhece todos os botões like em cada Publicação
 export const btnLikes = () => {
   const botoesPost = document.getElementsByClassName('botoesReacao');
@@ -66,9 +92,11 @@ export const btnLikes = () => {
   // Procura onde está o alvo de reação neste caso 'like'
   Array.from(botoesPost).forEach((botaoPost) => {
     const btnLike = botaoPost.querySelector('.like');
+    const btnComment = botaoPost.querySelector('.comment');
 
     // Reconhece o botão
     btnLike.addEventListener('click', handleLikes);
+    btnComment.addEventListener('click', handleComments);
   });
 };
 
@@ -93,12 +121,14 @@ const preencherHome = async (containerPost) => {
           }
           btnLikes();
         }
+
         if (change.type === 'modified') {
           const btnLike = document.getElementsByName(change.doc.id);
           const irmaoBtnLike = btnLike[0].nextElementSibling;
           irmaoBtnLike.textContent = change.doc.data().likes.length;
           btnLikes();
         }
+
         if (change.type === 'removed') {
           /* const postEliminado = document.getElementById(change.doc.id);
             postEliminado.parentElement.remove(); */
@@ -205,11 +235,11 @@ export const criacaoPost = (formCompartilhar) => {
 
     if (arquivoLocal === undefined) {
       // se nenhum arquivo é selecionado, é enviado vazio
-      await subirDataHomeCol(userData.id, postTxt, categoria, '');
+      await subirPosts(userData.id, postTxt, categoria, '');
     } else {
       // obtenção do url do arquivo carregado do storage
       const urlImagem = await subirFileStorage(arquivoLocal, 'imgPosts');
-      await subirDataHomeCol(userData.id, postTxt, categoria, urlImagem);
+      await subirPosts(userData.id, postTxt, categoria, urlImagem);
     }
     e.target.reset();
   });
