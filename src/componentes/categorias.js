@@ -51,11 +51,11 @@ async function CommentFunctionHandler(e) {
     usuarioId: userData.id,
   };
 
-  const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
+  // const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
   
   // isto é para adicionar o comentário
-  subirComments(idComment, [...comentariosAntigos, comment]);
-  contadorComment.textContent = comentariosAntigos.length + 1; //o número de comentários antigos + 1
+  subirComments(idComment, [...dataPost.comments, comment]);
+  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
 }
 
 // Reconhece todos os botões like em cada Publicação

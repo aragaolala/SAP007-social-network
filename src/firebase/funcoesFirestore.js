@@ -56,7 +56,7 @@ export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, 
 };
 
 // Enviar dados para a coleção posts no firestore
-export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
+export const subirPosts = (criadorPost, post, Categoria, urlImg) => {
   const colRefPost = collection(db, 'posts');
   const functionAdd = addDoc(colRefPost, {
     usuarioId: criadorPost,

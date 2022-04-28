@@ -1,12 +1,13 @@
 import {
   obterPosts,
   obterPeloId,
-  subirDataHomeCol,
+  subirPosts,
   subirLikes,
   obterUsuarios,
   subirComments,
 } from '../firebase/funcoesFirestore.js';
 import { subirFileStorage } from '../firebase/funcoesStorage.js';
+import { serverTimestamp } from '../firebase/config.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
@@ -31,7 +32,7 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
     <i class="ph-heart-straight-fill like" name= "${idPost}"}></i>
     <p>${dataPost.likes.length}</p>
     <i class="ph-chat-centered-dots comment" name= "${idPost}"}></i>
-    <p>${(dataPost.comments || []).length}</p>
+    <p>${dataPost.comments.length}</p>
     <i class="ph-share-network" name= "${idPost}"}></i>
     <p>${dataPost.likes.length}</p>   
   </div>
@@ -77,11 +78,11 @@ export const handleComments = async (e) => {
     usuarioId: userData.id,
   };
 
-  const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
+  // const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
   
   // isto é para adicionar o comentário
-  subirComments(idComment, [...comentariosAntigos, comment]);
-  contadorComment.textContent = comentariosAntigos.length + 1; //o número de comentários antigos + 1
+  subirComments(idComment, [...dataPost.comments, comment]);
+  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
 };
 
 // Reconhece todos os botões like em cada Publicação
@@ -234,11 +235,11 @@ export const criacaoPost = (formCompartilhar) => {
 
     if (arquivoLocal === undefined) {
       // se nenhum arquivo é selecionado, é enviado vazio
-      await subirDataHomeCol(userData.id, postTxt, categoria, '');
+      await subirPosts(userData.id, postTxt, categoria, '');
     } else {
       // obtenção do url do arquivo carregado do storage
       const urlImagem = await subirFileStorage(arquivoLocal, 'imgPosts');
-      await subirDataHomeCol(userData.id, postTxt, categoria, urlImagem);
+      await subirPosts(userData.id, postTxt, categoria, urlImagem);
     }
     e.target.reset();
   });
