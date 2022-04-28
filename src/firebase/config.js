@@ -1,5 +1,6 @@
 // Configuração do Firebase
 
+// eslint-disable-next-line import/no-unresolved
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 
 import {
@@ -11,6 +12,7 @@ import {
   signInWithPopup,
   getAuth,
   GoogleAuthProvider,
+  // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 import {
@@ -28,6 +30,7 @@ import {
   serverTimestamp,
   deleteDoc,
   onSnapshot,
+  // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 import {
