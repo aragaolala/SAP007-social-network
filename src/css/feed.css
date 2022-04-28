@@ -260,7 +260,10 @@ figure {
   margin-right: 5px;
 }
 
-
+.painelCompartilhar{
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+}
 
 .painelCompartilhar {
   padding: 2.5vh 3%;
