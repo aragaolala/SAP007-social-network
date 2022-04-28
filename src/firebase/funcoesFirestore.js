@@ -47,7 +47,7 @@ export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, 
   const colRefId = doc(db, 'usuarios', id);
   await setDoc(colRefId, {
     username: Username,
-    email: email,
+    email,
     local: Local,
     pronomes: Pronomes,
     imgUsuario: srcImg,
@@ -60,7 +60,7 @@ export const subirDataHomeCol = (criadorPost, post, Categoria, urlImg) => {
   const colRefPost = collection(db, 'posts');
   const functionAdd = addDoc(colRefPost, {
     usuarioId: criadorPost,
-    publicacao : post,
+    publicacao: post,
     categoria: Categoria,
     imgPost: urlImg,
     timestamp: serverTimestamp(),
@@ -88,13 +88,13 @@ export const atualizarPerfil = (userId, username, pronomes, local, imgUsuario, i
   };
 
   if (imgUsuario) {
-    dadosParaAtualizar.imgUsuario = imgUsuario
+    dadosParaAtualizar.imgUsuario = imgUsuario;
   }
 
   if (imgCapa) {
-    dadosParaAtualizar.imgCapa = imgCapa
+    dadosParaAtualizar.imgCapa = imgCapa;
   }
-  
+
   return updateDoc(colRefId, dadosParaAtualizar);
 };
 
@@ -137,10 +137,10 @@ export const excluirPost = async (postId) => {
 };
 
 // Editar um post em especifico
-export const atualizarPost = (postId, publicacao ) => {
+export const atualizarPost = (postId, publicacao) => {
   const colRefId = doc(db, 'posts', postId);
   return updateDoc(colRefId, {
-    publicacao ,
+    publicacao,
   });
 };
 

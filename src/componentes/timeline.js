@@ -97,7 +97,7 @@ export const painelEditarPerfil = () => {
 export const secaoCategorias = (img, tituloCategoria) => {
   const articleTema = document.createElement('article');
 
-  articleTema.classList.add('pagTema')
+  articleTema.classList.add('pagTema');
 
   const headerFeed = document.createElement('header');
   headerFeed.classList.add('item1');

@@ -1,11 +1,11 @@
-import { atualizarPerfil } from "../firebase/funcoesFirestore.js";
-import { validarSessaoStorage } from "./validacoes.js";
-import { subirFileStorage } from "../firebase/funcoesStorage.js";
+import { atualizarPerfil } from '../firebase/funcoesFirestore.js';
+import { validarSessaoStorage } from './validacoes.js';
+import { subirFileStorage } from '../firebase/funcoesStorage.js';
 
-// Renderizar sessão editar perfil
+// Renderizar seção editar perfil
 export const conteudoEditarPerfil = () => {
-  const editarSecao = document.createElement("section");
-  editarSecao.classList.add("corpoEditarPerfil");
+  const editarSecao = document.createElement('section');
+  editarSecao.classList.add('corpoEditarPerfil');
   const userData = validarSessaoStorage();
   editarSecao.innerHTML = `
           <nav class= "barraNavegacaoInferior">
@@ -56,7 +56,7 @@ export const conteudoEditarPerfil = () => {
                   </div>
 
                   <div class="exibicaoFormulario" id="exibicaoFormulario">
-                  <form id="formIngresso">
+                  <form id="formDeLogin">
 
                       <div class="caixaInputDadosImg">
                           <p class="txtDosCamposAtualizarPerfil">Foto de perfil</p>
@@ -97,68 +97,78 @@ export const conteudoEditarPerfil = () => {
 };
 
 // Funcionalidade para sustituir dados da sessão perfil
-export const atualizarDadosPerfil = (username, local, pronomes, imgUsuario, imgCapa) => {
-    const nomeDoUsuario = document.getElementById('nomeDoUsuario');
-    const descricaoDoPerfil = document.getElementById('descricaoDoPerfil');
-    const localDoPerfil = document.getElementById('localDoPerfil');
-    const imgUsuarioElement = document.getElementById('imgUsuario');
-    const imgCapaElement = document.getElementById('imgDeCapaUsuario');
-    nomeDoUsuario.innerHTML = username;
-    descricaoDoPerfil.innerHTML = pronomes;
-    localDoPerfil.innerHTML = local;
-    if (imgUsuario) {
-        imgUsuarioElement.src = imgUsuario;
-    }
-    if (imgCapa) {
-        imgCapaElement.src = imgCapa;
-    }
-  };
+export const atualizarDadosPerfil = (
+  username,
+  local,
+  pronomes,
+  imgUsuario,
+  imgCapa,
+) => {
+  const nomeDoUsuario = document.getElementById('nomeDoUsuario');
+  const descricaoDoPerfil = document.getElementById('descricaoDoPerfil');
+  const localDoPerfil = document.getElementById('localDoPerfil');
+  const imgUsuarioElement = document.getElementById('imgUsuario');
+  const imgCapaElement = document.getElementById('imgDeCapaUsuario');
+  nomeDoUsuario.innerHTML = username;
+  descricaoDoPerfil.innerHTML = pronomes;
+  localDoPerfil.innerHTML = local;
+  if (imgUsuario) {
+    imgUsuarioElement.src = imgUsuario;
+  }
+  if (imgCapa) {
+    imgCapaElement.src = imgCapa;
+  }
+};
 
 // Funcionalidade do botão Editar Perfil
 export const btnEditarPerfil = () => {
-    const btnSalvarMudancas = document.getElementById('salvarMudancas');
-    const btnarquivoLocal = document.getElementById('selbtn');
-    const btnarquivoLocalCapa = document.getElementById('ImgCapaUpdate');
-    const arquivoImgUsuario = [];
-    const arquivoImgCapa = [];
-    btnarquivoLocal.addEventListener('change', (e) => {
-        arquivoImgUsuario.push(e.target.files[0]);
-      });
-      btnarquivoLocalCapa.addEventListener('change', (e) => {
-        arquivoImgCapa.push(e.target.files[0]);
-      });
-      btnSalvarMudancas.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const inputUsuarioAtualizado = document.getElementById('atualizacaoUsuario').value;
-        const inputPronomesAtualizado = document.getElementById('atualizacaoPronome').value;
-        const inputLocalAtualizado = document.getElementById('atualizacaoLocal').value;
-        const userData = JSON.parse(sessionStorage.userSession);
-        const urlImagem = await subirFileStorage(arquivoImgUsuario[arquivoImgUsuario.length - 1], 'imgUsuarios');
-        const urlCapa = await subirFileStorage(arquivoImgCapa[arquivoImgCapa.length - 1], 'imgCapa');
-        atualizarPerfil(
-          userData.id,
-          inputUsuarioAtualizado,
-          inputPronomesAtualizado,
-          inputLocalAtualizado,
-          urlImagem,
-          urlCapa,
-        )
-        .then(() => {
-            // recebendo os dados para atualizar no sessionStorage e metodo atualizarDadosPerfil
-            userData.username = inputUsuarioAtualizado;
-            userData.local = inputLocalAtualizado;
-            userData.pronomes = inputPronomesAtualizado;
-            userData.imgUsuario = urlImagem ? urlImagem : userData.imgUsuario;
-            userData.imgCapa = urlCapa ? urlCapa : userData.imgCapa;
-            sessionStorage.setItem('userSession', JSON.stringify(userData));
-            atualizarDadosPerfil(
-              inputUsuarioAtualizado,
-              inputLocalAtualizado,
-              inputPronomesAtualizado,
-              urlImagem,
-              urlCapa,
-            );
-          });
-      });
-    };
-    
+  const btnSalvarMudancas = document.getElementById('salvarMudancas');
+  const btnarquivoLocal = document.getElementById('selbtn');
+  const btnarquivoLocalCapa = document.getElementById('ImgCapaUpdate');
+  const arquivoImgUsuario = [];
+  const arquivoImgCapa = [];
+  btnarquivoLocal.addEventListener('change', (e) => {
+    arquivoImgUsuario.push(e.target.files[0]);
+  });
+  btnarquivoLocalCapa.addEventListener('change', (e) => {
+    arquivoImgCapa.push(e.target.files[0]);
+  });
+  btnSalvarMudancas.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const inputUsuarioAtualizado = document.getElementById('atualizacaoUsuario').value;
+    const inputPronomesAtualizado = document.getElementById('atualizacaoPronome').value;
+    const inputLocalAtualizado = document.getElementById('atualizacaoLocal').value;
+    const userData = JSON.parse(sessionStorage.userSession);
+    const urlImagem = await subirFileStorage(
+      arquivoImgUsuario[arquivoImgUsuario.length - 1],
+      'imgUsuarios',
+    );
+    const urlCapa = await subirFileStorage(
+      arquivoImgCapa[arquivoImgCapa.length - 1],
+      'imgCapa',
+    );
+    atualizarPerfil(
+      userData.id,
+      inputUsuarioAtualizado,
+      inputPronomesAtualizado,
+      inputLocalAtualizado,
+      urlImagem,
+      urlCapa,
+    ).then(() => {
+      // recebendo os dados para atualizar no sessionStorage e metodo atualizarDadosPerfil
+      userData.username = inputUsuarioAtualizado;
+      userData.local = inputLocalAtualizado;
+      userData.pronomes = inputPronomesAtualizado;
+      userData.imgUsuario = urlImagem || userData.imgUsuario;
+      userData.imgCapa = urlCapa || userData.imgCapa;
+      sessionStorage.setItem('userSession', JSON.stringify(userData));
+      atualizarDadosPerfil(
+        inputUsuarioAtualizado,
+        inputLocalAtualizado,
+        inputPronomesAtualizado,
+        urlImagem,
+        urlCapa,
+      );
+    });
+  });
+};

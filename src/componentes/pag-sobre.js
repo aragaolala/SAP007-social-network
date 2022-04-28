@@ -1,21 +1,21 @@
-import { conteudoHeader, secaoDeExibicao } from "./headerFeed.js";
-import { validarSessaoStorage } from "./validacoes.js";
+import { conteudoHeader, secaoDeExibicao } from './headerFeed.js';
+import { validarSessaoStorage } from './validacoes.js';
 
 export const sobreNos = () => {
-  const articlePainel = document.createElement("article");
-  articlePainel.classList.add("artPainel");
-  articlePainel.setAttribute("id", "artPainel");
+  const articlePainel = document.createElement('article');
+  articlePainel.classList.add('artPainel');
+  articlePainel.setAttribute('id', 'artPainel');
 
-  const headerFeed = document.createElement("header");
-  headerFeed.classList.add("item1");
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('item1');
   headerFeed.innerHTML = conteudoHeader();
 
-  const secaoExibicaoCategoria = document.createElement("div");
-  secaoExibicaoCategoria.classList.add("exibicaoCategoria");
+  const secaoExibicaoCategoria = document.createElement('div');
+  secaoExibicaoCategoria.classList.add('exibicaoCategoria');
   secaoExibicaoCategoria.innerHTML = secaoDeExibicao();
 
-  const navInferior = document.createElement("nav");
-  navInferior.classList.add("barraNavegacaoInferior");
+  const navInferior = document.createElement('nav');
+  navInferior.classList.add('barraNavegacaoInferior');
   const userData = validarSessaoStorage();
   navInferior.innerHTML = `
             <ul>
@@ -43,8 +43,8 @@ export const sobreNos = () => {
             </ul>
         `;
 
-  const textInfo = document.createElement("nav");
-  textInfo.classList.add("texto-info");
+  const textInfo = document.createElement('nav');
+  textInfo.classList.add('texto-info');
   textInfo.innerHTML = `
             <h2 class="title-text">Um pouco sobre nós</h2>
             <h1 class="subtitle-text">Speak your mind and find support: Fale o que pensa e encontre apoio</h1>
@@ -66,9 +66,9 @@ export const sobreNos = () => {
             </div>
         `;
 
-  const footer = document.createElement("footer");
-  footer.classList.add("footerDesktop");
-  footer.innerHTML = "";
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = '';
 
   articlePainel.appendChild(headerFeed);
   articlePainel.appendChild(secaoExibicaoCategoria);
@@ -78,5 +78,3 @@ export const sobreNos = () => {
 
   return articlePainel;
 };
-
-//a nav inferior some acima de 1024 x 863 px

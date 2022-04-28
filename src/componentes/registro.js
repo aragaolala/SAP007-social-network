@@ -10,15 +10,15 @@ export const formRegistros = () => {
       <form id="formRegistro" class="boxLogin">
         <p class="texto">Criar Conta</p>
         <div class="secaoRegistro">
-          <input type="text" id="usuarioRegistro" class="dadosIngresso" placeholder="Nome de usuária" required>
+          <input type="text" id="usuarioRegistro" class="dadosRegistro" placeholder="Nome de usuária" required>
           <i class="ph-user"></i>
         </div>
         <div class="secaoRegistro">
-          <input type="text" id="emailRegistro" class="dadosIngresso" placeholder="E-mail" required>
+          <input type="text" id="emailRegistro" class="dadosRegistro" placeholder="E-mail" required>
           <i class="ph-envelope"></i>
         </div>
         <div class="secaoRegistro">
-          <input type="password" id="senhaRegistro" class="dadosIngresso" placeholder="Senha" required>
+          <input type="password" id="senhaRegistro" class="dadosRegistro" placeholder="Senha" required>
           <i id="botaoSenha" class="ph-eye-closed"></i>
         </div>
         <div class="secaoCheckbox">
@@ -43,7 +43,7 @@ export const registroEmail = (selectorForm, containerError) => {
     const usuarioRegistro = document.getElementById('usuarioRegistro').value;
     const emailRegistro = document.getElementById('emailRegistro').value;
     const senhaRegistro = document.getElementById('senhaRegistro').value;
-    // aqui chama o container dos modos de erros 
+    // aqui chama o container dos modos de erros
     const localExibicao = document.getElementById(containerError);
 
     registroUsuario(emailRegistro, senhaRegistro)

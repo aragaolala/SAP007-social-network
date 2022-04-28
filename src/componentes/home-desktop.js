@@ -1,9 +1,9 @@
-import { validarSessaoStorage } from "./validacoes.js";
+import { validarSessaoStorage } from './validacoes.js';
 
 // Renderização da seção de dados do usuário e categorias de versão desktop
 export const homeParaDesktop = () => {
-  const secaoDesktop = document.createElement("section");
-  secaoDesktop.classList.add("item2");
+  const secaoDesktop = document.createElement('section');
+  secaoDesktop.classList.add('item2');
   const userData = validarSessaoStorage();
   // const userData = JSON.parse(sessionStorage.userSession);
   secaoDesktop.innerHTML = `

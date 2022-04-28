@@ -1,127 +1,127 @@
-import { sobreNos } from "../componentes/pag-sobre.js";
-import { infoAjuda } from "../componentes/ajuda.js";
-import { fundoHome } from "../componentes/logo-slogan.js";
-import { formRegistros, registroEmail } from "../componentes/registro.js";
-import { formInicioSessao, login } from "../componentes/login.js";
+import { sobreNos } from '../componentes/pag-sobre.js';
+import { infoAjuda } from '../componentes/ajuda.js';
+import { fundoHome } from '../componentes/logo-slogan.js';
+import { formRegistros, registroEmail } from '../componentes/registro.js';
+import { formInicioSessao, login } from '../componentes/login.js';
 import {
   painel,
   painelPerfil,
   painelEditarPerfil,
   secaoCategorias,
-} from "../componentes/timeline.js";
+} from '../componentes/timeline.js';
 import {
   encerrarSessao,
   menuHamburguerHeader,
   exibicaoCategorias,
-} from "../componentes/headerFeed.js";
-import { userState } from "../componentes/validacoes.js";
-import { criacaoPost } from "../componentes/home-mobile.js";
-import { btnEditarPerfil } from "../componentes/editar-perfil.js";
+} from '../componentes/headerFeed.js';
+import { userState } from '../componentes/validacoes.js';
+import { criacaoPost } from '../componentes/home-mobile.js';
+import { btnEditarPerfil } from '../componentes/editar-perfil.js';
 
 export const visualizacaoTelas = () => {
-  const main = document.getElementById("main");
-  main.innerHTML = "";
+  const main = document.getElementById('main');
+  main.innerHTML = '';
   // devolve o ponto de ancoragem do URL (caminho/rota )
   switch (window.location.hash.toLowerCase()) {
-    case "":
-    case "#/":
-    case "#/inicio":
+    case '':
+    case '#/':
+    case '#/inicio':
       main.appendChild(fundoHome(formInicioSessao()));
-      login("formIngresso", "localExibicao");
+      login('formDeLogin', 'localExibicao');
       break;
 
-    case "#/registro":
+    case '#/registro':
       main.appendChild(fundoHome(formRegistros()));
-      registroEmail("formRegistro", "localExibicao");
+      registroEmail('formRegistro', 'localExibicao');
       break;
 
-    case "#/timeline":
+    case '#/timeline':
       userState();
       main.appendChild(painel());
       encerrarSessao();
       menuHamburguerHeader();
-      criacaoPost("formCompartilhar", "container-post");
+      criacaoPost('formCompartilhar', 'container-post');
       exibicaoCategorias();
       break;
 
-    case "#/relacionamentos":
+    case '#/relacionamentos':
       userState();
       main.appendChild(
-        secaoCategorias("imagens/coracoes.png", "Relacionamentos")
+        secaoCategorias('imagens/coracoes.png', 'Relacionamentos'),
       );
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/web":
+    case '#/web':
       userState();
-      main.appendChild(secaoCategorias("imagens/codigo.png", "Web"));
+      main.appendChild(secaoCategorias('imagens/codigo.png', 'Web'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/saude":
+    case '#/saude':
       userState();
-      main.appendChild(secaoCategorias("imagens/saude.png", "Saúde"));
+      main.appendChild(secaoCategorias('imagens/saude.png', 'Saúde'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/viagens":
+    case '#/viagens':
       userState();
-      main.appendChild(secaoCategorias("imagens/aviao.png", "Viagens"));
+      main.appendChild(secaoCategorias('imagens/aviao.png', 'Viagens'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/amizades":
+    case '#/amizades':
       userState();
-      main.appendChild(secaoCategorias("imagens/pulseira.png", "Amizade"));
+      main.appendChild(secaoCategorias('imagens/pulseira.png', 'Amizade'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/moda":
+    case '#/moda':
       userState();
-      main.appendChild(secaoCategorias("imagens/cabide.png", "Moda"));
+      main.appendChild(secaoCategorias('imagens/cabide.png', 'Moda'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    /* Só posta se inserir a string "estudos" dentro da categoria no firestore. 
+    /* Só posta se inserir a string "estudos" dentro da categoria no firestore.
     Descobrir pq nao esta automático como os outros */
     /* RESOLVIDO: precisava mudar o valor no home-mobile.js */
-    case "#/estudos":
+    case '#/estudos':
       userState();
-      main.appendChild(secaoCategorias("imagens/open-book.png", "Estudos"));
+      main.appendChild(secaoCategorias('imagens/open-book.png', 'Estudos'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/maternidade":
+    case '#/maternidade':
       userState();
-      main.appendChild(secaoCategorias("imagens/bebe.png", "Maternidade"));
+      main.appendChild(secaoCategorias('imagens/bebe.png', 'Maternidade'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/outros":
+    case '#/outros':
       userState();
-      main.appendChild(secaoCategorias("imagens/more.png", "Outros"));
+      main.appendChild(secaoCategorias('imagens/more.png', 'Outros'));
       encerrarSessao();
       menuHamburguerHeader();
       exibicaoCategorias();
       break;
 
-    case "#/meuperfil":
+    case '#/meuperfil':
       userState();
       main.appendChild(painelPerfil());
       encerrarSessao();
@@ -130,7 +130,7 @@ export const visualizacaoTelas = () => {
       /* menuPontosHorizontais(); */
       break;
 
-    case "#/editarperfil":
+    case '#/editarperfil':
       userState();
       main.appendChild(painelEditarPerfil());
       encerrarSessao();
@@ -139,7 +139,7 @@ export const visualizacaoTelas = () => {
       btnEditarPerfil();
       break;
 
-    case "#/sobre":
+    case '#/sobre':
       userState();
       main.appendChild(sobreNos());
       encerrarSessao();
@@ -147,7 +147,7 @@ export const visualizacaoTelas = () => {
       exibicaoCategorias();
       break;
 
-    case "#/ajuda":
+    case '#/ajuda':
       userState();
       main.appendChild(infoAjuda());
       encerrarSessao();
@@ -156,7 +156,7 @@ export const visualizacaoTelas = () => {
       break;
 
     default:
-      main.innerHTML = "Página Não Encontrada";
+      main.innerHTML = 'Página Não Encontrada';
       break;
   }
 };

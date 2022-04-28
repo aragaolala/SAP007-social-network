@@ -216,6 +216,11 @@
     height: auto;
 }
 
+.fundo3 p{
+    font-family: 'Cookie', cursive;
+    font-size: 40px;
+}
+
 .botoesDoPerfil .btnEditar p{
     display: inline-block;
     font-size: 17px;
@@ -230,10 +235,7 @@
     color: #662F82;
 }
 
-.fundo3 p{
-    font-family: 'Cookie', cursive;
-    font-size: 40px;
-}
+
 
 /******* seção Editar - perfil de usuario ******/
 .fundoExibicao{

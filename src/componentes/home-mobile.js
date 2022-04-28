@@ -4,15 +4,15 @@ import {
   subirDataHomeCol,
   subirLikes,
   obterUsuarios,
-} from "../firebase/funcoesFirestore.js";
-import { subirFileStorage } from "../firebase/funcoesStorage.js";
+} from '../firebase/funcoesFirestore.js';
+import { subirFileStorage } from '../firebase/funcoesStorage.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
-  const divPainel = document.createElement("div");
-  divPainel.classList.add("painelPost");
+  const divPainel = document.createElement('div');
+  divPainel.classList.add('painelPost');
 
-  divPainel.innerHTML = divPainel.innerHTML = `
+  divPainel.innerHTML = `
   <div class="usuarioPost" id= "${idPost}">
       <div class="imgUsuarioPost"><img class="imgPost"src="${dataCriador.imgUsuario}"></div>
       <div class="infoUsuarioPost">
@@ -42,33 +42,33 @@ export const handleLikes = async (e) => {
   const btnLike = e.target;
   const userData = JSON.parse(sessionStorage.userSession);
   // o id do post que está associado ao atributo name é encontrado e salvo no idLike
-  const idLike = btnLike.getAttribute("name");
-  const dataPost = await obterPeloId(idLike, "posts");
+  const idLike = btnLike.getAttribute('name');
+  const dataPost = await obterPeloId(idLike, 'posts');
   // verificando se o id do usuário está na lista de likes de cada post
   if (dataPost.likes.includes(userData.id)) {
     // isto é para remover o like por usuário
     subirLikes(
       idLike,
-      dataPost.likes.filter((item) => item !== userData.id)
+      dataPost.likes.filter((item) => item !== userData.id),
     );
-    btnLike.style.color = "#8F7D7D";
+    btnLike.style.color = '#8F7D7D';
   } else {
     // isto é para adicionar like por usuário
     subirLikes(idLike, [...dataPost.likes, userData.id]);
-    btnLike.style.color = "#E7B9E4";
+    btnLike.style.color = '#E7B9E4';
   }
 };
 
 // Reconhece todos os botões like em cada Publicação
 export const btnLikes = () => {
-  const botoesPost = document.getElementsByClassName("botoesReacao");
+  const botoesPost = document.getElementsByClassName('botoesReacao');
 
   // Procura onde está o alvo de reação neste caso 'like'
   Array.from(botoesPost).forEach((botaoPost) => {
-    const btnLike = botaoPost.querySelector(".like");
+    const btnLike = botaoPost.querySelector('.like');
 
     // Reconhece o botão
-    btnLike.addEventListener("click", handleLikes);
+    btnLike.addEventListener('click', handleLikes);
   });
 };
 
@@ -78,29 +78,28 @@ const preencherHome = async (containerPost) => {
   const usuarios = await obterUsuarios();
   await obterPosts((querySnapshot) => {
     querySnapshot.docChanges().forEach((change) => {
-      if (window.location.hash === "#/timeline") {
-        if (change.type === "added") {
+      if (window.location.hash === '#/timeline') {
+        if (change.type === 'added') {
           const criadorPost = usuarios.filter(
-            (user) => user.userId === change.doc.data().usuarioId
+            (user) => user.userId === change.doc.data().usuarioId,
           );
           // console.log(criadorPost[0]);
           containerPost.prepend(
-            mostrarPost(change.doc.id, change.doc.data(), criadorPost[0])
+            mostrarPost(change.doc.id, change.doc.data(), criadorPost[0]),
           );
 
           if (change.doc.data().likes.includes(userData.id)) {
-            document.getElementsByName(change.doc.id)[0].style.color =
-              "#E7B9E4";
+            document.getElementsByName(change.doc.id)[0].style.color = '#E7B9E4';
           }
           btnLikes();
         }
-        if (change.type === "modified") {
+        if (change.type === 'modified') {
           const btnLike = document.getElementsByName(change.doc.id);
           const irmaoBtnLike = btnLike[0].nextElementSibling;
           irmaoBtnLike.textContent = change.doc.data().likes.length;
           btnLikes();
         }
-        if (change.type === "removed") {
+        if (change.type === 'removed') {
           /* const postEliminado = document.getElementById(change.doc.id);
             postEliminado.parentElement.remove(); */
         }
@@ -109,16 +108,16 @@ const preencherHome = async (containerPost) => {
   });
 };
 
-// A propriedade nextElementSibling retorna o elemento imediatamente após 
+// A propriedade nextElementSibling retorna o elemento imediatamente após
 // o elemento especificado, no mesmo nível da árvore.
 
 // Renderizando Barra de Navegação Inferior, Painel de Compartilhamento e Container Categorias
 export const homeMobile = () => {
-  const secaoMobile = document.createElement("section");
-  secaoMobile.classList.add("item3");
+  const secaoMobile = document.createElement('section');
+  secaoMobile.classList.add('item3');
 
-  const navInferior = document.createElement("nav");
-  navInferior.classList.add("barraNavegacaoInferior");
+  const navInferior = document.createElement('nav');
+  navInferior.classList.add('barraNavegacaoInferior');
   const userData = JSON.parse(sessionStorage.userSession);
   navInferior.innerHTML = `
     <ul>
@@ -145,9 +144,9 @@ export const homeMobile = () => {
     </li>
     </ul>
     `;
-  const painelCompartilhar = document.createElement("form");
-  painelCompartilhar.setAttribute("id", "formCompartilhar");
-  painelCompartilhar.classList.add("painelCompartilhar");
+  const painelCompartilhar = document.createElement('form');
+  painelCompartilhar.setAttribute('id', 'formCompartilhar');
+  painelCompartilhar.classList.add('painelCompartilhar');
   painelCompartilhar.innerHTML = `
     <textarea id="inputCompartilhar" placeholder="O que gostaria de compartilhar?" rows="8" cols="76"></textarea>  
     
@@ -170,13 +169,13 @@ export const homeMobile = () => {
     </div>
   `;
 
-  const containerExibicaoCategorias = document.createElement("div");
-  containerExibicaoCategorias.classList.add("categorias-container");
-  containerExibicaoCategorias.setAttribute("id", "categoriasContainer");
+  const containerExibicaoCategorias = document.createElement('div');
+  containerExibicaoCategorias.classList.add('categorias-container');
+  containerExibicaoCategorias.setAttribute('id', 'categoriasContainer');
 
-  const containerPublicacoes = document.createElement("div");
-  containerPublicacoes.classList.add("container-post");
-  containerPublicacoes.setAttribute("id", "container-post");
+  const containerPublicacoes = document.createElement('div');
+  containerPublicacoes.classList.add('container-post');
+  containerPublicacoes.setAttribute('id', 'container-post');
   preencherHome(containerPublicacoes);
 
   secaoMobile.appendChild(navInferior);
@@ -189,28 +188,27 @@ export const homeMobile = () => {
 export const criacaoPost = (formCompartilhar) => {
   const divCompartilhar = document.getElementById(formCompartilhar);
 
-  divCompartilhar.addEventListener("submit", async (e) => {
+  divCompartilhar.addEventListener('submit', async (e) => {
     e.preventDefault();
     // escolha da categoria / tema onde o usuario quer subir o post
-    const selectCategoria = e.target.querySelector("#Grupo");
-    const categoria =
-      selectCategoria.options[selectCategoria.selectedIndex].value;
+    const selectCategoria = e.target.querySelector('#Grupo');
+    const categoria = selectCategoria.options[selectCategoria.selectedIndex].value;
 
     // Escolha do arquivo que o usuário deseja enviar para o post
-    const arquivoLocal = e.target.querySelector("#compartilharImg").files[0];
+    const arquivoLocal = e.target.querySelector('#compartilharImg').files[0];
 
     // obter o campo txt do formulário (falta validar o formulário, atenção!)
-    const postTxt = e.target.querySelector("#inputCompartilhar").value;
+    const postTxt = e.target.querySelector('#inputCompartilhar').value;
 
-    // JSON.parse() recebe uma string JSON e a transforma em um objeto JavaScript
+    // JSON.parse()recebe uma string JSON e a transforma em um objeto JavaScript
     const userData = JSON.parse(sessionStorage.userSession);
 
     if (arquivoLocal === undefined) {
       // se nenhum arquivo é selecionado, é enviado vazio
-      await subirDataHomeCol(userData.id, postTxt, categoria, "");
+      await subirDataHomeCol(userData.id, postTxt, categoria, '');
     } else {
       // obtenção do url do arquivo carregado do storage
-      const urlImagem = await subirFileStorage(arquivoLocal, "imgPosts");
+      const urlImagem = await subirFileStorage(arquivoLocal, 'imgPosts');
       await subirDataHomeCol(userData.id, postTxt, categoria, urlImagem);
     }
     e.target.reset();
