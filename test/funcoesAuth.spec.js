@@ -11,9 +11,9 @@ describe('registroUsuario', () => {
   it('Deveria ser uma função de registro', () => {
     expect(typeof registroUsuario).toBe('function');
   });
-  it('Deveria registrar um usuário com email e senha', () => registroUsuario('laa.brz@gmail.com', '123456').then(() => {
+  it('Deveria registrar um usuário com email e senha', () => registroUsuario('teste@gmail.com', '123456').then(() => {
     expect(createUserWithEmailAndPassword.mock.calls[0][1]).toBe(
-      'laa.brz@gmail.com',
+      'teste@gmail.com',
     );
     expect(createUserWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
   }));
