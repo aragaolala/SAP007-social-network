@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
 // Configuração do Firebase
 
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
 
 import {
   onAuthStateChanged,
@@ -12,7 +11,7 @@ import {
   signInWithPopup,
   getAuth,
   GoogleAuthProvider,
-} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 import {
   getFirestore,
@@ -29,7 +28,7 @@ import {
   serverTimestamp,
   deleteDoc,
   onSnapshot,
-} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 import {
   getStorage,
@@ -37,7 +36,7 @@ import {
   uploadBytes,
   getDownloadURL,
   // eslint-disable-next-line import/no-unresolved
-} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js';
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-storage.js';
 
 // A Configuração de Firebase de Nossa Aplicação Web
 const firebaseConfig = {
