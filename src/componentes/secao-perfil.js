@@ -44,9 +44,9 @@ export const btnExcluirPost = () => {
   Array.from(postsCards).forEach((postCard) => {
     const btnExcluir = postCard.querySelector('.btnDelete');
     btnExcluir.addEventListener('click', async () => {
-      const confirmarcao = window.confirm('Deseja mesmo excluir essa publicação?');
+      const confirmacao = window.confirm('Deseja mesmo excluir essa publicação?');
       // confirm foi usado para verificar se o usuário queria excluir a postagem
-      if (!confirmarcao) {
+      if (!confirmacao) {
         // se a confirmação for falsa, não faz nada, do contrário exclui o post
         return;
       }
