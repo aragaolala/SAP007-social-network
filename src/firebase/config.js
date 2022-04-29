@@ -1,7 +1,6 @@
 // Configuração do Firebase
-
-// eslint-disable-next-line import/no-unresolved
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
+/* eslint-disable */
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js'; 
 
 import {
   onAuthStateChanged,

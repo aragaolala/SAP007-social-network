@@ -7,7 +7,8 @@ import {
   subirComments,
 } from '../firebase/funcoesFirestore.js';
 import { validarSessaoStorage } from './validacoes.js';
-import { serverTimestamp } from '../firebase/config.js';
+// import { serverTimestamp } from '../firebase/config.js'
+// 'serverTimestamp' is defined but never used
 
 // Handler: Ações que devem ser executadas quando o usuário clicar em um botão
 async function LikeFunctionHandler(e) {
@@ -44,18 +45,18 @@ async function CommentFunctionHandler(e) {
   const idComment = btnComment.getAttribute('name');
   const contadorComment = btnComment.nextElementSibling;
   const dataPost = await obterPeloId(idComment, 'posts');
-  
   const comment = {
     comment: 'Olá, mundo',
     // timestamp: serverTimestamp(),
     usuarioId: userData.id,
   };
 
-  // const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
-  
+  // const comentariosAntigos = dataPost.comments || [];
+  // uso a validação de || para usar uma array vazia se nao tiver comentários no post
   // isto é para adicionar o comentário
   subirComments(idComment, [...dataPost.comments, comment]);
-  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
+  contadorComment.textContent = dataPost.comments.length + 1;
+  // o número de comentários antigos + 1
 }
 
 // Reconhece todos os botões like em cada Publicação
