@@ -23,7 +23,7 @@
 
 ##### Aqui vem uma descricao geral
 
-- Qual é a necessidade ou problema que a Grrrl Talk busca resolver?
+- Qual é a necessidade e para quem a Grrrl Talk busca resolver?
 
 - Como a Grrrl Talk está resolvendo os problemas das usuárias?
 
