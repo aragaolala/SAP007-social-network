@@ -1,10 +1,11 @@
-# Criando uma Rede Social
+# Grrrl Talk - Fale o que pensa e encontre apoio 💪🏼
 
 ## Índice
 
-* [1. Prefácio](#1-prefácio)
-* [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
+* [1. Resumo do Projeto](#1-resumo-do-projeto)
+* [2. Histórias de usuário]
+(#2-histórias-de-usuário)
+* [3. Protótipos de baixa e alta fidelidade](#3-protótipos-de-baixa-e-alta-fidelidade)
 * [4. Considerações gerais](#4-considerações-gerais)
 * [5. Critérios de aceitação mínimos do
   projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
@@ -15,11 +16,13 @@
 
 ***
 
-## 1. Prefácio
+## 1. Resumo do Projeto
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
-invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
-viver sem elas.
+##### Aqui vem uma descricao geral
+
+- Qual é a necessidade ou problema que a Grrrl Talk busca resolver?
+
+- Como a Grrrl Talk está resolvendo os problemas das usuárias?
 
 ![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
 
@@ -29,7 +32,7 @@ para químicos onde os usuários podem publicar artigos a respeito de suas
 pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
 determinadas tags ou popularidade, mais recente ou mais comentado.
 
-## 2. Resumo do projeto
+## 2. Histórias de usuário
 
 Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
 decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
@@ -47,7 +50,7 @@ Application
 [_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
 qual seja possível **ler e escrever dados**.
 
-## 3. Objetivos de aprendizagem
+## 3. Protótipos de baixa e alta fidelidade
 
 Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
 
