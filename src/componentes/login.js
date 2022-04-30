@@ -26,6 +26,9 @@ export const formInicioSessao = () => {
                     <input type="password" id="senhaLogin" class="dadosRegistro" placeholder="Senha" required>
                     <i id="botaoSenha" class="ph-eye-closed"></i>
                 </div>
+                <div class="texto2">
+                  <a id="resetPass" href="#/resetpassword">Esqueceu sua senha?</a>
+                </div>
                 <button type="submit" id="botaoDeLogin" class="iniciarSessao">Login</button>
                  <p class="texto2">Ou faça login com o Google</p>
                  <p class="texto2"><img id="imgGoogle" src="imagens/GoogleOriginal.png"></p>
