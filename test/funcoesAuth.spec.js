@@ -4,9 +4,10 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   onAuthStateChanged,
+  signInWithPopup,
 } from '../src/firebase/config';
 import {
-  loginUsuario, registroUsuario, envioEmailVerificacao, estadoAuthUsuario,
+  loginUsuario, registroUsuario, envioEmailVerificacao, estadoAuthUsuario, googleInicioSessao,
 } from '../src/firebase/funcoesAuth';
 
 jest.mock('../src/firebase/config');
@@ -24,6 +25,17 @@ describe('registroUsuario', () => {
     }));
 });
 
+// envioEmailVerificacao
+describe('envioEmailVerificacao', () => {
+  it('Deveria ser uma função que envia o email de verificação', () => {
+    expect(typeof envioEmailVerificacao).toBe('function');
+  });
+  it('', () => envioEmailVerificacao()
+    .then(() => {
+      expect(sendEmailVerification.mock.calls).toHaveLength(1);
+    }));
+});
+
 // loginUsuario
 describe('loginUsuario', () => {
   it('Deveria ser uma função de legin', () => {
@@ -36,18 +48,18 @@ describe('loginUsuario', () => {
     }));
 });
 
-// envioEmailVerificacao
-describe('envioEmailVerificacao', () => {
-  it('Deveria ser uma função que envia o email de verificação', () => {
-    expect(typeof envioEmailVerificacao).toBe('function');
+// googleInicioSessao com o popUp
+describe('googleInicioSessao', () => {
+  it('Deveria ser uma função login com o Google', () => {
+    expect(typeof googleInicioSessao).toBe('function');
   });
-  it('', () => envioEmailVerificacao()
-    .then(() => {
-      expect(sendEmailVerification.mock.calls).toHaveLength(1);
-    }));
+  const provider = { id: 123, correo: 'hola@gmail.com' };
+  it('provedor', () => googleInicioSessao(provider).then(() => {
+    expect(signInWithPopup.mock.calls[0][1]).toBe(provider);
+  }));
 });
 
-// estadoAuthUsuario - o estado de login e que, a parir, daí é possível coletar dados sobre a user
+// estadoAuthUsuario - o estado de login e que, a parir daí, é possível coletar dados sobre a user
 describe('estadoAuthUsuario', () => {
   it('Deveria ser uma função do estado da usuária', () => {
     expect(typeof estadoAuthUsuario).toBe('function');
