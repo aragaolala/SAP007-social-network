@@ -70,3 +70,5 @@ describe('estadoAuthUsuario', () => {
       expect(onAuthStateChanged.mock.calls[0][1]).toEqual(callback);
     }));
 });
+
+/* teste */
