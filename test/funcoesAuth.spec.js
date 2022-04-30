@@ -53,7 +53,7 @@ describe('googleInicioSessao', () => {
   it('Deveria ser uma função login com o Google', () => {
     expect(typeof googleInicioSessao).toBe('function');
   });
-  const provider = { id: 123, correo: 'hola@gmail.com' };
+  const provider = { id: 123, email: 'meajuda@jesus' };
   it('provedor', () => googleInicioSessao(provider).then(() => {
     expect(signInWithPopup.mock.calls[0][1]).toBe(provider);
   }));
