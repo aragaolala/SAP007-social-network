@@ -24,7 +24,8 @@
 
 - Como a Grrrl Talk está resolvendo os problemas das usuárias?
 
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
+<img alt="img-girl-power" src="imagens/../src/imagens/g-power.jpeg" width="250px">
+
 
 Há redes sociais de todo tipo para todos os tipos de interesse. Por exemplo: em
 uma rodada de financiamento com investidores, foi apresentada uma rede social
