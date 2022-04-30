@@ -3,3 +3,6 @@ import {
   addDoc, collection,
 } from '../src/firebase/config';
 
+jest.mock('../src/firebase/config');
+
+
