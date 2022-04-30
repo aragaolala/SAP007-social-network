@@ -1,23 +1,18 @@
-const auth = {
-  currentUser: {
-    uid: 'fake-uid',
-    displayName: 'fake-name',
-    providerData: [{ providerId: 'google.com' }],
-    email: 'fake-email',
-    photoURL: 'fake-photo',
-    metadata: {
-      createdAt: 'fake-time',
-    },
-  },
-};
+export const signInWithEmailAndPassword = jest.fn(() => Promise.resolve({}));
+export const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve({}));
+export const signOut = jest.fn(() => Promise.resolve({}));
+export const onAuthStateChanged = jest.fn(() => Promise.resolve({}));
+export const sendEmailVerification = jest.fn(() => Promise.resolve({}));
+export const auth = jest.fn();
+export const signInWithPopup = jest.fn((_auth_, provider) => Promise.resolve({ provider }));
 
-// const setDoc = jest.fn((document, values) => Promise.resolve({values}));
+export const db = jest.fn();
 
-const db = {};
-const setDoc = jest.fn((document, values) => Promise.resolve({ values }));
-const doc = jest.fn(() => Promise.resolve({}));
-const collection = jest.fn(() => Promise.resolve({}));
+export const collection = jest.fn((_db_, _collection_) => _collection_);
 
-export {
-  auth, setDoc, doc, db, collection,
-};
+export const addDoc = jest.fn((Collection, data) => Promise.resolve({ [Collection]: data }));
+
+export const doc = jest.fn((_db_, nameCol, idDoc) => Object({ [nameCol]: idDoc }));
+
+export const serverTimestamp = jest.fn();
+export const getDoc = jest.fn(() => Promise.resolve({}));
