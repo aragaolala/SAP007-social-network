@@ -1,4 +1,7 @@
-# Grrrl Talk - Fale o que pensa e encontre apoio 💪🏼
+# Grrrl Talk - Fale o que pensa e encontre apoio.
+<img alt="img-girl-power" src="imagens/../src/imagens/logo.png" width="250px">
+<img alt="img-girl-power" src="imagens/../src/imagens/pinky-promise.svg" width="250px">
+
 
 ## Índice
 
@@ -24,8 +27,7 @@
 
 - Como a Grrrl Talk está resolvendo os problemas das usuárias?
 
-<img alt="img-girl-power" src="imagens/../src/imagens/logo.png" width="250px">
-<img alt="img-girl-power" src="imagens/../src/imagens/pinky-promise.svg" width="250px">
+
 
 ---
 ## 2. Histórias de usuário
