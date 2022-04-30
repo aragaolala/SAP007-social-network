@@ -1,9 +1,9 @@
 // importando funcões que serão testadas
 import {
-  signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification,
 } from '../src/firebase/config';
 import {
-  loginUsuario, registroUsuario,
+  loginUsuario, registroUsuario, envioEmailVerificacao,
 } from '../src/firebase/funcoesAuth';
 
 jest.mock('../src/firebase/config');
@@ -30,5 +30,16 @@ describe('loginUsuario', () => {
     .then(() => {
       expect(signInWithEmailAndPassword.mock.calls[0][1]).toBe('meajuda@deus');
       expect(signInWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
+    }));
+});
+
+// envioEmailVerificacao
+describe('envioEmailVerificacao', () => {
+  it('Deveria ser uma função que envia o email de verificação', () => {
+    expect(typeof envioEmailVerificacao).toBe('function');
+  });
+  it('', () => envioEmailVerificacao()
+    .then(() => {
+      expect(sendEmailVerification.mock.calls).toHaveLength(1);
     }));
 });
