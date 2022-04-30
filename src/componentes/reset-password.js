@@ -33,8 +33,12 @@ export const resetPass = () => {
             </div>
         </form>
 
-        <section class="msgReset">
-            <p class="exibicaoRegistroSucesso">O e-mail de redefinição foi enviado para <b class="emailText"></b>, caso não tenha recebido, verifique sua caixa de spam ou lixo eletrônico!</p>
+        <section class="msgReset" style="display: none">
+            <p class="exibicaoRegistroSucesso">O e-mail de redefinição foi enviado para <b class="emailText"></b>. Caso não tenha recebido, verifique sua caixa de spam ou lixo eletrônico!</p>
+        </section>
+
+        <section class="msgErro" style="display: none">
+            <p class="exibicaoError">Houve algum erro ao requisitar sua solicitação. Tente novamente mais tarde.</p>
         </section>
     `;
   
@@ -56,13 +60,14 @@ export const resetPass = () => {
     return resetPasswordFirebase(email)
       .then(() => {
         console.log('Reset Password successful');
-        document.querySelector('.msgReset');
+        document.querySelector('.msgReset').style.display = 'block';
         const emailText = document.querySelector('.emailText');
         emailText.innerHTML = `${email}`;
       })
       .catch((err) => {
         const error = err.code;
         console.log(error);
+        document.querySelector('.msgErro').style.display = 'block';
       });
   };
   
