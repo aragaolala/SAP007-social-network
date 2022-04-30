@@ -38,5 +38,10 @@
 - HU #4
 ## 3. Protótipos de baixa e alta fidelidade
 
-- Versão Mobile 
-- Versão Desktop
+- Versão Mobile - Alta fidelidade
+
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta2.png" width="150px">
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta1.png" width="150px">
+- Versão Mobile - Baixa fidelidade
+- Versão Desktop - Alta fidelidade
+- Versão Desktop - Baixa fidelidade
