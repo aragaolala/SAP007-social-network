@@ -7,7 +7,11 @@ import {
   signInWithPopup,
 } from '../src/firebase/config';
 import {
-  loginUsuario, registroUsuario, envioEmailVerificacao, estadoAuthUsuario, googleInicioSessao,
+  loginUsuario,
+  registroUsuario,
+  envioEmailVerificacao,
+  estadoAuthUsuario,
+  googleInicioSessao,
 } from '../src/firebase/funcoesAuth';
 
 jest.mock('../src/firebase/config');
@@ -18,11 +22,12 @@ describe('registroUsuario', () => {
   it('Deveria ser uma função de registro', () => {
     expect(typeof registroUsuario).toBe('function');
   });
-  it('Deveria registrar a usuária', () => registroUsuario('meajuda@deus', '123456')
-    .then(() => {
-      expect(createUserWithEmailAndPassword.mock.calls[0][1]).toBe('meajuda@deus');
-      expect(createUserWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
-    }));
+  it('Deveria registrar a usuária', () => registroUsuario('meajuda@deus', '123456').then(() => {
+    expect(createUserWithEmailAndPassword.mock.calls[0][1]).toBe(
+      'meajuda@deus',
+    );
+    expect(createUserWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
+  }));
 });
 
 // envioEmailVerificacao
@@ -30,22 +35,20 @@ describe('envioEmailVerificacao', () => {
   it('Deveria ser uma função que envia o email de verificação', () => {
     expect(typeof envioEmailVerificacao).toBe('function');
   });
-  it('', () => envioEmailVerificacao()
-    .then(() => {
-      expect(sendEmailVerification.mock.calls).toHaveLength(1);
-    }));
+  it('', () => envioEmailVerificacao().then(() => {
+    expect(sendEmailVerification.mock.calls).toHaveLength(1);
+  }));
 });
 
 // loginUsuario
 describe('loginUsuario', () => {
-  it('Deveria ser uma função de legin', () => {
+  it('Deveria ser uma função de login', () => {
     expect(typeof loginUsuario).toBe('function');
   });
-  it('Deveria iniciar a sessão da usuária', () => loginUsuario('meajuda@deus', '123456')
-    .then(() => {
-      expect(signInWithEmailAndPassword.mock.calls[0][1]).toBe('meajuda@deus');
-      expect(signInWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
-    }));
+  it('Deveria iniciar a sessão da usuária', () => loginUsuario('meajuda@deus', '123456').then(() => {
+    expect(signInWithEmailAndPassword.mock.calls[0][1]).toBe('meajuda@deus');
+    expect(signInWithEmailAndPassword.mock.calls[0][2]).toBe('123456');
+  }));
 });
 
 // googleInicioSessao com o popUp
@@ -65,8 +68,7 @@ describe('estadoAuthUsuario', () => {
     expect(typeof estadoAuthUsuario).toBe('function');
   });
   const callback = () => {};
-  it('Deveria verificar o estado da usuária', () => estadoAuthUsuario(callback)
-    .then(() => {
-      expect(onAuthStateChanged.mock.calls[0][1]).toEqual(callback);
-    }));
+  it('Deveria verificar o estado da usuária', () => estadoAuthUsuario(callback).then(() => {
+    expect(onAuthStateChanged.mock.calls[0][1]).toEqual(callback);
+  }));
 });
