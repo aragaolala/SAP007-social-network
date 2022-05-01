@@ -16,6 +16,8 @@ import {
 
 jest.mock('../src/firebase/config');
 // temos uma pasta __mocks__ no firebase
+// Essa função, recebe como parâmetro o caminho do módulo que será sobrescrito com o mock
+// do artigo "fundamentando mocks em js"
 
 // registroUsuario
 describe('registroUsuario', () => {

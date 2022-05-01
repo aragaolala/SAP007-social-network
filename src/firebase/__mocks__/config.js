@@ -1,3 +1,5 @@
+// O trecho jest.fn() retorna uma função de mock para ser utilizada.
+
 export const signInWithEmailAndPassword = jest.fn(() => Promise.resolve({}));
 export const createUserWithEmailAndPassword = jest.fn(() => Promise.resolve({}));
 export const signOut = jest.fn(() => Promise.resolve({}));
