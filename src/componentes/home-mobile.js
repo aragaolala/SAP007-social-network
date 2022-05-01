@@ -7,7 +7,7 @@ import {
   subirComments,
 } from '../firebase/funcoesFirestore.js';
 import { subirFileStorage } from '../firebase/funcoesStorage.js';
-import { serverTimestamp } from '../firebase/config.js';
+// import { serverTimestamp } from '../firebase/config.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador) => {
@@ -78,11 +78,12 @@ export const handleComments = async (e) => {
     usuarioId: userData.id,
   };
 
-  // const comentariosAntigos = dataPost.comments || [];// uso a validação de || para usar uma array vazia se nao tiver comentários no post
-  
+  // const comentariosAntigos = dataPost.comments || [];
+  // uso a validação de || para usar uma array vazia se nao tiver comentários no post
   // isto é para adicionar o comentário
   subirComments(idComment, [...dataPost.comments, comment]);
-  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
+  contadorComment.textContent = dataPost.comments.length + 1;
+  // o número de comentários antigos + 1
 };
 
 // Reconhece todos os botões like em cada Publicação
