@@ -9,6 +9,8 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
   getAuth,
   GoogleAuthProvider,
   // eslint-disable-next-line import/no-unresolved
@@ -69,6 +71,8 @@ export {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
   provedor,
   GoogleAuthProvider,
   getFirestore,
