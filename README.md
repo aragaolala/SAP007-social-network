@@ -30,6 +30,9 @@
 
   Ao fornecer um espaço livre de proconceitos e julgamentos, o aplicativo promove a conexão entre mulheres que buscam compartilhar suas vivências, encontrar apoio e também acolher outras histórias.
 
+  <a href="https://aragaolala.github.io/SAP007-social-network/">Nossa aplicação</a>
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/qr-code.png" width="100px">
+
 ---
 
 ## 2. Histórias de usuário
