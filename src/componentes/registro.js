@@ -21,10 +21,6 @@ export const formRegistros = () => {
           <input type="password" id="senhaRegistro" class="dadosRegistro" placeholder="Senha" required>
           <i id="botaoSenha" class="ph-eye-closed"></i>
         </div>
-        <div class="secaoCheckbox">
-          <input type="checkbox" id="checkRegistro" class="checkRegistro" required/><label class="texto2">Aceito os termos 
-          e condições das Políticas de Privacidade.</label>
-        </div>
         <button type="submit" class="iniciarSessao">Registrar-se</button> 
         <p class="texto2">Já tem tem uma conta? <a id="registrar-se" href="#/inicio">Iniciar sessão</a></p>
       </form>

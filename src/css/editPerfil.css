@@ -234,6 +234,10 @@
         font-size: 17px;
     }
 
+    .postComentario{
+        font-size: 15px;
+    }
+
     .descricaoUsuarioPost{
         font-size: 13px;
     }
@@ -293,7 +297,7 @@
         height: 5px;
     }
 
-    #inputCompartilhar {
+    #inputCompartilhar, #inputComentario {
         width: 100%;
     }
 

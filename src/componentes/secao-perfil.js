@@ -30,9 +30,7 @@ const postsUsuario = (idPost, dataCriador, dataPost) => {
         <i class="ph-heart-straight-fill like" name= "${idPost}"}></i>
         <p>${dataPost.likes.length}</p>
         <i class="ph-chat-centered-dots comment" name= "${idPost}"}></i>
-        <p>${dataPost.comments.length}</p>
-        <i class="ph-share-network" name= "${idPost}"}></i>
-        <p>${dataPost.likes.length}</p>         
+        <p>${dataPost.comments.length}</p>       
     </div>
     `;
   return divPost;

@@ -29,9 +29,22 @@ body {
   text-align: center;
 }
 
-#inputCompartilhar {
+#inputCompartilhar, #inputEditar {
   border: 1px solid #662f82;
   height: 60px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+#inputEditar {
+  border: 1px solid #662f82;
+  border-radius: 5px;
+}
+
+#inputComentario{
+  border: 1px solid #662f82;
+  height: 45px;
   width: 100%;
   border-radius: 5px;
   padding: 3px;
@@ -91,6 +104,30 @@ body {
   display: flex;
   color: #662f82;
   font-size: 15px;
+}
+
+.postComentarios{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.postComentario{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.userComentario, .ph-sparkle {
+  font-weight: bolder;
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #662f82;
+}
+
+.conteudoComentario {
+  font-weight: lighter;
+  font-size: 13px;
+  margin-left: 15px;
 }
 
 .botoesReacao {
@@ -296,8 +333,25 @@ figure {
   font-size: 14px;
 }
 
+#botaoComentario {
+  background-color: #662f82;
+  border-radius: 10px;
+  border-style: none;
+  color: #e8e3e7;
+  overflow: hidden;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: center;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  font-size: 12px;
+  float: right;
+}
+
 textarea {
   font-size: 14px;
+  resize: none;
 }
 
 #compartilharImg::before {
@@ -362,9 +416,14 @@ textarea {
   color: #662f82;
 }
 
-.btnEncerrar {
+.btnEncerrar, .btnFechar {
   font-weight: bold;
   color: #662f82;
+  cursor: pointer;
+}
+
+.btnFechar{
+  float: right;
 }
 
 .categoriaUnica p {
@@ -405,6 +464,10 @@ textarea {
 
   .nomeUsuarioPost {
     font-size: 17px;
+  }
+
+  .postComentario{
+    font-size: 15px;
   }
 
   .descricaoUsuarioPost {
@@ -478,7 +541,7 @@ textarea {
     height: 5px;
   }
 
-  #inputCompartilhar {
+  #inputCompartilhar, #inputComentario{
     width: 100%;
   }
 
