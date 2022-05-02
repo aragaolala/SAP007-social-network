@@ -230,6 +230,10 @@
     margin: 3vh 0;
 }
 
+#SecPublicacoesUsuario{
+    width: 100%;
+}
+
 .fundo3{
     margin-top: 20px;
     color: #662F82;

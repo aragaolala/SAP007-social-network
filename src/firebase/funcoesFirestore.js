@@ -85,7 +85,6 @@ export const subirComments = async (idPost, dataComments) => {
   await updateDoc(docId, {
     comments: dataComments,
   });
-  console.log('diz aí anjo', dataComments); 
 };
 
 // Para atualizar os dados do perfil na coleção de usuários
