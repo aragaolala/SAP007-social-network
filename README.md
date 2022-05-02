@@ -9,6 +9,7 @@
   - [Índice](#índice)
   - [1. Resumo do Projeto](#1-resumo-do-projeto)
   - [2. Histórias de usuário](#2-histórias-de-usuário)
+        - [Histórias de usuário (HU):](#histórias-de-usuário-hu)
   - [3. Protótipos](#3-protótipos)
   - [4. Critérios de aceitação](#4-critérios-de-aceitação)
   - [5. Teste de usabilidade](#5-teste-de-usabilidade)
@@ -19,43 +20,50 @@
 
 ## 1. Resumo do Projeto
 
-- A Grrrl Talk surgiu da necessidade em ter um ambiente seguro e livre de assédio e/ou comentários misóginos. O app, exclusivo para mulheres, visa fortalecer nossa rede de apoio mútuo ao compartilhar e acolher histórias.
+💪🏼 A Grrrl Talk surgiu da necessidade em ter um ambiente seguro e livre de assédio e/ou comentários misóginos. O app, exclusivo para mulheres, visa fortalecer nossa rede de apoio mútuo ao compartilhar e acolher histórias.
 
-- Qual a necessidade a Grrrl Talk busca resolver? E para quem?
+👉🏼 Qual a necessidade a Grrrl Talk busca resolver? E para quem?
+
   Pensando no assédio e agressões, com raízes misóginas infelizmente comuns e conhecidos por todas as mulheres, sofrido nos espaços virtuais, esta aplicação busca servir como um espaço seguro e exclusivo para mulheres, para trocas de histórias, desabafos e demais experiências.
 
-- Como a Grrrl Talk está resolvendo os problemas das usuárias?
+👉🏼 Como a Grrrl Talk está resolvendo os problemas das usuárias?
+
   Ao fornecer um espaço livre de proconceitos e julgamentos, o aplicativo promove a conexão entre mulheres que buscam compartilhar suas vivências, encontrar apoio e também acolher outras histórias.
 
 ---
 
 ## 2. Histórias de usuário
 
-- Formulário aplicado:
+- Pesquisa de usuária - Formulário aplicado (<a href="https://docs.google.com/forms/d/1lcvzDfIz48dvusbueu6E-Rj2DZQWjbNyT8mCkn91ESc/viewanalytics">Resultados iniciais aqui</a>):
+<br>
   
   ![Pesquisa de usuário](https://media.giphy.com/media/QeVGgNieuCIGkjLNtU/giphy.gif)
   <br>
 
-- HU #1: Gostaria de me cadastrar e, em seguida, fazer login com meu email.
-  <br>
-   1. Critérios de aceitação: a usuária deverá ter opcões de ingressar numa conta existente ou criar cadastro; Para criar conta será necessário um usarname, email e senh; para fazer login será necessário email e senha.
-   2. Definições de pronto: criar página de registro e de login com seus respectivos js; criar funcões que interajam com o Firebase, que cadastre e armazene dados da nova usuária.
-  <br>
+##### Histórias de usuário (HU):
+ ✅ HU #1: Gostaria de me cadastrar e, em seguida, fazer login com meu email.
   
-- HU #2: Gostaria de publicar um post e ter a opção de editar e/ou removê-lo.
-  <br>
-  1. Critérios de aceitação: a usuária deve conseguir postar o que deseja e fazer as edicões que deseja.
-  2. Definições de pronto: criar um painel que contenha uma área de texto e um botão que submeta o post; criar uma funcao que interaja com o Firebase que armazene os dados da publicacao no banco de dados, numa coleçao, e que devolva essas publicaçoes quando requisitado.
-  <br>
-- HU #3: Gostaria de dar like nas publicações
-  <br>
-  1. Critérios de aceitação: a usuária poderá dar like ou remover o seu like.
-  2. Definições de pronto: criar uma função de dar like e que também remova; que essa função conte os likes numa publicação; que as alterações (acréscimo ou remoção do like) sejam atualizadas na coleção posts do Firebase.
-  <br>
-- HU #4: Gostaria de fazer logout
-  <br>
-  1. Critérios de aceitação: a usuária poderá encerrar sua sessão.
-  2. Definições de pronto: criar uma funcão de logout e que mude o estado da usuária.
+   1.1 Critérios de aceitação: a usuária deverá ter opcões de ingressar numa conta existente ou criar cadastro; Para criar conta será necessário um usarname, email e senh; para fazer login será necessário email e senha.
+   
+   1.2 Definições de pronto: criar página de registro e de login com seus respectivos js; criar funcões que interajam com o Firebase, que cadastre e armazene dados da nova usuária.
+  
+✅ HU #2: Gostaria de publicar um post e ter a opção de editar e/ou removê-lo.
+  
+  2.1 Critérios de aceitação: a usuária deve conseguir postar o que deseja e fazer as edicões que deseja.
+
+  2.2 Definições de pronto: criar um painel que contenha uma área de texto e um botão que submeta o post; criar uma funcao que interaja com o Firebase que armazene os dados da publicacao no banco de dados, numa coleçao, e que devolva essas publicaçoes quando requisitado.
+  
+✅ HU #3: Gostaria de dar like nas publicações
+
+  3.1 Critérios de aceitação: a usuária poderá dar like ou remover o seu like.
+
+  3.2 Definições de pronto: criar uma função de dar like e que também remova; que essa função conte os likes numa publicação; que as alterações (acréscimo ou remoção do like) sejam atualizadas na coleção posts do Firebase.
+  
+✅ HU #4: Gostaria de fazer logout
+
+  4.1 Critérios de aceitação: a usuária poderá encerrar sua sessão.
+
+  4.2 Definições de pronto: criar uma funcão de logout e que mude o estado da usuária.
 
 ## 3. Protótipos
 
