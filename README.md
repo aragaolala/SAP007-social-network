@@ -12,9 +12,8 @@
   - [3. Protótipos](#3-protótipos)
   - [4. Critérios de aceitação](#4-critérios-de-aceitação)
   - [5. Teste de usabilidade](#5-teste-de-usabilidade)
-  - [6. Melhorias futuras](#6-melhorias-futuras)
-  - [7. Linguagens e ferramentas utilizadas](#7-linguagens-e-ferramentas-utilizadas)
-  - [8. Sobre as desenvolvedoras](#8-sobre-as-desenvolvedoras)
+  - [6. Linguagens e ferramentas utilizadas](#6-linguagens-e-ferramentas-utilizadas)
+  - [7. Sobre as desenvolvedoras](#7-sobre-as-desenvolvedoras)
   
 ***
 
@@ -92,13 +91,12 @@
 
 ![Teste de usabilidade](https://media.giphy.com/media/XbZIicEeOH2HOTyLr0/giphy.gif)
 
-## 6. Melhorias futuras
+- Melhorias futuras:
+1. Editar e/ou remover comentários
+2. Compartilhamento de posts
+3. Visitar outros perfis
 
-- Editar e/ou remover comentários
-- Visitar outros perfis
-- Compartilhamento de posts
-
-## 7. Linguagens e ferramentas utilizadas
+## 6. Linguagens e ferramentas utilizadas
 
 1. CritériosHTML e CSS
 
@@ -141,7 +139,7 @@
 - Nomenclatura / Semântica
 - Linting
 
-## 8. Sobre as desenvolvedoras
+## 7. Sobre as desenvolvedoras
 💜 Feito com muito carinho por Amanda Gusmão e Layssa Aragão: 
 
 ⚡️Layssa Aragão <a href="https://www.linkedin.com/in/layssaaragaob/">Linkedin</a> | <a href="https://github.com/aragaolala">GitHub</a>
