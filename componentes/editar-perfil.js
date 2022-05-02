@@ -135,7 +135,7 @@ export const btnEditarPerfil = () => {
   });
   btnSalvarMudancas.addEventListener('click', async (e) => {
     e.preventDefault();
-    const inputUsuarioAtualizado = document.getElementById('atualizacaoUsuario');
+    const inputUsuarioAtualizado = document.getElementById('atualizacaoUsuario').value;
     const inputPronomesAtualizado = document.getElementById('atualizacaoPronome').value;
     const inputLocalAtualizado = document.getElementById('atualizacaoLocal').value;
     const userData = JSON.parse(sessionStorage.userSession);
