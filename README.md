@@ -29,7 +29,7 @@
 
 ## 2. Histórias de usuário
 
-* Form pesquisa com a 
+* Formulário aplicado:
   
   ![Pesquisa de usuário](https://media.giphy.com/media/QeVGgNieuCIGkjLNtU/giphy.gif)
   <br>
@@ -73,6 +73,7 @@
 * Versão Mobile - Baixa fidelidade
 * Versão Desktop - Baixa fidelidade
 * Paleta de cores:
+  
    <img alt="prot-alta-fidel" src="imagens/../src/imagens/paleta-de-cores.png" width="300px">
 
 ## 4. Teste de usabilidade
