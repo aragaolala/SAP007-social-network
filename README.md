@@ -17,11 +17,12 @@
 ## 1. Resumo do Projeto
 
 * A Grrrl Talk surgiu da necessidade em ter um ambiente seguro e livre de assédio e/ou comentários misóginos. O app, exclusivo para mulheres, visa fortalecer nossa rede de apoio mútuo ao compartilhar e acolher histórias.
-<BR>
+
 
 * Qual a necessidade a Grrrl Talk busca resolver? E para quem?
   Pensando no assédio e agressões, com raízes misóginas infelizmente comuns e conhecidos por todas as mulheres, sofrido nos espaços virtuais, esta aplicação busca servir como um espaço seguro e exclusivo para mulheres, para trocas de histórias, desabafos e demais experiências.
-  <br>
+
+
 * Como a Grrrl Talk está resolvendo os problemas das usuárias?
   Ao fornecer um espaço livre de proconceitos e julgamentos, o aplicativo promove a conexão entre mulheres que buscam compartilhar suas vivências, encontrar apoio e também acolher outras histórias.
 
