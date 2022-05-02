@@ -81,7 +81,7 @@ const mostrarPostPorCategoria = async (containerPost, grupo) => {
     const criadorPost = usuarios.filter(
       (user) => user.userId === docs.usuarioId,
     );
-    containerPost.prepend(mostrarPost(docs.postId, docs, criadorPost[0]));
+    containerPost.prepend(mostrarPost(docs.postId, docs, criadorPost[0], usuarios));
     // verificando se o id do usuário logado está na lista de likes
     // se funcionar fica rosa
     if (docs.likes.includes(userData.id)) {
