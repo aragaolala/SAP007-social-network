@@ -80,3 +80,30 @@
 ## 4. Teste de usabilidade
 ![Teste de usabilidade](https://media.giphy.com/media/XbZIicEeOH2HOTyLr0/giphy.gif)
 ## 5. Linguagens e ferramentas utilizadas
+- HTML e CSS
+ 1. HTML semântico
+ 2. CSS flexbox
+- DOM e Web APIs
+ 1. Manipulação do DOM
+ 2. History API
+ 3. sessionStorage
+- Javascript
+ 1. Uso de callbacks
+ 2. Consumo de Promises
+ 3. Uso de ES modules (import | export)
+- Firebase
+ 1. Firestore
+ 2. Firebase Auth
+ 3. Firebase security rules
+ 4. Uso de onSnapshot | onAuthStateChanged
+- Testing
+ 1. Teste unitários
+ 2. Testes assíncronos
+ 3. Mocking
+- Git e Github
+ 1. Colaboração pelo Github
+ 2. Organização pelo Github
+- Boas práticas de programação
+ 1. Modularização
+ 2. Nomenclatura / Semântica
+ 3. Linting
