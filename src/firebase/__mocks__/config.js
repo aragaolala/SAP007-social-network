@@ -8,6 +8,8 @@ export const onAuthStateChanged = jest.fn(() => Promise.resolve({}));
 export const sendEmailVerification = jest.fn(() => Promise.resolve({}));
 export const auth = jest.fn();
 export const signInWithPopup = jest.fn((_auth_, provider) => Promise.resolve({ provider }));
+export const sendPasswordResetEmail = jest.fn(() => Promise.resolve({}));
+export const updatePassword = jest.fn(() => Promise.resolve({}));
 
 export const db = jest.fn();
 

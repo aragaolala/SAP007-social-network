@@ -52,7 +52,7 @@ export const resetPass = () => {
 
   return articlePainel;
 };
-
+/*eslint-disable*/
 export const handleReset = (e) => {
   e.preventDefault();
 

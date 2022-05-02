@@ -30,8 +30,8 @@ export const envioEmailVerificacao = () => sendEmailVerification(auth.currentUse
 
 export const estadoAuthUsuario = (callback) => onAuthStateChanged(auth, callback);
 
-//RESET PASSWORD
+// RESET PASSWORD
 export const resetPasswordFirebase = (email) => sendPasswordResetEmail(auth, email);
 
-//Atualizar senha
+// Atualizar senha
 export const atualPasswordFirebase = (novaSenha) => updatePassword(auth, novaSenha);

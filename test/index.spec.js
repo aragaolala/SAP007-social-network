@@ -5,6 +5,8 @@ import {
   sendEmailVerification,
   onAuthStateChanged,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
 } from '../src/firebase/config';
 import {
   loginUsuario,
@@ -12,6 +14,9 @@ import {
   envioEmailVerificacao,
   estadoAuthUsuario,
   googleInicioSessao,
+  resetPasswordFirebase,
+  atualPasswordFirebase,
+
 } from '../src/firebase/funcoesAuth';
 
 jest.mock('../src/firebase/config');
@@ -72,5 +77,25 @@ describe('estadoAuthUsuario', () => {
   const callback = () => {};
   it('Deveria verificar o estado da usuária', () => estadoAuthUsuario(callback).then(() => {
     expect(onAuthStateChanged.mock.calls[0][1]).toEqual(callback);
+  }));
+});
+
+// resetPasswordFirebase - reset de senha
+describe('envioResetEmail', () => {
+  it('Deveria ser uma função que envia o email de redefinição de senha', () => {
+    expect(typeof resetPasswordFirebase).toBe('function');
+  });
+  it('', () => resetPasswordFirebase().then(() => {
+    expect(sendPasswordResetEmail.mock.calls).toHaveLength(1);
+  }));
+});
+
+// atualPasswordFirebase - senha atualizada
+describe('senhaAtualizada', () => {
+  it('Deveria ser uma função que atualiza a senha redefinida', () => {
+    expect(typeof atualPasswordFirebase).toBe('function');
+  });
+  it('', () => atualPasswordFirebase().then(() => {
+    expect(updatePassword.mock.calls).toHaveLength(1);
   }));
 });
