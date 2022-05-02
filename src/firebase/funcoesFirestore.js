@@ -42,7 +42,7 @@ export const obterPeloId = (idUser, nameColection) => {
   return querySnapshot;
 };
 
-// Adicionar dados iniciais para o momento de registro para a coleção de usuários
+// Adicionar dados iniciais no momento do registro para a coleção de usuários
 export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, srcImg, srcImgCapa) => {
   const colRefId = doc(db, 'usuarios', id);
   await setDoc(colRefId, {
@@ -55,7 +55,7 @@ export const adicionarDataUserFS = async (id, Username, email, Pronomes, Local, 
   });
 };
 
-// Enviar dados para a coleção posts no firestore
+// Enviar dados para a coleção posts no firestore - cria publicação e sobe
 export const subirPosts = (criadorPost, post, Categoria, urlImg) => {
   const colRefPost = collection(db, 'posts');
   const functionAdd = addDoc(colRefPost, {
@@ -142,12 +142,12 @@ export const obterUserPosts = async () => {
   return postFiltrado;
 };
 
-// Remover um post a respeito do postid
+// Remover um post conforme o postid
 export const excluirPost = async (postId) => {
   await deleteDoc(doc(db, 'posts', postId));
 };
 
-// Editar um post em especifico
+// Editar um post em específico
 export const atualizarPost = (postId, publicacao) => {
   const colRefId = doc(db, 'posts', postId);
   return updateDoc(colRefId, {
@@ -155,7 +155,7 @@ export const atualizarPost = (postId, publicacao) => {
   });
 };
 
-// Obter posts de grupos por categoria
+// Obter posts dos grupos por categoria
 export const obterPostsGrupo = async (grupo) => {
   const colRef = collection(db, 'posts');
   const q = query(colRef, orderBy('timestamp'));

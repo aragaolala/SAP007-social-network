@@ -1,6 +1,7 @@
 // Configuração do Firebase
 /* eslint-disable*/
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js'; 
 
 import {
   onAuthStateChanged,
@@ -9,8 +10,11 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
   getAuth,
   GoogleAuthProvider,
+  // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 
 import {
@@ -28,6 +32,7 @@ import {
   serverTimestamp,
   deleteDoc,
   onSnapshot,
+  // eslint-disable-next-line import/no-unresolved
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 import {
@@ -67,6 +72,8 @@ export {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
   provedor,
   GoogleAuthProvider,
   getFirestore,

@@ -7,6 +7,8 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   signInWithPopup,
+  sendPasswordResetEmail,
+  updatePassword,
 } from './config.js';
 
 // Cria um usuário com e- mail e senha
@@ -27,3 +29,9 @@ export const encerrarAtividadeUsuario = () => signOut(auth);
 export const envioEmailVerificacao = () => sendEmailVerification(auth.currentUser);
 
 export const estadoAuthUsuario = (callback) => onAuthStateChanged(auth, callback);
+
+// RESET PASSWORD
+export const resetPasswordFirebase = (email) => sendPasswordResetEmail(auth, email);
+
+// Atualizar senha
+export const atualPasswordFirebase = (novaSenha) => updatePassword(auth, novaSenha);
