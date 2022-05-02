@@ -66,7 +66,7 @@
 
 ## 3. Protótipos
 
-- <a href="https://xd.adobe.com/view/b0dbbbfa-b976-4c6f-92ec-8157f5996765-e588/">Veja as telas pelo AdobeXd </a>
+- <a href="https://xd.adobe.com/view/b0dbbbfa-b976-4c6f-92ec-8157f5996765-e588/">Veja todas as telas pelo AdobeXd </a>
   
 - Versão Mobile - Alta fidelidade
 
