@@ -79,6 +79,12 @@
   <img alt="prot-alta-fidel" src="imagens/../src/imagens/versao-desktop2.png" width="500px">
 
 - Versão Mobile - Baixa fidelidade
+
+<img alt="prot-alta-fidel" src="imagens/../src/imagens/1.png" width="100px">
+<img alt="prot-alta-fidel" src="imagens/../src/imagens/2.png" width="100px">
+<img alt="prot-alta-fidel" src="imagens/../src/imagens/3.png" width="100px">
+<img alt="prot-alta-fidel" src="imagens/../src/imagens/4.png" width="100px">
+  
 - Versão Desktop - Baixa fidelidade
 - Paleta de cores:
   
