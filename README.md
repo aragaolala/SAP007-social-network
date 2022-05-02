@@ -35,7 +35,6 @@
 ## 2. Histórias de usuário
 
 - Pesquisa de usuária - Formulário aplicado (<a href="https://docs.google.com/forms/d/1lcvzDfIz48dvusbueu6E-Rj2DZQWjbNyT8mCkn91ESc/viewanalytics">Resultados iniciais aqui</a>):
-<br>
   
   ![Pesquisa de usuário](https://media.giphy.com/media/QeVGgNieuCIGkjLNtU/giphy.gif)
   <br>
