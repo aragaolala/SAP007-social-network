@@ -7,7 +7,6 @@
 - [Grrrl Talk - Fale o que pensa e encontre apoio](#grrrl-talk---fale-o-que-pensa-e-encontre-apoio)
   - [Índice](#índice)
   - [1. Resumo do Projeto](#1-resumo-do-projeto)
-        - [Aqui vem uma descricao geral](#aqui-vem-uma-descricao-geral)
   - [2. Histórias de usuário](#2-histórias-de-usuário)
   - [3. Protótipos](#3-protótipos)
   - [4. Teste de usabilidade](#4-teste-de-usabilidade)
@@ -17,7 +16,8 @@
 
 ## 1. Resumo do Projeto
 
-##### Aqui vem uma descricao geral
+* A Grrrl Talk surgiu da necessidade em ter um ambiente seguro e livre de assédio e/ou comentários misóginos. O app, exclusivo para mulheres, visa fortalecer nossa rede de apoio mútuo ao compartilhar e acolher histórias.
+<BR>
 
 * Qual a necessidade a Grrrl Talk busca resolver? E para quem?
   Pensando no assédio e agressões, com raízes misóginas infelizmente comuns e conhecidos por todas as mulheres, sofrido nos espaços virtuais, esta aplicação busca servir como um espaço seguro e exclusivo para mulheres, para trocas de histórias, desabafos e demais experiências.
@@ -41,7 +41,7 @@
    2. Definições de pronto: criar página de registro e de login com seus respectivos js; criar funcões que interajam com o Firebase, que cadastre e armazene dados da nova usuária.
   <br>
   
-* HU #2: Gostaria de publicar um post e ter a opcao de editar e/ou removê-lo.
+* HU #2: Gostaria de publicar um post e ter a opção de editar e/ou removê-lo.
   <br>
   1. Critérios de aceitação: a usuária deve conseguir postar o que deseja e fazer as edicões que deseja.
   2. Definições de pronto: criar um painel que contenha uma área de texto e um botão que submeta o post; criar uma funcao que interaja com o Firebase que armazene os dados da publicacao no banco de dados, numa coleçao, e que devolva essas publicaçoes quando requisitado.
