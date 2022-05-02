@@ -85,7 +85,6 @@
 <img alt="prot-alta-fidel" src="imagens/../src/imagens/3.png" width="100px">
 <img alt="prot-alta-fidel" src="imagens/../src/imagens/4.png" width="100px">
   
-- Versão Desktop - Baixa fidelidade
 - Paleta de cores:
   
    <img alt="prot-alta-fidel" src="imagens/../src/imagens/paleta-de-cores.png" width="300px">
