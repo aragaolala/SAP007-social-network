@@ -7,12 +7,27 @@ import {
   subirComments,
 } from '../firebase/funcoesFirestore.js';
 import { subirFileStorage } from '../firebase/funcoesStorage.js';
-// import { serverTimestamp } from '../firebase/config.js';
 
 // Mostrar todos os posts
-export const mostrarPost = (idPost, dataPost, dataCriador) => {
+export const mostrarPost = (idPost, dataPost, dataCriador, usuarios) => {
   const divPainel = document.createElement('div');
   divPainel.classList.add('painelPost');
+
+  const comentarios = dataPost.comments.reverse().map((comentario) => {
+    let criadorComentario = usuarios.find(
+      (user) => user.userId === comentario.usuarioId,
+    );
+
+    if (!criadorComentario) {
+      criadorComentario = {};
+    }
+    return `
+      <div class="postComentario">
+        <p class="ph-sparkle" class="userComentario">${criadorComentario.username}</p>
+        <p class="conteudoComentario">${comentario.comment}</p>
+      </div>    
+    `;
+  }).join('');
 
   divPainel.innerHTML = `
   <div class="usuarioPost" id= "${idPost}">
@@ -33,9 +48,19 @@ export const mostrarPost = (idPost, dataPost, dataCriador) => {
     <p>${dataPost.likes.length}</p>
     <i class="ph-chat-centered-dots comment" name= "${idPost}"}></i>
     <p>${dataPost.comments.length}</p>
-    <i class="ph-share-network" name= "${idPost}"}></i>
-    <p>${dataPost.likes.length}</p>   
   </div>
+  <section class="exibicaoComentarios comentarioModal-${idPost}" style="display: none">
+    <form id="formComentario" class="painelComentario">
+      <span class="btnFechar">&times;</span>
+      <textarea id="inputComentario" placeholder="O que gostaria de comentar?" rows="2" cols="70"></textarea>  
+      <div class="botoes">
+        <button id="botaoComentario">Enviar</button> 
+      </div>
+    </form>
+    <div class="postComentarios">
+      ${comentarios}
+    </div>
+  </section>
   `;
 
   return divPainel;
@@ -66,24 +91,47 @@ export const handleLikes = async (e) => {
 // Simula o contador no Firestore como array de usuários que dão click
 export const handleComments = async (e) => {
   const btnComment = e.target;
-  const userData = JSON.parse(sessionStorage.userSession);
-  // o id do post que está associado ao atributo name é encontrado e salvo no idComment
-  const idComment = btnComment.getAttribute('name');
-  const contadorComment = btnComment.nextElementSibling;
-  const dataPost = await obterPeloId(idComment, 'posts');
-
-  const comment = {
-    comment: 'Olá, mundo',
-    // timestamp: serverTimestamp(),
-    usuarioId: userData.id,
-  };
-
-  // const comentariosAntigos = dataPost.comments || [];
-  // uso a validação de || para usar uma array vazia se nao tiver comentários no post
-  // isto é para adicionar o comentário
-  subirComments(idComment, [...dataPost.comments, comment]);
-  contadorComment.textContent = dataPost.comments.length + 1;
+  // const userData = JSON.parse(sessionStorage.userSession);
+  // o id do post que está associado ao atributo name é encontrado e salvo no idPost
+  const idPost = btnComment.getAttribute('name');
+  document.querySelector(`.comentarioModal-${idPost}`).style.display = 'block';
+  // const contadorComment = btnComment.nextElementSibling;
+  // contadorComment.textContent = dataPost.comments.length + 1;
   // o número de comentários antigos + 1
+};
+
+// Funcionalidade para a Criação de comentários
+export const criacaoComentario = (idPost) => {
+  const formComentario = document.querySelector(`.comentarioModal-${idPost} #formComentario`);
+
+  formComentario.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // obter o campo txt do formulário
+    const postComentario = e.target.querySelector('#inputComentario').value;
+
+    // JSON.parse()recebe uma string JSON e a transforma em um objeto JavaScript
+    const userData = JSON.parse(sessionStorage.userSession);
+
+    const dataPost = await obterPeloId(idPost, 'posts');
+
+    const comment = {
+      comment: postComentario,
+      usuarioId: userData.id,
+    };
+
+    // isto é para adicionar o comentário
+    subirComments(idPost, [...dataPost.comments, comment]);
+
+    e.target.reset();
+  });
+
+  // Botão para fechar o modal de comentários
+  const btnFechar = document.querySelector('.btnFechar');
+
+  btnFechar.addEventListener('click', () => {
+    document.querySelector(`.comentarioModal-${idPost}`).style.display = 'none';
+  });
 };
 
 // Reconhece todos os botões like em cada Publicação
@@ -114,13 +162,14 @@ const preencherHome = async (containerPost) => {
           );
           // console.log(criadorPost[0]);
           containerPost.prepend(
-            mostrarPost(change.doc.id, change.doc.data(), criadorPost[0]),
+            mostrarPost(change.doc.id, change.doc.data(), criadorPost[0], usuarios),
           );
 
           if (change.doc.data().likes.includes(userData.id)) {
             document.getElementsByName(change.doc.id)[0].style.color = '#E7B9E4';
           }
           btnLikes();
+          criacaoComentario(change.doc.id);
         }
 
         if (change.type === 'modified') {
@@ -128,11 +177,6 @@ const preencherHome = async (containerPost) => {
           const irmaoBtnLike = btnLike[0].nextElementSibling;
           irmaoBtnLike.textContent = change.doc.data().likes.length;
           btnLikes();
-        }
-
-        if (change.type === 'removed') {
-          /* const postEliminado = document.getElementById(change.doc.id);
-            postEliminado.parentElement.remove(); */
         }
       }
     });
