@@ -10,7 +10,6 @@ import { subirFileStorage } from '../firebase/funcoesStorage.js';
 
 // Mostrar todos os posts
 export const mostrarPost = (idPost, dataPost, dataCriador, usuarios) => {
-  
   const divPainel = document.createElement('div');
   divPainel.classList.add('painelPost');
 
@@ -22,7 +21,6 @@ export const mostrarPost = (idPost, dataPost, dataCriador, usuarios) => {
     if (!criadorComentario) {
       criadorComentario = {};
     }
-    
     return `
       <div class="postComentario">
         <p class="ph-sparkle" class="userComentario">${criadorComentario.username}</p>
@@ -98,8 +96,8 @@ export const handleComments = async (e) => {
   const idPost = btnComment.getAttribute('name');
   document.querySelector(`.comentarioModal-${idPost}`).style.display = 'block';
   // const contadorComment = btnComment.nextElementSibling;
-  
-  // contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
+  // contadorComment.textContent = dataPost.comments.length + 1;
+  // o número de comentários antigos + 1
 };
 
 // Funcionalidade para a Criação de comentários
@@ -127,7 +125,7 @@ export const criacaoComentario = (idPost) => {
 
     e.target.reset();
   });
-  
+
   // Botão para fechar o modal de comentários
   const btnFechar = document.querySelector('.btnFechar');
 

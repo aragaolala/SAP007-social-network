@@ -43,15 +43,15 @@ async function CommentFunctionHandler(e) {
   const idComment = btnComment.getAttribute('name');
   const contadorComment = btnComment.nextElementSibling;
   const dataPost = await obterPeloId(idComment, 'posts');
-  
   const comment = {
     comment: 'Olá, mundo',
     usuarioId: userData.id,
   };
-  
+
   // isto é para adicionar o comentário
   subirComments(idComment, [...dataPost.comments, comment]);
-  contadorComment.textContent = dataPost.comments.length + 1; //o número de comentários antigos + 1
+  contadorComment.textContent = dataPost.comments.length + 1;
+  // o número de comentários antigos + 1
 }
 
 // Reconhece todos os botões like em cada Publicação

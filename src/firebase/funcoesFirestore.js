@@ -79,12 +79,13 @@ export const subirLikes = async (idPost, dataLikes) => {
 };
 
 // Para atualizar a estrutura de comentários
+/* eslint-disable*/
 export const subirComments = async (idPost, dataComments) => {
   const docId = doc(db, 'posts', idPost);
   await updateDoc(docId, {
     comments: dataComments,
   });
-  console.log('diz aí anjo', dataComments);
+  console.log('diz aí anjo', dataComments); 
 };
 
 // Para atualizar os dados do perfil na coleção de usuários
