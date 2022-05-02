@@ -40,8 +40,13 @@
 
 - Versão Mobile - Alta fidelidade
 
-  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta2.png" width="200px">
-  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta1.png" width="200px">
-- Versão Mobile - Baixa fidelidade
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta2.png" width="200px" height="400px">
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta1.png" width="200px" height="400px">
+
 - Versão Desktop - Alta fidelidade
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/versao-desktop.png" width="500px">
+  <img alt="prot-alta-fidel" src="imagens/../src/imagens/versao-desktop2.png" width="500px">
+- Versão Mobile - Baixa fidelidade
 - Versão Desktop - Baixa fidelidade
+- Paleta de cores:
+   <img alt="prot-alta-fidel" src="imagens/../src/imagens/paleta-de-cores.png" width="300px">

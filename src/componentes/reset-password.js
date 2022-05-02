@@ -1,20 +1,20 @@
 import { resetPasswordFirebase } from '../firebase/funcoesAuth.js';
 
 export const resetPass = () => {
-    const articlePainel = document.createElement('article');
-    articlePainel.classList.add('container-resetpass');
-  
-    const headerFeed = document.createElement('header');
-    headerFeed.classList.add('container-header');
-    headerFeed.innerHTML = `
+  const articlePainel = document.createElement('article');
+  articlePainel.classList.add('container-resetpass');
+
+  const headerFeed = document.createElement('header');
+  headerFeed.classList.add('container-header');
+  headerFeed.innerHTML = `
         <div class="titulo-header1">
             <img src="imagens/logo.png" id="Logo1">
         </div>
     `;
 
-    const infoPass = document.createElement('nav');
-    infoPass.classList.add('texto-info');
-    infoPass.innerHTML = `
+  const infoPass = document.createElement('nav');
+  infoPass.classList.add('texto-info');
+  infoPass.innerHTML = `
         <form id="resetPasswordBtn">
             <h2 class="slogan">Speak Your Mind and Find Support</h2>
             <div class="box-reset">
@@ -41,38 +41,38 @@ export const resetPass = () => {
             <p class="exibicaoError">Houve algum erro ao requisitar sua solicitação. Tente novamente mais tarde.</p>
         </section>
     `;
-  
-    const footer = document.createElement('footer');
-    footer.classList.add('footerDesktop');
-    footer.innerHTML = 'By: Amanda Gusmão & Layssa Aragão';
-  
-    articlePainel.appendChild(headerFeed);
-    articlePainel.appendChild(infoPass);
-    articlePainel.appendChild(footer);
-  
-    return articlePainel;
-  };
 
-  export const handleReset = (e) => {
-    e.preventDefault();
-  
-    const email = document.querySelector('#resetEmail').value;
-    return resetPasswordFirebase(email)
-      .then(() => {
-        console.log('Reset Password successful');
-        document.querySelector('.msgReset').style.display = 'block';
-        const emailText = document.querySelector('.emailText');
-        emailText.innerHTML = `${email}`;
-      })
-      .catch((err) => {
-        const error = err.code;
-        console.log(error);
-        document.querySelector('.msgErro').style.display = 'block';
-      });
-  };
-  
-  export const resetPasswordInit = () => {
-    const resetP = document.querySelector('#resetPasswordBtn');
-  
-    resetP.addEventListener('submit', handleReset);
-  };
+  const footer = document.createElement('footer');
+  footer.classList.add('footerDesktop');
+  footer.innerHTML = 'By: Amanda Gusmão & Layssa Aragão';
+
+  articlePainel.appendChild(headerFeed);
+  articlePainel.appendChild(infoPass);
+  articlePainel.appendChild(footer);
+
+  return articlePainel;
+};
+
+export const handleReset = (e) => {
+  e.preventDefault();
+
+  const email = document.querySelector('#resetEmail').value;
+  return resetPasswordFirebase(email)
+    .then(() => {
+      console.log('Reset Password successful');
+      document.querySelector('.msgReset').style.display = 'block';
+      const emailText = document.querySelector('.emailText');
+      emailText.innerHTML = `${email}`;
+    })
+    .catch((err) => {
+      const error = err.code;
+      console.log(error);
+      document.querySelector('.msgErro').style.display = 'block';
+    });
+};
+
+export const resetPasswordInit = () => {
+  const resetP = document.querySelector('#resetPasswordBtn');
+
+  resetP.addEventListener('submit', handleReset);
+};
