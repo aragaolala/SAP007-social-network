@@ -1,0 +1,441 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* timeline *****/
+/****** seção à esquerda *********/
+
+.item1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.secUsuario, .secaoCategorias{
+    margin: 0;
+    border-radius: 14px 14px 0 0;
+    margin-bottom: 25px;
+}
+
+.containerCapaDeFundo{
+    height: 120px;
+}
+
+.containerCapaDeFundo img{
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
+
+.containerPerfil{
+    display: flex;
+    height: 160px;
+    background-color: #E8E3E7;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+    padding: 3%;
+}
+
+.containerPerfil img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #662F82;
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.dadosUsuario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+    justify-content: center;
+}
+
+.dadosUsuario .nomeUsuario{
+    font-family: 'Cookie', cursive;
+    color: #662F82;  
+    text-transform: capitalize;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.dadosUsuario .localUsuario{
+    color: #662F82;
+    font-size: 15px;
+}
+
+.dadosUsuario .pronomeUsuario{
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #662F82;
+}
+
+.secaoCategorias{
+    background-color: #E8E3E7;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(102, 47, 130, 1);
+    padding: 2% 5%;
+}
+
+.secaoCategorias h1{
+    display: flex;
+    color:#662F82;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: left;
+    padding-bottom: 5%;
+}
+
+.categoriaUnica{
+    display: flex;
+    padding: 1% 0;
+    align-items: center;
+    text-decoration: none;
+}
+
+/******* seção post *****/
+#tituloCategoria{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/***** container grupos ******/
+.secaoDeExibicao .categoriaUnica {
+    justify-content: left;
+}
+
+.painelCompartilhar .botoes{
+    padding: 1vh 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2%;
+}
+
+.botaoCompartilharImagen{
+    border-color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.container-post{
+    width: auto;
+    height: auto;
+}
+
+.painelPost{
+    border-bottom: 2px solid #662F82;
+    padding-top: 3%;    
+}
+
+.usuarioPost{
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    padding: 0 3%;
+}
+
+.infoUsuarioPost{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    text-transform: capitalize;
+}
+
+.postsCompartilhado{
+    display: flex;
+    width: auto;
+    height: auto;
+    text-align: justify;
+    justify-content: center;
+    margin-left: 55px;
+    padding-bottom: 5px;
+}
+
+/******** seção perfil da usuária *******/
+.corpoPerfil, .corpoEditarPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-perfil{
+    background: #E8E3E7;
+}
+
+.fundoImagenPerfil{
+    width: 100%;
+}
+
+.fundoImagenPerfil img{
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-size: cover;   
+    cursor: pointer;   
+    object-fit: cover;
+}
+
+.btnEditar{
+    display: none;
+}
+
+.fundo2{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 1% 7%;    
+}
+
+.botoesDoPerfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: auto;
+}
+
+.fundo3 p{
+    font-family: 'Cookie', cursive;
+    font-size: 40px;
+}
+
+.botoesDoPerfil .btnEditar p{
+    display: inline-block;
+    font-size: 17px;
+}
+
+.secPostUsuario .painelPost{
+    margin: 3vh 0;
+}
+
+.fundo3{
+    margin-top: 20px;
+    color: #662F82;
+}
+
+
+
+/******* seção Editar - perfil de usuario ******/
+.fundoExibicao{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.container-superior-perfil{
+    width: 100%;
+}
+
+.imgPerfilUsuario{
+    display: flex;
+    width: 45%;
+    justify-content: center;
+}
+
+.exibicaoFormulario{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/**** menu hamburguer - logout ******/
+.nomeUsuarioPost img{
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.conteudoCompartilhado{
+    width: 100%;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.conteudoCompartilhado img{
+    width: 100%;
+    padding-top: 10px;
+}
+
+.btnDelete, .btnEdit{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border: transparent;
+    background-color: transparent;
+    margin-left: 3%;
+}
+
+.containerCategorias a:hover{
+    background-color: rgba(102, 47, 130, 0.3)
+}
+.containerCategorias a:active::before{
+    background-color: rgba(102, 47, 130, 0.3)
+}
+
+/*******  nav bar inferior  *****/
+/* estilos botões input*/
+.botoes input{
+    align-items: center;
+    width: 29%;
+    min-width: 100px;
+    height: 51px;
+    border-radius: 8px;
+    padding: 0 8px 0 0;
+    margin-right: 8px;
+}
+
+.editForm{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.editFormt textarea{    
+    width: 100%;
+    height: 15vh;
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+.secBtnEditarPost{
+    display: flex;
+    margin: 2% 0;
+    justify-content: space-around;
+}
+
+.imgParaAtualizar::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+#selbtn, #ImgCapaUpdate{
+    width: 100%;
+    height: 100%;
+}
+#compartilharImg::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+/***** MEDIA QUERIES ******/
+@media screen and (max-width: 1023px){
+    .secUsuario, .secaoCategorias{
+        display: none;
+    }
+    .categoriaUnica{
+        justify-content: center;
+    }
+    .item2 {
+        grid-column: 1/-1;
+    }
+    .item3 {
+        grid-column: 1/-1;
+    }
+    /* .painelCompartilhar, .painelPost{
+        margin: 1vh 9%;       
+    } */
+    .barraNavegacaoInferior{
+        display: block;
+    }
+    .secPostUsuario{
+        width: 85%;
+        margin-bottom: 8vh;
+    }
+    .item3 .container-post .painelPost {
+        justify-content: flex-start;
+    }
+    .fundo2{        
+        padding: 1% 5%;    
+    }
+    .imgPerfilUsuario img {
+        width: 120px;
+        height: 120px;
+    }
+    .conteudoTextoPerfil h2, .conteudoTextoPerfil p {
+        text-align: center;
+    }   
+    .tituloCategoria{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .botoesDoPerfil{
+        display: none;
+    }
+}
+
+/* para desktop */
+@media screen and (min-width: 1024px) {
+    .nomeUsuario{
+        font-size: 40px;
+    }
+
+    .item1{
+        margin: 40px 0px;
+    }
+
+    .titulo-header{
+        text-align: initial;
+    }
+
+    .categoriaUnica p{
+        font-size: 20px;
+    }
+    
+    .categoriaUnica img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #tituloCategoria{
+        background-color: rgba(102, 47, 130, 0.3)
+    }
+
+    figure, .pontos{
+        width: 35px;
+        height: 5px;
+    }
+
+    #inputCompartilhar, #inputComentario {
+        width: 100%;
+    }
+
+    .barraNavegacaoInferior{
+        display: none;
+    }
+
+    .footerDesktop{
+        position: relative;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        background-color: #662F82;
+        color: #E8E3E7;
+        padding: 40px;
+        text-align: center;
+    }
+}
