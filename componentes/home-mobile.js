@@ -12,6 +12,7 @@ import { subirFileStorage } from '../firebase/funcoesStorage.js';
 export const mostrarPost = (idPost, dataPost, dataCriador, usuarios) => {
   const divPainel = document.createElement('div');
   divPainel.classList.add('painelPost');
+  divPainel.setAttribute('id', idPost);
 
   const comentarios = dataPost.comments.reverse().map((comentario) => {
     let criadorComentario = usuarios.find(
@@ -156,10 +157,11 @@ const preencherHome = async (containerPost) => {
   await obterPosts((querySnapshot) => {
     querySnapshot.docChanges().forEach((change) => {
       if (window.location.hash === '#/timeline') {
+        const criadorPost = usuarios.filter(
+          (user) => user.userId === change.doc.data().usuarioId,
+        );
+
         if (change.type === 'added') {
-          const criadorPost = usuarios.filter(
-            (user) => user.userId === change.doc.data().usuarioId,
-          );
           // console.log(criadorPost[0]);
           containerPost.prepend(
             mostrarPost(change.doc.id, change.doc.data(), criadorPost[0], usuarios),
@@ -173,10 +175,23 @@ const preencherHome = async (containerPost) => {
         }
 
         if (change.type === 'modified') {
+          const postAtualizado = mostrarPost(change.doc.id, change.doc.data(), criadorPost[0], usuarios);
+
+          const postAntigo = document.querySelector(`.painelPost[id="${change.doc.id}"`);
+          // salva se o modal estava aberto ou fechado e aplica de novo
+          postAtualizado.querySelector('.exibicaoComentarios').style.display = postAntigo.querySelector('.exibicaoComentarios').style.display;
+          postAntigo.innerHTML = postAtualizado.innerHTML;
+          
           const btnLike = document.getElementsByName(change.doc.id);
           const irmaoBtnLike = btnLike[0].nextElementSibling;
           irmaoBtnLike.textContent = change.doc.data().likes.length;
+
+          if (change.doc.data().likes.includes(userData.id)) {
+            document.getElementsByName(change.doc.id)[0].style.color = '#E7B9E4';
+          }
+
           btnLikes();
+          criacaoComentario(change.doc.id);
         }
       }
     });
