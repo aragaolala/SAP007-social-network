@@ -34,7 +34,7 @@
 ## 2. Histórias de usuário
 
 * Form pesquisa com a usuária
-  <iframe src="https://giphy.com/embed/QeVGgNieuCIGkjLNtU" width="272" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/QeVGgNieuCIGkjLNtU">via GIPHY</a></p>
+  ![Pesquisa de usuário](https://media.giphy.com/media/QeVGgNieuCIGkjLNtU/giphy.gif)
 
 * HU #1: Gostaria de me cadastrar e, em seguida, fazer login com meu email 
   <br>
