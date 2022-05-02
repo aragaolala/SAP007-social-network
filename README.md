@@ -29,9 +29,11 @@
 
 ## 2. Histórias de usuário
 
-* Form pesquisa com a usuária
+* Form pesquisa com a 
+  
   ![Pesquisa de usuário](https://media.giphy.com/media/QeVGgNieuCIGkjLNtU/giphy.gif)
   <br>
+
 
 * HU #1: Gostaria de me cadastrar e, em seguida, fazer login com meu email.
   <br>
@@ -56,7 +58,7 @@
 
 ## 3. Protótipos
 
-- <a href="https://example.com">Veja as telas pelo AdobeXd </a>
+- <a href="https://xd.adobe.com/view/b0dbbbfa-b976-4c6f-92ec-8157f5996765-e588/">Veja as telas pelo AdobeXd </a>
   
 * Versão Mobile - Alta fidelidade
 
@@ -64,13 +66,15 @@
   <img alt="prot-alta-fidel" src="imagens/../src/imagens/prot-alta1.png" width="200px" height="400px">
 
 * Versão Desktop - Alta fidelidade
+  
   <img alt="prot-alta-fidel" src="imagens/../src/imagens/versao-desktop.png" width="500px">
   <img alt="prot-alta-fidel" src="imagens/../src/imagens/versao-desktop2.png" width="500px">
+
 * Versão Mobile - Baixa fidelidade
 * Versão Desktop - Baixa fidelidade
 * Paleta de cores:
    <img alt="prot-alta-fidel" src="imagens/../src/imagens/paleta-de-cores.png" width="300px">
 
 ## 4. Teste de usabilidade
-
+![Teste de usabilidade](https://media.giphy.com/media/XbZIicEeOH2HOTyLr0/giphy.gif)
 ## 5. Linguagens e ferramentas utilizadas
