@@ -142,5 +142,5 @@
 ## 7. Sobre as desenvolvedoras
 💜 Feito com muito carinho por Amanda Gusmão e Layssa Aragão: 
 
-⚡️Layssa Aragão <a href="https://www.linkedin.com/in/layssaaragaob/">Linkedin</a> | <a href="https://github.com/aragaolala">GitHub</a>
 ⚡️Amanda Gusmão <a href="https://www.linkedin.com/in/gusmaoamanda/">Linkedin</a> | <a href="https://github.com/amandagusmao">GitHub</a>
+⚡️Layssa Aragão <a href="https://www.linkedin.com/in/layssaaragaob/">Linkedin</a> | <a href="https://github.com/aragaolala">GitHub</a>
